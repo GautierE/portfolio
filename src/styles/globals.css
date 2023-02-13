@@ -5,4 +5,7 @@
     .bordered-text {
         text-shadow: -1px -1px 0 #3B4472, 1px -1px 0 #3B4472, -1px 1px 0 #3B4472, 1px 1px 0 #3B4472;
     }
+    .rounded-stroke {
+        stroke-linecap: round;
+    }
 }
