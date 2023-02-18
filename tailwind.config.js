@@ -19,6 +19,9 @@ module.exports = {
         navy: "#3B4472",
       },
       extend: {},
+      backgroundImage: {
+        wave: "url('../../public/wave.png')",
+      },
     },
   },
   plugins: [],
