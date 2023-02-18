@@ -59,7 +59,7 @@ export default function Skills() {
 
   return (
     <div
-      className="sticky flex h-screen flex-col items-center justify-center bg-gradient-to-t from-light-purple to-[#5a5fbf]"
+      className="sticky top-0 flex h-screen flex-col items-center justify-center bg-gradient-to-t from-mint via-[#5a5fbf] to-[#5a5fbf]"
       ref={ref}
     >
       <h2 className="self-start mt-12 ml-10 text-5xl text-white select-none bordered-title">
