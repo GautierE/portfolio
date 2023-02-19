@@ -7,7 +7,6 @@ export default function Skills() {
 
   const expandSkills = {
     hidden: ({ leftToRight }) => {
-      console.log(leftToRight);
       return { x: leftToRight ? -2000 : 2000, opacity: 0 };
     },
     visible: ({ delay }) => {
@@ -62,11 +61,11 @@ export default function Skills() {
       className="sticky top-0 flex h-screen flex-col items-center justify-center bg-gradient-to-t from-mint via-[#5a5fbf] to-[#5a5fbf]"
       ref={ref}
     >
-      <h2 className="self-start mt-12 ml-10 text-5xl text-white select-none bordered-title">
+      <h2 className="bordered-title mt-12 ml-10 select-none self-start text-5xl text-white">
         Skills
       </h2>
       {isInView && (
-        <div className="flex flex-col justify-around w-full h-full overflow-x-hidden">
+        <div className="flex h-full w-full flex-col justify-around overflow-x-hidden">
           <motion.div
             className="flex h-[16%] flex-row items-center justify-evenly bg-gradient-to-r from-slate-300"
             variants={expandSkills}

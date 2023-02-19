@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 export default function MyWork() {
   return (
     <div className="sticky top-0 mx-auto my-0 flex h-screen w-full flex-col items-center justify-start bg-[#f5f4fc]">
-      <h2 className="mt-20 mb-10 text-4xl text-black select-none">My Work</h2>
-      <div className="flex flex-wrap justify-center max-h-full">
+      <h2 className="mt-20 mb-10 select-none text-4xl text-black">My Work</h2>
+      <div className="flex flex-wrap justify-center">
         <Project
           title="Cloudmate"
           description="Web-based tool to help sneaker resellers"
@@ -54,10 +54,10 @@ const Project = ({ title, imageUrl, imageAlt, description }) => {
       className="m-2 flex min-h-[250px] w-full max-w-[400px] flex-[50%] flex-col items-center justify-evenly bg-[#f5f4fc] shadow-lg"
       whileHover={{ translateY: -8 }}
     >
-      <div className="relative w-10/12 mt-3 mb-1 h-4/6">
+      <div className="relative mt-3 mb-1 h-4/6 w-10/12">
         <Image src={imageUrl} alt={imageAlt} fill={true} />
       </div>
-      <div className="w-full pt-2 pl-5 h-2/6 bg-gradient-to-r from-slate-200">
+      <div className="h-2/6 w-full bg-gradient-to-r from-slate-200 pt-2 pl-5">
         <h5 className="text-lg font-bold">{title}</h5>
         <p className="text-sm">{description}</p>
       </div>
