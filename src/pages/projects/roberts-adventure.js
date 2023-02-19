@@ -4,6 +4,34 @@ import { motion, useAnimationControls } from "framer-motion";
 import useResizeObserver from "@react-hook/resize-observer";
 
 export default function RobertsAdventure() {
+  const carouselContent = [
+    {
+      caption: "Game screenshot",
+      imageUrl: "/projects/robert/robert_background.png",
+      imageAlt: "a",
+    },
+    {
+      caption: "Game screenshot",
+      imageUrl: "/projects/robert/robert_background.png",
+      imageAlt: "a",
+    },
+    {
+      caption: "Game screenshot",
+      imageUrl: "/projects/robert/robert_background.png",
+      imageAlt: "a",
+    },
+    {
+      caption: "Game screenshot",
+      imageUrl: "/projects/robert/robert_background.png",
+      imageAlt: "a",
+    },
+    {
+      caption: "Game screenshot",
+      imageUrl: "/projects/robert/robert_background.png",
+      imageAlt: "a",
+    },
+  ];
+
   const carouselContainer = useRef(null);
   const carouselSize = useSize(carouselContainer);
   const [carouselPosition, setCarouselPosition] = useState(0);
@@ -11,7 +39,7 @@ export default function RobertsAdventure() {
 
   useEffect(() => {
     controls.start({
-      x: carouselPosition * -101 + "%",
+      x: carouselPosition * -100 + "%",
       transition: { duration: 1, ease: "easeInOut" },
     });
   }, [carouselPosition, controls]);
@@ -29,68 +57,50 @@ export default function RobertsAdventure() {
       <h2 className="mt-20 mb-20 text-4xl font-bold text-center text-black select-none">
         Robert&apos;s Adventure
       </h2>
-      <div className="flex justify-center mb-5">
-        <button onClick={moveToPrevious} className="mr-5">
-          ◀
-        </button>
-        <div className="w-10/12 overflow-x-hidden">
-          <motion.div
-            className="flex"
-            ref={carouselContainer}
-            animate={controls}
-          >
-            {carouselSize && (
-              <>
-                <CarouselItem
-                  caption="Game screenshot"
-                  imageUrl="/projects/robert/robert_background.png"
-                  imageAlt="a"
-                  width={carouselSize.width}
-                />
-                <CarouselItem
-                  caption="a"
-                  imageUrl="/projects/robert/robert_background.png"
-                  imageAlt="a"
-                  width={carouselSize.width}
-                />
-                <CarouselItem
-                  caption="a"
-                  imageUrl="/projects/robert/robert_background.png"
-                  imageAlt="a"
-                  width={carouselSize.width}
-                />
-                <CarouselItem
-                  caption="a"
-                  imageUrl="/projects/robert/robert_background.png"
-                  imageAlt="a"
-                  width={carouselSize.width}
-                />
-                <CarouselItem
-                  caption="a"
-                  imageUrl="/projects/robert/robert_background.png"
-                  imageAlt="a"
-                  width={carouselSize.width}
-                />
-                <CarouselItem
-                  caption="a"
-                  imageUrl="/projects/robert/robert_background.png"
-                  imageAlt="a"
-                  width={
-                    carouselContainer.style
-                      ? carouselContainer.style.width
-                      : 1000
-                  }
-                />
-              </>
-            )}
-          </motion.div>
+      <div>
+        <div className="flex justify-center">
+          <button onClick={moveToPrevious} className="mr-5">
+            ◀
+          </button>
+          <div className="w-10/12 overflow-hidden">
+            <motion.div
+              className="flex"
+              ref={carouselContainer}
+              animate={controls}
+            >
+              {carouselSize &&
+                carouselContent.map((item, index) => (
+                  <CarouselItem
+                    key={index}
+                    caption={item.caption}
+                    imageUrl={item.imageUrl}
+                    imageAlt={item.imageAlt}
+                    width={carouselSize.width}
+                  />
+                ))}
+            </motion.div>
+          </div>
+          <button onClick={moveToNext} className="ml-5">
+            ▶
+          </button>
         </div>
-        <button onClick={moveToNext} className="ml-5">
-          ▶
-        </button>
+        <div className="flex justify-center mx-auto mt-5 mb-10">
+          {carouselContent.map((item, index) => (
+            <button
+              key={index}
+              className="w-3 h-3 mx-2 bg-black rounded-full"
+              onClick={() => setCarouselPosition(index)}
+              style={{
+                backgroundColor: carouselPosition === index ? "black" : "gray",
+              }}
+            />
+          ))}
+        </div>
       </div>
       <div
-        style={{ maxWidth: (carouselSize?.width * 70) / 100 }}
+        style={{
+          maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
+        }}
         className="py-5 mx-auto text-lg border-y-2 border-light-purple "
       >
         <p>
@@ -138,7 +148,7 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
   return (
     <div
       style={{ flexBasis: width }}
-      className={`m-2 flex max-h-[40vw] min-h-[38vw] w-full  flex-[50%] shrink-0 grow-0 flex-col items-center justify-evenly bg-[#f5f4fc] shadow`}
+      className={`flex max-h-[40vw] min-h-[38vw] w-full  flex-[50%] shrink-0 grow-0 flex-col items-center justify-evenly bg-[#f5f4fc] shadow`}
     >
       <div className="relative mt-5 mb-5 h-[95%] w-11/12">
         <Image src={imageUrl} alt={imageAlt} fill={true} />
