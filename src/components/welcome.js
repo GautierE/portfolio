@@ -3,18 +3,25 @@ import Image from "next/image";
 
 export default function Welcome() {
   return (
-    <div className="sticky top-0 flex h-screen items-center  bg-gradient-to-b from-[#5a5fbf] to-white">
-      <div className="w-7/12 mx-auto select-none h-1/6 ">
-        <h1 className="sticky z-10 text-white bordered-text text-8xl">
-          Hi, my name is <span className="font-bold text-navy">Gautier</span>.
+    <div className="to-background-white sticky top-0 flex  h-screen items-center bg-gradient-to-b from-[#5a5fbf]">
+      <div className="mx-auto h-1/6 w-7/12 select-none ">
+        <h1 className="bordered-text sticky z-10 text-8xl text-white">
+          Hi, my name is{" "}
+          <span className="font-bold text-black" style={{ textShadow: "none" }}>
+            Gautier
+          </span>
+          .
         </h1>
-        <p className="sticky z-10 text-5xl text-white bordered-text">
-          I&apos;m a <span className="text-navy">fullstack</span> web and mobile{" "}
-          <br /> developer
+        <p className="bordered-text sticky z-10 text-5xl text-white">
+          I&apos;m a{" "}
+          <span className="text-black" style={{ textShadow: "none" }}>
+            fullstack
+          </span>{" "}
+          web and mobile <br /> developer
         </p>
       </div>
       <Image
-        className="absolute z-0 rounded-full right-80 top-6"
+        className="absolute right-80 top-6 z-0 rounded-full"
         src={"/Picsou.png"}
         alt={"Profile picture"}
         width={648 / 1.4}

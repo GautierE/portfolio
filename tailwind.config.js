@@ -17,6 +17,7 @@ module.exports = {
         mint: "#D9EDDF",
         "light-purple": "#8C8EB1",
         navy: "#3B4472",
+        "background-white": "#f5f4fc",
       },
       extend: {},
       backgroundImage: {

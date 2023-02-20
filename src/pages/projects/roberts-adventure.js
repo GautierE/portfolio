@@ -148,7 +148,7 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
   return (
     <div
       style={{ flexBasis: width }}
-      className={`flex max-h-[40vw] min-h-[38vw] w-full  flex-[50%] shrink-0 grow-0 flex-col items-center justify-evenly bg-[#f5f4fc] shadow`}
+      className={`flex max-h-[40vw] min-h-[38vw] w-full  flex-[50%] shrink-0 grow-0 flex-col items-center justify-evenly bg-background-white shadow`}
     >
       <div className="relative mt-5 mb-5 h-[95%] w-11/12">
         <Image src={imageUrl} alt={imageAlt} fill={true} />
