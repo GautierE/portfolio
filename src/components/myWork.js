@@ -49,8 +49,8 @@ export default function MyWork() {
     },
   ];
   return (
-    <div className="via-background-white to-background-white sticky top-0 mx-auto my-0 flex h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-mint">
-      <h2 className="mb-10 select-none text-4xl text-black">My Work</h2>
+    <div className="sticky top-0 mx-auto my-0 flex h-[110vh] w-full flex-col items-center justify-center bg-gradient-to-b from-mint via-background-white to-background-white">
+      <h2 className="mb-12 text-5xl text-black select-none">My Work</h2>
       <div className="flex max-w-[1650px] flex-wrap justify-center">
         {projectsContent.map((project, index) => (
           <Project
@@ -70,19 +70,19 @@ export default function MyWork() {
 const Project = ({ title, imageUrl, imageAlt, description, route }) => {
   return (
     <motion.div
-      className="bg-background-white m-2 min-h-[250px] w-full
-         max-w-[400px]
+      className="m-2 min-h-[250px] w-full max-w-[400px]
+         bg-background-white
         shadow-lg"
       whileHover={{ translateY: -8 }}
     >
       <Link
         href={`/projects/${route}`}
-        className="flex h-full w-full cursor-pointer flex-col items-center justify-evenly"
+        className="flex flex-col items-center w-full h-full cursor-pointer justify-evenly"
       >
-        <div className="relative mt-3 mb-1 h-4/6 w-10/12">
+        <div className="relative w-10/12 mt-3 mb-1 h-4/6">
           <Image src={imageUrl} alt={imageAlt} fill={true} />
         </div>
-        <div className="h-2/6 w-full bg-gradient-to-r from-slate-200 pt-2 pl-5">
+        <div className="w-full pt-2 pl-5 h-2/6 bg-gradient-to-r from-slate-200">
           <h5 className="text-lg font-bold">{title}</h5>
           <p className="text-sm">{description}</p>
         </div>
