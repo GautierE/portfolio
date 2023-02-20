@@ -14,8 +14,8 @@ export default function Skills() {
         x: 0,
         opacity: 1,
         transition: {
-          x: { delay, duration: 3, ease: "linear" },
-          opacity: { delay, duration: 3, ease: "linear" },
+          x: { delay, duration: 2, ease: "linear" },
+          opacity: { delay, duration: 2, ease: "linear" },
         },
       };
     },
@@ -23,19 +23,27 @@ export default function Skills() {
 
   const drawCircles = {
     hidden: { pathLength: 0, opacity: 0 },
-    visible: ({ i, waitTime }) => {
-      const delay = i * 0.3 + waitTime;
+    visible: ({ i, waitTime, itemCount, leftToRight }) => {
+      let delay;
+
+      if (leftToRight) {
+        delay =
+          i !== itemCount ? (itemCount - i) * 0.4 + waitTime : 0.3 + waitTime;
+      } else {
+        delay = i !== 0 ? i * 0.4 + waitTime : 0.3 + waitTime;
+      }
+
       return {
         pathLength: 1,
         opacity: 1,
         transition: {
           pathLength: {
-            delay,
+            delay: delay,
             type: "spring",
-            duration: 3 + Math.floor(Math.random() * (1 - 0.1) + 0.1),
+            duration: 2 + Math.random() * (1 - 0.1) + 0.1,
             bounce: 0,
           },
-          opacity: { delay, duration: 2.5 },
+          opacity: { delay: delay, duration: 2.5 },
         },
       };
     },
@@ -43,8 +51,16 @@ export default function Skills() {
 
   const drawImages = {
     hidden: { opacity: 0 },
-    visible: ({ i, waitTime }) => {
-      const delay = i * 0.3 + waitTime;
+    visible: ({ i, waitTime, itemCount, leftToRight }) => {
+      let delay;
+
+      if (leftToRight) {
+        delay =
+          i !== itemCount ? (itemCount - i) * 0.4 + waitTime : 0.9 + waitTime;
+      } else {
+        delay = i !== 0 ? i * 0.4 + waitTime : 0.3 + waitTime;
+      }
+
       return {
         translateX: "-19%",
         translateY: "-16%",
@@ -61,13 +77,14 @@ export default function Skills() {
       className="sticky top-0 flex h-[110vh] flex-col items-center justify-center bg-mint"
       ref={ref}
     >
-      <h2 className="self-start mt-12 ml-10 text-5xl text-white select-none bordered-title">
+      <h2 className="absolute text-5xl text-black select-none top-12 left-20">
         Skills
       </h2>
-      {isInView && (
-        <div className="flex flex-col justify-around w-full h-full overflow-x-hidden">
+      <div className="absolute top-[15%] flex h-3/5 w-2/3 flex-col justify-evenly overflow-x-hidden rounded-md bg-background-white p-5 shadow">
+        <div>
+          <p className="pb-2 pl-2 text-2xl">Front-end</p>
           <motion.div
-            className="flex h-[16%] flex-row items-center justify-evenly bg-gradient-to-r from-slate-300"
+            className="flex h-[100px] flex-row items-center justify-evenly border-y-2 border-light-purple"
             variants={expandSkills}
             custom={{ leftToRight: true, delay: 0 }}
             initial="hidden"
@@ -85,8 +102,13 @@ export default function Skills() {
                       r="25%"
                       stroke="#3B4472"
                       variants={drawCircles}
-                      custom={{ i: i, waitTime: 3 }}
-                      className="rounded-stroke fill-mint stroke-[4px]"
+                      custom={{
+                        i: i,
+                        waitTime: 0,
+                        itemCount: 5,
+                        leftToRight: true,
+                      }}
+                      className="rounded-stroke fill-white stroke-[4px]"
                     />
                     <motion.image
                       width="40%"
@@ -94,83 +116,12 @@ export default function Skills() {
                       x="50%"
                       y="50%"
                       variants={drawImages}
-                      custom={{ i: i, waitTime: 3 }}
-                      href="../../techno_logos/html_logo.svg"
-                    />
-                  </svg>
-                );
-              }
-
-              return technos;
-            })()}
-          </motion.div>
-          <motion.div
-            className="flex h-[16%] flex-row items-center justify-evenly bg-gradient-to-l from-slate-300"
-            variants={expandSkills}
-            initial="hidden"
-            animate="visible"
-            custom={{ leftToRight: false, delay: 2 }}
-          >
-            {(() => {
-              const technos = [];
-
-              for (let i = 0; i < 6; i++) {
-                technos.push(
-                  <svg className="max-w-[120px]">
-                    <motion.circle
-                      cx="50%"
-                      cy="50%"
-                      r="25%"
-                      stroke="#3B4472"
-                      variants={drawCircles}
-                      custom={{ i: i, waitTime: 5 }}
-                      className="rounded-stroke fill-mint stroke-[4px]"
-                    />
-                    <motion.image
-                      width="40%"
-                      height="40%"
-                      x="50%"
-                      y="50%"
-                      variants={drawImages}
-                      custom={{ i: i, waitTime: 5 }}
-                      href="../../techno_logos/html_logo.svg"
-                    />
-                  </svg>
-                );
-              }
-
-              return technos;
-            })()}
-          </motion.div>
-          <motion.div
-            className="flex h-[16%] flex-row items-center justify-evenly bg-gradient-to-r from-slate-300"
-            variants={expandSkills}
-            initial="hidden"
-            animate="visible"
-            custom={{ leftToRight: true, delay: 4 }}
-          >
-            {(() => {
-              const technos = [];
-
-              for (let i = 0; i < 6; i++) {
-                technos.push(
-                  <svg className="max-w-[120px]">
-                    <motion.circle
-                      cx="50%"
-                      cy="50%"
-                      r="25%"
-                      stroke="#3B4472"
-                      variants={drawCircles}
-                      custom={{ i: i, waitTime: 7 }}
-                      className="rounded-stroke fill-mint stroke-[4px]"
-                    />
-                    <motion.image
-                      width="40%"
-                      height="40%"
-                      x="50%"
-                      y="50%"
-                      variants={drawImages}
-                      custom={{ i: i, waitTime: 7 }}
+                      custom={{
+                        i: i,
+                        waitTime: 0,
+                        itemCount: 5,
+                        leftToRight: true,
+                      }}
                       href="../../techno_logos/html_logo.svg"
                     />
                   </svg>
@@ -181,7 +132,109 @@ export default function Skills() {
             })()}
           </motion.div>
         </div>
-      )}
+        <div>
+          <p className="pb-2 pl-2 text-2xl">Back-end</p>
+          <motion.div
+            className="flex h-[100px] flex-row items-center justify-evenly border-y-2 border-light-purple"
+            variants={expandSkills}
+            initial="hidden"
+            animate="visible"
+            custom={{ leftToRight: false, delay: 1.5 }}
+          >
+            {(() => {
+              const technos = [];
+
+              for (let i = 0; i < 6; i++) {
+                technos.push(
+                  <svg className="max-w-[120px]">
+                    <motion.circle
+                      cx="50%"
+                      cy="50%"
+                      r="25%"
+                      stroke="#3B4472"
+                      variants={drawCircles}
+                      custom={{
+                        i: i,
+                        waitTime: 1.5,
+                        itemCount: 5,
+                        leftToRight: false,
+                      }}
+                      className="rounded-stroke fill-white stroke-[4px]"
+                    />
+                    <motion.image
+                      width="40%"
+                      height="40%"
+                      x="50%"
+                      y="50%"
+                      variants={drawImages}
+                      custom={{
+                        i: i,
+                        waitTime: 1.5,
+                        itemCount: 5,
+                        leftToRight: false,
+                      }}
+                      href="../../techno_logos/html_logo.svg"
+                    />
+                  </svg>
+                );
+              }
+
+              return technos;
+            })()}
+          </motion.div>
+        </div>
+        <div>
+          <p className="pb-2 pl-2 text-2xl">Tools</p>
+          <motion.div
+            className="flex h-[100px] flex-row items-center justify-evenly border-y-2 border-light-purple"
+            variants={expandSkills}
+            initial="hidden"
+            animate="visible"
+            custom={{ leftToRight: true, delay: 3 }}
+          >
+            {(() => {
+              const technos = [];
+
+              for (let i = 0; i < 6; i++) {
+                technos.push(
+                  <svg className="max-w-[120px]">
+                    <motion.circle
+                      cx="50%"
+                      cy="50%"
+                      r="25%"
+                      stroke="#3B4472"
+                      variants={drawCircles}
+                      custom={{
+                        i: i,
+                        waitTime: 3,
+                        itemCount: 5,
+                        leftToRight: true,
+                      }}
+                      className="rounded-stroke fill-white stroke-[4px]"
+                    />
+                    <motion.image
+                      width="40%"
+                      height="40%"
+                      x="50%"
+                      y="50%"
+                      variants={drawImages}
+                      custom={{
+                        i: i,
+                        waitTime: 3,
+                        itemCount: 5,
+                        leftToRight: true,
+                      }}
+                      href="../../techno_logos/html_logo.svg"
+                    />
+                  </svg>
+                );
+              }
+
+              return technos;
+            })()}
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
