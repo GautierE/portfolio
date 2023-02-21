@@ -74,13 +74,13 @@ export default function Skills() {
 
   return (
     <div
-      className="sticky top-0 flex h-[110vh] flex-col items-center justify-center bg-background-white "
+      className="sticky top-0 flex h-[130vh] flex-col items-center justify-center bg-background-white "
       ref={ref}
     >
       <h2 className="absolute text-black select-none left-32 top-20 text-7xl">
         Skills
       </h2>
-      <div className="absolute top-[20%] flex h-3/5 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-gradient-to-r from-custom-blue to-lighter-blue  p-5 shadow">
+      <div className="absolute top-[15%] flex h-1/2 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-gradient-to-r from-custom-blue to-lighter-blue  p-5 shadow">
         <div>
           <p className="pb-2 pl-2 text-2xl text-white">Front-end</p>
           <motion.div
