@@ -3,13 +3,13 @@ import Image from "next/image";
 
 export default function Welcome() {
   return (
-    <div className="sticky top-0 flex flex-col h-screen bg-gradient-to-b from-mint to-background-white">
+    <div className="sticky top-0 flex flex-col h-screen bg-gradient-to-t from-background-white via-mint to-mint">
       <div className="relative flex items-center w-full h-1/2">
         <div className="ml-32 select-none">
-          <h1 className="sticky z-10 text-white bordered-text text-7xl">
+          <h1 className="text-white bordered-text text-7xl">
             Hi, my name is{" "}
             <span
-              className="font-bold text-black"
+              className="font-bold text-custom-blue"
               style={{ textShadow: "none" }}
             >
               Gautier
@@ -18,7 +18,7 @@ export default function Welcome() {
           </h1>
           <p className="sticky z-10 text-4xl text-white bordered-text">
             I&apos;m a{" "}
-            <span className="text-black" style={{ textShadow: "none" }}>
+            <span className="text-custom-blue" style={{ textShadow: "none" }}>
               fullstack
             </span>{" "}
             web and mobile <br /> developer
@@ -33,8 +33,8 @@ export default function Welcome() {
           quality={100}
         />
       </div>
-      <div className="flex items-center w-full h-1/2">
-        <div className="flex self-end justify-start w-1/2 mb-10 ml-20">
+      <div className="flex items-center w-full px-20 mb-10 h-1/2">
+        <div className="flex self-end justify-start w-1/2">
           <Image
             src="/welcome/github_logo.svg"
             alt="Github logo"
@@ -74,7 +74,7 @@ export default function Welcome() {
             laoreet tincidunt sodales. Phasellus non placerat justo. In accumsan
             quis justo vitae molestie.
           </p>
-          <button className="self-end w-1/2 p-2 mr-10 text-4xl rounded bg-light-purple">
+          <button className="self-end w-1/2 p-2 mr-2 text-4xl text-white rounded bg-custom-blue">
             Let&apos;s work together
           </button>
         </div>

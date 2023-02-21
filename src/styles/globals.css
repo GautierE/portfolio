@@ -5,9 +5,6 @@
     .bordered-text {
         text-shadow: -1px -1px 0 #3B4472, 1px -1px 0 #3B4472, -1px 1px 0 #3B4472, 1px 1px 0 #3B4472;
     }
-    .bordered-title {
-        text-shadow: 3px 0 #3B4472, -3px 0 #3B4472, 0 3px #3B4472, 0 -3px #3B4472, 2px 2px #3B4472, -2px -2px #3B4472, 2px -2px #3B4472, -2px 2px #3B4472;
-    }
     .rounded-stroke {
         stroke-linecap: round;
     }

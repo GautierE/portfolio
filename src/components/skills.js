@@ -74,17 +74,17 @@ export default function Skills() {
 
   return (
     <div
-      className="sticky top-0 flex h-[110vh] flex-col items-center justify-center bg-mint"
+      className="sticky top-0 flex h-[110vh] flex-col items-center justify-center bg-background-white "
       ref={ref}
     >
-      <h2 className="absolute text-5xl text-black select-none top-12 left-20">
+      <h2 className="absolute text-black select-none left-32 top-20 text-7xl">
         Skills
       </h2>
-      <div className="absolute top-[15%] flex h-3/5 w-2/3 flex-col justify-evenly overflow-x-hidden rounded-md bg-background-white p-5 shadow">
+      <div className="absolute top-[20%] flex h-3/5 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-gradient-to-r from-custom-blue to-lighter-blue  p-5 shadow">
         <div>
-          <p className="pb-2 pl-2 text-2xl">Front-end</p>
+          <p className="pb-2 pl-2 text-2xl text-white">Front-end</p>
           <motion.div
-            className="flex h-[100px] flex-row items-center justify-evenly border-y-2 border-light-purple"
+            className="flex h-[100px] flex-row items-center justify-evenly rounded-full  bg-white"
             variants={expandSkills}
             custom={{ leftToRight: true, delay: 0 }}
             initial="hidden"
@@ -133,9 +133,9 @@ export default function Skills() {
           </motion.div>
         </div>
         <div>
-          <p className="pb-2 pl-2 text-2xl">Back-end</p>
+          <p className="pb-2 pl-2 text-2xl text-white">Back-end</p>
           <motion.div
-            className="flex h-[100px] flex-row items-center justify-evenly border-y-2 border-light-purple"
+            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full  bg-white"
             variants={expandSkills}
             initial="hidden"
             animate="visible"
@@ -184,9 +184,9 @@ export default function Skills() {
           </motion.div>
         </div>
         <div>
-          <p className="pb-2 pl-2 text-2xl">Tools</p>
+          <p className="pb-2 pl-2 text-2xl text-white">Tools</p>
           <motion.div
-            className="flex h-[100px] flex-row items-center justify-evenly border-y-2 border-light-purple"
+            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full  bg-white"
             variants={expandSkills}
             initial="hidden"
             animate="visible"

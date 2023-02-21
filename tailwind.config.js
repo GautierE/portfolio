@@ -15,8 +15,8 @@ module.exports = {
       },
       colors: {
         mint: "#D9EDDF",
-        "light-purple": "#8C8EB1",
-        navy: "#3B4472",
+        "custom-blue": "#4831d4",
+        "lighter-blue": "#6957d9",
         "background-white": "#f5f4fc",
       },
       extend: {},

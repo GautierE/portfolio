@@ -2,11 +2,13 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="sticky top-0 w-full h-screen mx-auto my-0 bg-background-white">
+    <div className="sticky top-0 w-full h-screen mx-auto my-0 bg-gradient-to-t from-mint via-background-white to-background-white">
       <div className="flex flex-col items-center justify-center h-full">
-        <div className="mb-40 text-center text-navy">
-          <h2 className="mb-3 text-5xl font-bold ">Send me a message !</h2>
-          <p className="text-2xl">
+        <div className="text-center mb-28 ">
+          <h2 className="mb-3 text-5xl font-bold text-custom-blue ">
+            Send me a message !
+          </h2>
+          <p className="text-2xl text-lighter-blue">
             Got a question or proposal, or just want <br /> to say hello? Go
             ahead.
           </p>
@@ -18,7 +20,7 @@ export default function Contact() {
                 Name
               </label>
               <input
-                className="p-4 text-lg border-b border-light-purple bg-background-white"
+                className="p-4 text-lg bg-transparent border-b border-lighter-blue"
                 id="name"
                 placeholder="Enter your name"
                 type="text"
@@ -30,7 +32,7 @@ export default function Contact() {
                 Email
               </label>
               <input
-                className="p-4 text-lg border-b border-light-purple bg-background-white"
+                className="p-4 text-lg bg-transparent border-b border-lighter-blue "
                 id="email"
                 placeholder="Enter your email"
                 type="text"
@@ -43,7 +45,7 @@ export default function Contact() {
               Message
             </label>
             <textarea
-              className="p-4 text-lg border-b resize-none h-28 border-light-purple bg-background-white"
+              className="p-4 text-lg bg-transparent border-b resize-none h-28 border-lighter-blue "
               id="message"
               placeholder="Enter your message"
               type="text"
