@@ -20,9 +20,6 @@ module.exports = {
         "background-white": "#f5f4fc",
       },
       extend: {},
-      backgroundImage: {
-        wave: "url('../../public/wave.png')",
-      },
     },
   },
   plugins: [],
