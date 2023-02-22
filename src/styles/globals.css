@@ -8,4 +8,7 @@
     .rounded-stroke {
         stroke-linecap: round;
     }
+    .bg-purple-white {
+        background: linear-gradient(to right, #592d8c 0%, #592d8c 75%, #f5f4fc 33%, #f5f4fc 100%);
+    }
 }

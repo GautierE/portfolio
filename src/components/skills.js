@@ -79,17 +79,17 @@ export default function Skills() {
 
   return (
     <div
-      className="sticky top-0 flex h-[130vh] flex-col items-center justify-center bg-gradient-to-r from-background-white to-lighter-blue"
+      className="bg-purple-white sticky top-0 flex h-[130vh] flex-col items-center justify-center"
       ref={ref}
     >
-      <h2 className="absolute text-black select-none left-32 top-20 text-7xl">
+      <h2 className="absolute font-bold select-none right-32 top-20 text-7xl">
         Skills
       </h2>
-      <div className="absolute top-[15%] flex h-1/2 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-gradient-to-r from-lighter-blue to-background-white  p-5 shadow">
+      <div className="absolute top-[17%] flex h-1/2 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-background-white  p-5 shadow">
         <div>
-          <p className="pb-2 pl-2 text-2xl text-white">Front-end</p>
+          <p className="pb-2 pl-2 text-2xl">Front-end</p>
           <motion.div
-            className="flex h-[100px] flex-row items-center justify-evenly rounded-full bg-gradient-to-r from-background-white  to-lighter-blue"
+            className="bg--background-white flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple"
             variants={expandSkills}
             custom={{ leftToRight: true, delay: 0 }}
             initial="hidden"
@@ -107,7 +107,12 @@ export default function Skills() {
                   leftToRight: true,
                 }}
               >
-                <img src={item.url} alt={item.desc} width="40%" />
+                <img
+                  src={item.url}
+                  alt={item.desc}
+                  width="40%"
+                  className="p-2 border-2 rounded-full border-purple"
+                />
                 <p className="whitespace-nowrap">{item.desc}</p>
               </motion.div>
             ))}
@@ -116,7 +121,7 @@ export default function Skills() {
         <div>
           <p className="pb-2 pl-2 text-2xl text-white">Back-end</p>
           <motion.div
-            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full bg-gradient-to-r from-background-white  to-lighter-blue"
+            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-purple text-white"
             variants={expandSkills}
             initial="hidden"
             animate="visible"
@@ -138,7 +143,9 @@ export default function Skills() {
                   src={item.url}
                   alt={item.desc}
                   width="32%"
+                  className="p-2 border-2 rounded-full"
                 />
+
                 <p className="whitespace-nowrap">{item.desc}</p>
               </div>
             ))}
@@ -147,7 +154,7 @@ export default function Skills() {
         <div>
           <p className="pb-2 pl-2 text-2xl text-white">Miscs</p>
           <motion.div
-            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full  bg-gradient-to-r from-background-white  to-lighter-blue"
+            className=" bg--background-white flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple"
             variants={expandSkills}
             initial="hidden"
             animate="visible"
@@ -169,6 +176,7 @@ export default function Skills() {
                   src={item.url}
                   alt={item.desc}
                   width="28%"
+                  className="p-2 border-2 rounded-full border-purple"
                 />
                 <p className="whitespace-nowrap">{item.desc}</p>
               </div>
