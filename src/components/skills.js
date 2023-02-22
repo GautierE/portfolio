@@ -1,39 +1,39 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 export default function Skills() {
   const frontEndLogos = [
-    { url: "../../skills/html_logo.svg" },
-    { url: "../../skills/css_logo.svg" },
-    { url: "../../skills/js_logo.svg" },
-    { url: "../../skills/nextjs_logo.svg" },
-    { url: "../../skills/react_logo.svg" },
-    { url: "../../skills/jquery_logo.svg" },
-    { url: "../../skills/tailwind_logo.svg" },
-    { url: "../../skills/bootstrap_logo.svg" },
-    { url: "../../skills/framermotion_logo.webp" },
-    { url: "../../skills/react_logo.svg" },
+    { url: "/skills/html_logo.svg", desc: "HTML" },
+    { url: "/skills/css_logo.svg", desc: "CSS" },
+    { url: "/skills/js_logo.svg", desc: "Javascript" },
+    { url: "/skills/nextjs_logo.svg", desc: "Next.js" },
+    { url: "/skills/react_logo.svg", desc: "React" },
+    { url: "/skills/jquery_logo.svg", desc: "jQuery" },
+    { url: "/skills/tailwind_logo.svg", desc: "Tailwind CSS" },
+    { url: "/skills/bootstrap_logo.svg", desc: "Bootstrap" },
+    { url: "/skills/framermotion_logo.webp", desc: "Framer Motion" },
+    { url: "/skills/react_logo.svg", desc: "React Native" },
   ];
 
   const backEndLogos = [
-    { url: "../../skills/php_logo.svg" },
-    { url: "../../skills/symfony_logo.svg" },
-    { url: "../../skills/doctrine_logo.svg" },
-    { url: "../../skills/node_logo.svg" },
-    { url: "../../skills/express_logo.svg" },
-    { url: "../../skills/sequelize_logo.svg" },
-    { url: "../../skills/mysql_logo.svg" },
-    { url: "../../skills/sqlite_logo.svg" },
+    { url: "../../skills/php_logo.svg", desc: "PHP" },
+    { url: "../../skills/symfony_logo.svg", desc: "Symfony" },
+    { url: "../../skills/doctrine_logo.svg", desc: "Doctrine" },
+    { url: "../../skills/node_logo.svg", desc: "Node.js" },
+    { url: "../../skills/express_logo.svg", desc: "Express.js" },
+    { url: "../../skills/sequelize_logo.svg", desc: "Sequelize" },
+    { url: "../../skills/mysql_logo.svg", desc: "MySQL" },
+    { url: "../../skills/sqlite_logo.svg", desc: "SQLite" },
   ];
 
   const miscsLogos = [
-    { url: "../../skills/git_logo.svg" },
-    { url: "../../skills/agile_icon.svg" },
-    { url: "../../skills/scrum_icon.svg" },
-    { url: "../../skills/chrome_logo.svg" },
-    { url: "../../skills/request_icon.svg" },
-    { url: "../../skills/oauth_logo.svg" },
-    { url: "../../skills/api_icon.svg" },
+    { url: "../../skills/git_logo.svg", desc: "Git" },
+    { url: "../../skills/agile_icon.svg", desc: "Agile" },
+    { url: "../../skills/scrum_icon.svg", desc: "Scrum" },
+    { url: "../../skills/chrome_logo.svg", desc: "Chrome extension" },
+    { url: "../../skills/request_icon.svg", desc: "HTTP Requests" },
+    { url: "../../skills/oauth_logo.svg", desc: "Oauth" },
+    { url: "../../skills/api_icon.svg", desc: "RESTful API" },
   ];
   const ref = useRef(null);
 
@@ -53,34 +53,6 @@ export default function Skills() {
     },
   };
 
-  const drawCircles = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: ({ i, waitTime, itemCount, leftToRight }) => {
-      let delay;
-
-      if (leftToRight) {
-        delay =
-          i !== itemCount ? (itemCount - i) * 0.4 + waitTime : 0.3 + waitTime;
-      } else {
-        delay = i !== 0 ? i * 0.4 + waitTime : 0.3 + waitTime;
-      }
-
-      return {
-        pathLength: 0,
-        opacity: 1,
-        transition: {
-          pathLength: {
-            delay: delay,
-            type: "spring",
-            duration: 2 + Math.random() * (1 - 0.1) + 0.1,
-            bounce: 0,
-          },
-          opacity: { delay: delay, duration: 2.5 },
-        },
-      };
-    },
-  };
-
   const drawImages = {
     hidden: { opacity: 0 },
     visible: ({ i, waitTime, itemCount, leftToRight }) => {
@@ -94,8 +66,6 @@ export default function Skills() {
       }
 
       return {
-        translateX: "-19%",
-        translateY: "-16%",
         opacity: 1,
         transition: {
           opacity: { delay, duration: 2.5 },
@@ -123,36 +93,20 @@ export default function Skills() {
             animate="visible"
           >
             {frontEndLogos.map((item, i) => (
-              <svg key={i} className="max-w-[120px]">
-                <motion.circle
-                  cx="50%"
-                  cy="50%"
-                  r="25%"
-                  stroke="#3B4472"
-                  variants={drawCircles}
-                  custom={{
-                    i: i,
-                    waitTime: 0,
-                    itemCount: frontEndLogos.length - 1,
-                    leftToRight: true,
-                  }}
-                  className="rounded-stroke fill-white stroke-[4px]"
-                />
-                <motion.image
-                  width="40%"
-                  height="40%"
-                  x="50%"
-                  y="50%"
-                  variants={drawImages}
-                  custom={{
-                    i: i,
-                    waitTime: 0,
-                    itemCount: frontEndLogos.length - 1,
-                    leftToRight: true,
-                  }}
-                  href={item.url}
-                />
-              </svg>
+              <motion.div
+                key={i}
+                className="flex flex-col items-center w-full h-full justify-evenly"
+                variants={drawImages}
+                custom={{
+                  i: i,
+                  waitTime: 0,
+                  itemCount: frontEndLogos.length - 1,
+                  leftToRight: true,
+                }}
+              >
+                <img src={item.url} alt={item.desc} width="40%" />
+                <p className="whitespace-nowrap">{item.desc}</p>
+              </motion.div>
             ))}
           </motion.div>
         </div>
@@ -166,26 +120,11 @@ export default function Skills() {
             custom={{ leftToRight: false, delay: 1.5 }}
           >
             {backEndLogos.map((item, i) => (
-              <svg key={i} className="max-w-[120px]">
-                <motion.circle
-                  cx="50%"
-                  cy="50%"
-                  r="25%"
-                  stroke="#3B4472"
-                  variants={drawCircles}
-                  custom={{
-                    i: i,
-                    waitTime: 1.5,
-                    itemCount: backEndLogos.length - 1,
-                    leftToRight: false,
-                  }}
-                  className="rounded-stroke fill-white stroke-[4px]"
-                />
-                <motion.image
-                  width="40%"
-                  height="40%"
-                  x="50%"
-                  y="50%"
+              <div
+                key={i}
+                className="flex flex-col items-center w-full h-full justify-evenly"
+              >
+                <motion.img
                   variants={drawImages}
                   custom={{
                     i: i,
@@ -193,9 +132,12 @@ export default function Skills() {
                     itemCount: backEndLogos.length - 1,
                     leftToRight: false,
                   }}
-                  href={item.url}
+                  src={item.url}
+                  alt={item.desc}
+                  width="32%"
                 />
-              </svg>
+                <p className="whitespace-nowrap">{item.desc}</p>
+              </div>
             ))}
           </motion.div>
         </div>
@@ -209,26 +151,11 @@ export default function Skills() {
             custom={{ leftToRight: true, delay: 3 }}
           >
             {miscsLogos.map((item, i) => (
-              <svg className="max-w-[120px]" key={i}>
-                <motion.circle
-                  cx="50%"
-                  cy="50%"
-                  r="25%"
-                  stroke="#3B4472"
-                  variants={drawCircles}
-                  custom={{
-                    i: i,
-                    waitTime: 3,
-                    itemCount: miscsLogos.length - 1,
-                    leftToRight: true,
-                  }}
-                  className="rounded-stroke fill-white stroke-[4px]"
-                />
-                <motion.image
-                  width="40%"
-                  height="40%"
-                  x="50%"
-                  y="50%"
+              <div
+                key={i}
+                className="flex flex-col items-center w-full h-full justify-evenly"
+              >
+                <motion.img
                   variants={drawImages}
                   custom={{
                     i: i,
@@ -236,9 +163,12 @@ export default function Skills() {
                     itemCount: miscsLogos.length - 1,
                     leftToRight: true,
                   }}
-                  href={item.url}
+                  src={item.url}
+                  alt={item.desc}
+                  width="28%"
                 />
-              </svg>
+                <p className="whitespace-nowrap">{item.desc}</p>
+              </div>
             ))}
           </motion.div>
         </div>
