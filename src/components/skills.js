@@ -31,7 +31,10 @@ export default function Skills() {
     { url: "../../skills/agile_icon.svg", desc: "Agile" },
     { url: "../../skills/scrum_icon.svg", desc: "Scrum" },
     { url: "../../skills/chrome_logo.svg", desc: "Chrome extension" },
-    { url: "../../skills/request_icon.svg", desc: "HTTP Requests" },
+    {
+      url: "../../skills/webscrapping_icon.svg",
+      desc: "Web scrapping/automation",
+    },
     { url: "../../skills/oauth_logo.svg", desc: "Oauth" },
     { url: "../../skills/api_icon.svg", desc: "RESTful API" },
   ];
