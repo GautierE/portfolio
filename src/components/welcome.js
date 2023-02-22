@@ -158,9 +158,19 @@ export default function Welcome() {
             </svg>
           </motion.button>
         </div>
-        <span className="absolute left-1/3 bottom-32 text-2xl  after:absolute after:left-1/2 after:top-10 after:h-56 after:w-0.5 after:bg-lighter-blue after:content-[''] ">
+        <motion.span
+          animate={{
+            translateY: -10,
+            scale: 1.1,
+            transition: {
+              repeat: Infinity,
+              repeatDelay: 5,
+            },
+          }}
+          className="absolute left-1/3 bottom-28 text-xl  after:absolute after:left-1/2 after:top-10 after:h-56 after:w-0.5 after:bg-lighter-blue after:content-[''] "
+        >
           Scroll
-        </span>
+        </motion.span>
       </div>
     </div>
   );
