@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <div className="sticky top-0 w-full h-screen mx-auto my-0 bg-gradient-to-t from-mint via-background-white to-background-white">
+    <div className="sticky top-0 w-full h-screen mx-auto my-0 bg-background-white">
       <div className="flex flex-col items-center justify-center h-full">
         <div className="text-center mb-28 ">
           <h2 className="mb-3 text-5xl font-bold text-purple ">
@@ -59,7 +59,7 @@ export default function Contact() {
           className="flex items-center justify-center w-1/6 p-5 border-2 rounded-sm border-purple stroke-purple text-purple"
           whileHover={{
             scale: 1.05,
-            backgroundColor: "#4831d4",
+            backgroundColor: "#592d8c",
             color: "rgb(255, 255, 255)",
             stroke: "rgb(255, 255, 255)",
           }}
