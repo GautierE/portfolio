@@ -89,7 +89,7 @@ export default function Skills() {
         <div>
           <p className="pb-2 pl-2 text-2xl text-white">Front-end</p>
           <motion.div
-            className="flex h-[100px] flex-row items-center justify-evenly rounded-full bg-gradient-to-r from-background-white via-background-white to-lighter-blue"
+            className="flex h-[100px] flex-row items-center justify-evenly rounded-full bg-gradient-to-r from-background-white  to-lighter-blue"
             variants={expandSkills}
             custom={{ leftToRight: true, delay: 0 }}
             initial="hidden"
@@ -116,7 +116,7 @@ export default function Skills() {
         <div>
           <p className="pb-2 pl-2 text-2xl text-white">Back-end</p>
           <motion.div
-            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full bg-gradient-to-r from-background-white via-background-white to-lighter-blue"
+            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full bg-gradient-to-r from-background-white  to-lighter-blue"
             variants={expandSkills}
             initial="hidden"
             animate="visible"
@@ -147,7 +147,7 @@ export default function Skills() {
         <div>
           <p className="pb-2 pl-2 text-2xl text-white">Miscs</p>
           <motion.div
-            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full  bg-gradient-to-r from-background-white via-background-white to-lighter-blue"
+            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full  bg-gradient-to-r from-background-white  to-lighter-blue"
             variants={expandSkills}
             initial="hidden"
             animate="visible"

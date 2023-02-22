@@ -75,7 +75,9 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
         shadow-lg"
       whileHover={{ translateY: -8 }}
     >
-      <Link
+      <a
+        target="_blank"
+        rel="noreferrer"
         href={`/projects/${route}`}
         className="flex flex-col items-center w-full h-full cursor-pointer justify-evenly"
       >
@@ -86,7 +88,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
           <h5 className="text-lg font-bold">{title}</h5>
           <p className="text-sm">{description}</p>
         </div>
-      </Link>
+      </a>
     </motion.div>
   );
 };

@@ -18,6 +18,7 @@ module.exports = {
         "custom-blue": "#4831d4",
         "lighter-blue": "#6957d9",
         "background-white": "#f5f4fc",
+        purple: "#592d8c",
       },
       extend: {},
     },
