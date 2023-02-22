@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function MyWork() {
@@ -49,7 +48,7 @@ export default function MyWork() {
     },
   ];
   return (
-    <div className="sticky top-0 mx-auto my-0 flex h-[130vh] w-full flex-col items-center justify-start bg-gradient-to-b from-mint via-background-white to-background-white">
+    <div className="sticky top-0 mx-auto my-0 flex h-[130vh] w-full flex-col items-center justify-start bg-background-white">
       <h2 className="mt-20 text-black select-none text-7xl">My Work</h2>
       <div className="mt-24 flex max-w-[1650px] flex-wrap justify-center">
         {projectsContent.map((project, index) => (

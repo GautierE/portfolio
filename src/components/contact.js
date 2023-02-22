@@ -6,10 +6,10 @@ export default function Contact() {
     <div className="sticky top-0 w-full h-screen mx-auto my-0 bg-gradient-to-t from-mint via-background-white to-background-white">
       <div className="flex flex-col items-center justify-center h-full">
         <div className="text-center mb-28 ">
-          <h2 className="mb-3 text-5xl font-bold text-custom-blue ">
+          <h2 className="mb-3 text-5xl font-bold text-purple ">
             Send me a message !
           </h2>
-          <p className="text-2xl text-lighter-blue">
+          <p className="text-2xl">
             Got a question or proposal, or just want <br /> to say hello? Go
             ahead.
           </p>
@@ -21,7 +21,7 @@ export default function Contact() {
                 Name
               </label>
               <input
-                className="p-4 text-lg bg-transparent border-b border-lighter-blue"
+                className="p-4 text-lg bg-transparent border-b border-purple"
                 id="name"
                 placeholder="Enter your name"
                 type="text"
@@ -33,7 +33,7 @@ export default function Contact() {
                 Email
               </label>
               <input
-                className="p-4 text-lg bg-transparent border-b border-lighter-blue "
+                className="p-4 text-lg bg-transparent border-b border-purple "
                 id="email"
                 placeholder="Enter your email"
                 type="text"
@@ -46,7 +46,7 @@ export default function Contact() {
               Message
             </label>
             <textarea
-              className="p-4 text-lg bg-transparent border-b resize-none h-28 border-lighter-blue "
+              className="p-4 text-lg bg-transparent border-b resize-none h-28 border-purple "
               id="message"
               placeholder="Enter your message"
               type="text"
@@ -56,7 +56,7 @@ export default function Contact() {
           </div>
         </div>
         <motion.button
-          className="flex items-center justify-center w-1/6 p-5 border-2 rounded-sm border-custom-blue stroke-custom-blue text-custom-blue"
+          className="flex items-center justify-center w-1/6 p-5 border-2 rounded-sm border-purple stroke-purple text-purple"
           whileHover={{
             scale: 1.05,
             backgroundColor: "#4831d4",
