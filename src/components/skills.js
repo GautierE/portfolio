@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+
 export default function Skills() {
   const frontEndLogos = [
     { url: "/skills/html_logo.svg", desc: "HTML" },

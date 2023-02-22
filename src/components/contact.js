@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
@@ -54,7 +55,30 @@ export default function Contact() {
             />
           </div>
         </div>
-        <button>Send !</button>
+        <motion.button
+          className="flex items-center justify-center w-1/6 p-5 border-2 rounded-sm border-custom-blue stroke-custom-blue text-custom-blue"
+          whileHover={{
+            scale: 1.05,
+            backgroundColor: "#4831d4",
+            color: "rgb(255, 255, 255)",
+            stroke: "rgb(255, 255, 255)",
+          }}
+        >
+          <span className="mr-5 font-bold">SEND</span>
+          <svg
+            width="52"
+            height="22"
+            viewBox="0 0 72 22"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="none"
+              strokeWidth="2"
+              strokeMiterlimit="0"
+              d="M.043 11.119h70.714M60.917 1.319l9.8 9.8-9.8 9.8"
+            ></path>
+          </svg>
+        </motion.button>
       </div>
     </div>
   );
