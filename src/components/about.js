@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="sticky min-h-[2320px] w-full bg-background-white">
+    <div className="sticky min-h-[2320px] w-full bg-white">
       <div className="mx-auto my-0 max-w-[1200px]">
         <div className="pt-64">
-          <h2 className="relative select-none pb-7 text-7xl text-black after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-24 after:bg-purple  after:content-['']">
+          <h2 className="relative select-none pb-7 font-title text-7xl text-black after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-24 after:bg-purple  after:content-['']">
             About me
           </h2>
           <p className="max-w-[900px] pt-5 text-3xl">

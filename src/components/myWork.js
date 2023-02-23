@@ -6,54 +6,70 @@ export default function MyWork() {
   const projectsContent = [
     {
       title: "Cloudmate",
-      description: "Web-based tool to help sneaker resellers",
+      description:
+        "Web-based tool to help sneaker resellers. aPraesent sodales ex at tincidunt porttitor.",
       imageUrl: "/projects/robert/robert_background.png",
       imageAlt: "a",
       route: "roberts-adventure",
     },
     {
       title: "Cloudmate",
-      description: "Web-based tool to help sneaker resellers",
+      description:
+        "Web-based tool to help sneaker resellers. aPraesent sodales ex at tincidunt porttitor.",
       imageUrl: "/projects/robert/robert_background.png",
       imageAlt: "a",
       route: "roberts-adventure",
     },
     {
       title: "Cloudmate",
-      description: "Web-based tool to help sneaker resellers",
+      description:
+        "Web-based tool to help sneaker resellers. aPraesent sodales ex at tincidunt porttitor.",
       imageUrl: "/projects/robert/robert_background.png",
       imageAlt: "a",
       route: "roberts-adventure",
     },
     {
       title: "Cloudmate",
-      description: "Web-based tool to help sneaker resellers",
+      description:
+        "Web-based tool to help sneaker resellers. aPraesent sodales ex at tincidunt porttitor.",
       imageUrl: "/projects/robert/robert_background.png",
       imageAlt: "a",
       route: "roberts-adventure",
     },
     {
       title: "Cloudmate",
-      description: "Web-based tool to help sneaker resellers",
+      description:
+        "Web-based tool to help sneaker resellers. aPraesent sodales ex at tincidunt porttitor.",
       imageUrl: "/projects/robert/robert_background.png",
       imageAlt: "a",
       route: "roberts-adventure",
     },
     {
       title: "Cloudmate",
-      description: "Web-based tool to help sneaker resellers",
+      description:
+        "Web-based tool to help sneaker resellers. aPraesent sodales ex at tincidunt porttitor.",
       imageUrl: "/projects/robert/robert_background.png",
       imageAlt: "a",
       route: "roberts-adventure",
     },
   ];
+
   return (
-    <div className="sticky top-0 mx-auto my-0 flex h-[130vh] w-full flex-col items-center justify-start bg-background-white">
-      <h2 className="mt-20 text-black select-none text-7xl">My Work</h2>
-      <div className="mt-24 flex max-w-[1650px] flex-wrap justify-center">
+    <div className="sticky mx-auto my-0 h-[130vh] w-full bg-white">
+      <div className="pt-10 ml-20">
+        <h2 className="text-6xl font-bold text-black select-none font-title">
+          Take a look at my <br /> recent projects
+        </h2>
+        <p className="mt-5 text-xl">
+          Lorem ipsum dolor sit amet, consectetur <br />
+          adipiscing elit. Nullam laoreet tincidunt sodales.
+        </p>
+      </div>
+      <div className="mx-auto mt-10 flex max-w-[1800px] flex-wrap justify-center">
         {projectsContent.map((project, index) => (
           <Project
             key={index}
+            index={index}
             title={project.title}
             description={project.description}
             imageUrl={project.imageUrl}
@@ -66,28 +82,40 @@ export default function MyWork() {
   );
 }
 
-const Project = ({ title, imageUrl, imageAlt, description, route }) => {
+const Project = ({ title, imageUrl, imageAlt, description, route, index }) => {
   return (
     <motion.div
-      className="m-2 min-h-[265px] w-full max-w-[425px]
-         bg-background-white
-        shadow-lg"
+      className="mx-3 mb-7 min-h-[270px] min-w-[48%] max-w-[48%]  bg-white"
       whileHover={{ translateY: -8 }}
     >
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href={`/projects/${route}`}
-        className="flex flex-col items-center w-full h-full cursor-pointer justify-evenly"
-      >
-        <div className="relative w-10/12 mt-3 mb-1 h-4/6">
-          <Image src={imageUrl} alt={imageAlt} fill={true} />
+      <div className="flex w-full h-full justify-evenly">
+        <div
+          className={
+            index === 0
+              ? "relative w-full rounded-tl-3xl rounded-bl-3xl border-2 border-r-0 border-purple pt-10 pl-10"
+              : "relative w-full rounded-tl-3xl rounded-bl-3xl border-2 border-r-0 border-black pt-10 pl-10"
+          }
+        >
+          <h5 className="text-4xl">{title}</h5>
+          <p className="w-5/6 mt-5 text-lg">{description}</p>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={`/projects/${route}`}
+            className="absolute text-lg underline bottom-7 underline-offset-4"
+          >
+            Details
+          </a>
         </div>
-        <div className="w-full pt-2 pl-5 h-2/6 bg-gradient-to-r from-slate-200">
-          <h5 className="text-lg font-bold">{title}</h5>
-          <p className="text-sm">{description}</p>
+        <div className="relative w-10/12">
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            fill={true}
+            className="rounded-tr-3xl rounded-br-3xl"
+          />
         </div>
-      </a>
+      </div>
     </motion.div>
   );
 };

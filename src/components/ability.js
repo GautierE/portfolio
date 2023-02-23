@@ -3,12 +3,14 @@ import Image from "next/image";
 
 export default function Ability() {
   return (
-    <div className="px-auto sticky top-0 h-[130vh] w-full bg-background-white">
+    <div className="px-auto sticky top-0 h-[130vh] w-full bg-white">
       <div className="mx-auto flex h-[100vh] w-[90%] flex-col items-center justify-center">
-        <div className="w-1/3 mb-24 text-center">
-          <h2 className="mb-5 font-bold text-7xl">Specialities</h2>
-          <p className="text-2xl">
-            aPraesent sodales ex at tincidunt porttitor. Pellentesque nec
+        <div className="w-1/3 text-center mb-14">
+          <h2 className="text-6xl font-bold font- mb-7 font-title">
+            Specialities
+          </h2>
+          <p className="text-xl">
+            Lorem aPraesent sodales ex at tincidunt porttitor. Pellentesque nec
             auctorenim.
           </p>
         </div>

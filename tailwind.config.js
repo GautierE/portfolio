@@ -7,17 +7,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Jura"],
-        serif: ["Jura"],
-        mono: ["Jura"],
-        display: ["Jura"],
-        body: ["Jura"],
+        sans: ["Ubuntu"],
+        serif: ["Ubuntu"],
+        mono: ["Ubuntu"],
+        title: ["Rubik"],
       },
       colors: {
-        mint: "#D9EDDF",
-        "custom-blue": "#4831d4",
-        "lighter-blue": "#6957d9",
-        "background-white": "#f5f4fc",
         purple: "#592d8c",
       },
       extend: {},

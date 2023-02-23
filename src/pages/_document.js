@@ -8,7 +8,11 @@ export default function Document() {
         <meta charSet="utf-8" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Jura"
+          href="https://fonts.googleapis.com/css?family=Ubuntu"
+        />{" "}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Rubik"
         />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="Gautier's portfolio" />

@@ -82,14 +82,14 @@ export default function Skills() {
       className="bg-purple-white sticky top-0 flex h-[130vh] flex-col items-center justify-center"
       ref={ref}
     >
-      <h2 className="absolute font-bold select-none right-32 top-20 text-7xl">
+      <h2 className="absolute font-bold select-none right-32 top-20 font-title text-7xl">
         Skills
       </h2>
-      <div className="absolute top-[17%] flex h-1/2 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-background-white  p-5 shadow">
+      <div className="absolute top-[17%] flex h-1/2 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-white  p-5 shadow">
         <div>
           <p className="pb-2 pl-2 text-2xl">Front-end</p>
           <motion.div
-            className="bg--background-white flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple"
+            className="flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white"
             variants={expandSkills}
             custom={{ leftToRight: true, delay: 0 }}
             initial="hidden"
@@ -121,7 +121,7 @@ export default function Skills() {
         <div>
           <p className="pb-2 pl-2 text-2xl text-white">Back-end</p>
           <motion.div
-            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-purple text-white"
+            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white text-purple"
             variants={expandSkills}
             initial="hidden"
             animate="visible"
@@ -143,7 +143,7 @@ export default function Skills() {
                   src={item.url}
                   alt={item.desc}
                   width="32%"
-                  className="p-2 border-2 rounded-full"
+                  className="p-2 border-2 rounded-full border-purple"
                 />
 
                 <p className="whitespace-nowrap">{item.desc}</p>
@@ -154,7 +154,7 @@ export default function Skills() {
         <div>
           <p className="pb-2 pl-2 text-2xl text-white">Miscs</p>
           <motion.div
-            className=" bg--background-white flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple"
+            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white"
             variants={expandSkills}
             initial="hidden"
             animate="visible"

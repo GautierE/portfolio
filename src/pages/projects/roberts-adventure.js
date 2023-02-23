@@ -101,7 +101,7 @@ export default function RobertsAdventure() {
         style={{
           maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
         }}
-        className="py-5 mx-auto text-lg border-y-2 border-light-purple "
+        className="py-5 mx-auto text-lg border-light-purple border-y-2 "
       >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -148,7 +148,7 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
   return (
     <div
       style={{ flexBasis: width }}
-      className={`flex max-h-[40vw] min-h-[38vw] w-full  flex-[50%] shrink-0 grow-0 flex-col items-center justify-evenly bg-background-white shadow`}
+      className={`flex max-h-[40vw] min-h-[38vw] w-full  flex-[50%] shrink-0 grow-0 flex-col items-center justify-evenly bg-white shadow`}
     >
       <div className="relative mt-5 mb-5 h-[95%] w-11/12">
         <Image src={imageUrl} alt={imageAlt} fill={true} />

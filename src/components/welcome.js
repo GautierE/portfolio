@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Welcome() {
   return (
-    <div className="sticky top-0 flex flex-col h-screen bg-background-white ">
+    <div className="sticky top-0 flex flex-col h-screen bg-white ">
       <div className="absolute right-0 z-0 w-3/5 h-full">
         <Image
           src="/welcome/profile_picture.png"
@@ -13,20 +13,20 @@ export default function Welcome() {
           quality={100}
         />
       </div>
-      <div className="flex items-center w-full h-1/2">
-        <div className="relative select-none ml-14">
-          <h1 className="ml-10 text-black text-8xl">
+      <div className="flex items-center w-full mt-32 h-1/4">
+        <div className="relative select-none ml-28">
+          <h1 className="text-black font-title text-8xl">
             Hi, my name is{" "}
             <span className="font-bold text-white">Gautier.</span>
           </h1>
-          <p className="sticky mt-5 text-5xl text-black">
+          <p className="sticky mt-5 text-3xl text-black">
             I&apos;m a <span className="text-purple">fullstack</span> web and
-            mobile <br /> developer
+            mobile developer
           </p>
         </div>
       </div>
       <motion.button
-        className="flex items-center justify-center w-2/12 p-3 ml-10 text-2xl border-2 rounded-lg shadow-lg border-purple bg-purple fill-background-white text-background-white"
+        className="flex items-center justify-center w-2/12 p-3 text-2xl text-white border-2 rounded-lg shadow-lg ml-28 border-purple bg-purple fill-white"
         whileHover={{
           scale: 1.02,
           backgroundColor: "#f5f4fc",
@@ -34,7 +34,7 @@ export default function Welcome() {
           fill: "#592d8c",
         }}
       >
-        <span className="mr-5 font-bold">Download CV</span>
+        <span className="mr-5">Download CV</span>
         {/* /welcome/chat_icon.svg code */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@ export default function Welcome() {
         Scroll
       </motion.span>
       <motion.button
-        className="absolute flex items-center justify-center p-3 text-xl border-2 border-white rounded-lg shadow-lg z-2 right-10 top-10 bg-background-white stroke-black"
+        className="absolute flex items-center justify-center p-3 text-xl bg-white border-2 border-white rounded-lg shadow-lg z-2 right-10 top-10 stroke-black"
         whileHover={{
           scale: 1.02,
           color: "#592d8c",
