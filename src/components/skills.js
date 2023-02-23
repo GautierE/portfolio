@@ -1,7 +1,18 @@
-import React, { useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 export default function Skills() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      console.log("anim");
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
+
   const frontEndLogos = [
     { url: "/skills/html_logo.svg", desc: "HTML" },
     { url: "/skills/css_logo.svg", desc: "CSS" },
@@ -38,7 +49,6 @@ export default function Skills() {
     { url: "../../skills/oauth_logo.svg", desc: "Oauth" },
     { url: "../../skills/api_icon.svg", desc: "RESTful API" },
   ];
-  const ref = useRef(null);
 
   const expandSkills = {
     hidden: ({ leftToRight }) => {
@@ -93,7 +103,7 @@ export default function Skills() {
             variants={expandSkills}
             custom={{ leftToRight: true, delay: 0 }}
             initial="hidden"
-            animate="visible"
+            animate={controls}
           >
             {frontEndLogos.map((item, i) => (
               <motion.div
@@ -124,7 +134,7 @@ export default function Skills() {
             className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white text-purple"
             variants={expandSkills}
             initial="hidden"
-            animate="visible"
+            animate={controls}
             custom={{ leftToRight: false, delay: 1.5 }}
           >
             {backEndLogos.map((item, i) => (
@@ -157,7 +167,7 @@ export default function Skills() {
             className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white"
             variants={expandSkills}
             initial="hidden"
-            animate="visible"
+            animate={controls}
             custom={{ leftToRight: true, delay: 3 }}
           >
             {miscsLogos.map((item, i) => (
