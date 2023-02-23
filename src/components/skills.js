@@ -82,7 +82,7 @@ export default function Skills() {
       className="bg-purple-white sticky top-0 flex h-[130vh] flex-col items-center justify-center"
       ref={ref}
     >
-      <h2 className="absolute font-bold select-none right-32 top-20 font-title text-7xl">
+      <h2 className="absolute text-6xl font-bold select-none right-32 top-20 font-title">
         Skills
       </h2>
       <div className="absolute top-[17%] flex h-1/2 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-white  p-5 shadow">

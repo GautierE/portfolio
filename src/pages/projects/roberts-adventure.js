@@ -54,7 +54,7 @@ export default function RobertsAdventure() {
 
   return (
     <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
-      <h2 className="mt-20 mb-20 text-4xl font-bold text-center text-black select-none">
+      <h2 className="mt-20 mb-20 text-6xl font-bold text-center text-black select-none font-title">
         Robert&apos;s Adventure
       </h2>
       <div>
@@ -101,7 +101,7 @@ export default function RobertsAdventure() {
         style={{
           maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
         }}
-        className="py-5 mx-auto text-lg border-light-purple border-y-2 "
+        className="py-5 mx-auto text-lg border-y-2 border-purple "
       >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam

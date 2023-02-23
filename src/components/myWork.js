@@ -56,9 +56,9 @@ export default function MyWork() {
 
   return (
     <div className="sticky mx-auto my-0 h-[130vh] w-full bg-white">
-      <div className="pt-10 ml-20">
+      <div className="pt-20 ml-20">
         <h2 className="text-6xl font-bold text-black select-none font-title">
-          Take a look at my <br /> recent projects
+          Take a look at my <br /> recent work
         </h2>
         <p className="mt-5 text-xl">
           Lorem ipsum dolor sit amet, consectetur <br />

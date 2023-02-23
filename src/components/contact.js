@@ -6,7 +6,7 @@ export default function Contact() {
     <div className="sticky top-0 w-full h-screen mx-auto my-0 bg-white">
       <div className="flex flex-col items-center justify-center h-full">
         <div className="text-center mb-28 ">
-          <h2 className="mb-3 text-5xl font-bold font-title text-purple">
+          <h2 className="mb-3 text-6xl font-bold font-title text-purple">
             Send me a message !
           </h2>
           <p className="text-2xl">
@@ -26,7 +26,7 @@ export default function Contact() {
                 placeholder="Enter your name"
                 type="text"
                 required
-              />{" "}
+              />
             </div>
             <div className="flex flex-col w-1/2 ml-10">
               <label htmlFor="email" className="ml-2">
@@ -56,7 +56,7 @@ export default function Contact() {
           </div>
         </div>
         <motion.button
-          className="flex items-center justify-center w-1/6 p-5 border-2 rounded-sm border-purple stroke-purple text-purple"
+          className="flex items-center justify-center w-1/6 p-5 border-2 rounded-lg border-purple stroke-purple text-purple"
           whileHover={{
             scale: 1.05,
             backgroundColor: "#592d8c",
