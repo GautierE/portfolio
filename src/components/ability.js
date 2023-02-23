@@ -10,8 +10,8 @@ export default function Ability() {
             Specialities
           </h2>
           <p className="text-xl">
-            Lorem aPraesent sodales ex at tincidunt porttitor. Pellentesque nec
-            auctorenim.
+            I have built all types of applications in the past and I have now
+            decided to focus on web and mobile apps.
           </p>
         </div>
         <div className="flex justify-evenly">

@@ -20,8 +20,9 @@ export default function Welcome() {
             <span className="font-bold text-white">Gautier.</span>
           </h1>
           <p className="sticky mt-5 text-3xl text-black">
-            I&apos;m a <span className="text-purple">fullstack</span> web and
-            mobile developer
+            I&apos;m an independent{" "}
+            <span className="text-purple">developer</span> from <br />
+            Strasbourg, France.
           </p>
         </div>
       </div>
@@ -51,10 +52,11 @@ export default function Welcome() {
 
       <div className="relative flex items-center w-full px-20 mb-10 h-1/2">
         <div className="flex self-end justify-start w-1/2">
-          <a
+          <motion.a
             href="https://github.com/GautierE"
             target="_blank"
             rel="noreferrer"
+            whileHover={{ translateY: -8 }}
           >
             <Image
               src="/welcome/github_logo.svg"
@@ -64,11 +66,12 @@ export default function Welcome() {
               quality={100}
               className="mr-5"
             />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://www.linkedin.com/in/gautier-edel/"
             target="_blank"
             rel="noreferrer"
+            whileHover={{ translateY: -8 }}
           >
             <Image
               src="/welcome/linkedin_logo.svg"
@@ -78,12 +81,13 @@ export default function Welcome() {
               quality={100}
               className="mx-5"
             />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="mailto:gautier.edel.info@gmail.com"
             target="_blank"
             rel="noreferrer"
             className="flex"
+            whileHover={{ translateY: -8 }}
           >
             <Image
               src="/welcome/email_icon.svg"
@@ -93,7 +97,7 @@ export default function Welcome() {
               quality={100}
               className="mx-5"
             />
-          </a>
+          </motion.a>
         </div>
       </div>
       <motion.span
@@ -104,7 +108,7 @@ export default function Welcome() {
             repeatDelay: 5,
           },
         }}
-        className="absolute left-1/3 bottom-28 text-xl  after:absolute after:left-1/2 after:top-10 after:h-56 after:w-0.5 after:bg-purple after:content-[''] "
+        className="absolute left-1/3 bottom-48 text-xl  after:absolute after:left-1/2 after:top-10 after:h-48 after:w-0.5 after:bg-purple after:content-[''] "
       >
         Scroll
       </motion.span>

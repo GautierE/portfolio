@@ -10,7 +10,7 @@ export default function Contact() {
             Send me a message !
           </h2>
           <p className="text-2xl">
-            Got a question or proposal, or just want <br /> to say hello? Go
+            Got a question or proposal, or just want <br /> to say hello ? Go
             ahead.
           </p>
         </div>

@@ -119,7 +119,7 @@ export default function Skills() {
           </motion.div>
         </div>
         <div>
-          <p className="pb-2 pl-2 text-2xl text-white">Back-end</p>
+          <p className="pb-2 pl-2 text-2xl">Back-end</p>
           <motion.div
             className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white text-purple"
             variants={expandSkills}
@@ -152,7 +152,7 @@ export default function Skills() {
           </motion.div>
         </div>
         <div>
-          <p className="pb-2 pl-2 text-2xl text-white">Miscs</p>
+          <p className="pb-2 pl-2 text-2xl">Miscs</p>
           <motion.div
             className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white"
             variants={expandSkills}
