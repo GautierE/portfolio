@@ -94,12 +94,18 @@ export default function About() {
               src={"/about/sneakers.png"}
               alt={"Sneakers picture"}
               fill={true}
+              sizes="100%"
             />
           </div>
         </div>
         <div className="flex mt-32">
           <div className="relative h-[601px] w-[450px]">
-            <Image src={"/about/skate.png"} alt={"Skate picture"} fill={true} />
+            <Image
+              src={"/about/skate.png"}
+              alt={"Skate picture"}
+              fill={true}
+              sizes="100%"
+            />
           </div>
           <motion.p
             className="w-1/2 pt-20 ml-20 text-2xl"

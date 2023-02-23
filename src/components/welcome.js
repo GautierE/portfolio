@@ -25,7 +25,8 @@ export default function Welcome() {
           src="/welcome/profile_picture.png"
           alt="Profile picture"
           fill={true}
-          quality={100}
+          sizes="60%"
+          priority={true}
         />
       </div>
       <div className="flex items-center w-full mt-32 h-1/4">
@@ -90,7 +91,6 @@ export default function Welcome() {
               alt="Github logo"
               width={50}
               height={50}
-              quality={100}
               className="mr-5"
             />
           </motion.a>
@@ -105,7 +105,6 @@ export default function Welcome() {
               alt="Linkeding logo"
               width={40}
               height={40}
-              quality={100}
               className="mx-5"
             />
           </motion.a>
@@ -121,7 +120,6 @@ export default function Welcome() {
               alt="Email icon"
               width={40}
               height={40}
-              quality={100}
               className="mx-5"
             />
           </motion.a>

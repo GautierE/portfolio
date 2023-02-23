@@ -39,7 +39,7 @@ export default function MyWork() {
       description:
         "My work for C-Koya Tech as a fullstack Web & mobile developer.",
       imageUrl: "/projects/c_koya_tech/ckoya_logo.jpg",
-      imageAlt: "a",
+      imageAlt: "C-Koya Tech logo",
       route: "c-koya-tech",
     },
     {
@@ -135,6 +135,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             src={imageUrl}
             alt={imageAlt}
             fill={true}
+            sizes="100%"
             className="border-2 border-l-0 rounded-tr-3xl rounded-br-3xl border-purple"
           />
         </div>
