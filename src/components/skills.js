@@ -8,7 +8,6 @@ export default function Skills() {
 
   useEffect(() => {
     if (isInView) {
-      console.log("anim");
       controls.start("visible");
     }
   }, [isInView, controls]);
@@ -50,6 +49,18 @@ export default function Skills() {
     { url: "../../skills/api_icon.svg", desc: "RESTful API" },
   ];
 
+  const animateText = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   const expandSkills = {
     hidden: ({ leftToRight }) => {
       return { x: leftToRight ? -2000 : 2000, opacity: 0 };
@@ -59,8 +70,9 @@ export default function Skills() {
         x: 0,
         opacity: 1,
         transition: {
-          x: { delay, duration: 2, ease: "linear" },
-          opacity: { delay, duration: 2, ease: "linear" },
+          delay,
+          duration: 2,
+          ease: "linear",
         },
       };
     },
@@ -88,16 +100,37 @@ export default function Skills() {
   };
 
   return (
-    <div
-      className="bg-purple-white sticky top-0 flex h-[130vh] flex-col items-center justify-center"
-      ref={ref}
-    >
-      <h2 className="absolute text-6xl font-bold select-none right-32 top-20 font-title">
+    <div className="bg-purple-white sticky top-0 flex h-[130vh] flex-col items-center justify-center">
+      <motion.h2
+        className="absolute text-6xl font-bold select-none right-32 top-20 font-title"
+        variants={animateText}
+        initial="hidden"
+        animate={controls}
+        ref={ref}
+      >
         Skills
-      </h2>
+      </motion.h2>
       <div className="absolute top-[17%] flex h-1/2 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-white  p-5 shadow">
         <div>
-          <p className="pb-2 pl-2 text-2xl">Front-end</p>
+          <motion.p
+            className="pb-2 pl-2 text-2xl"
+            variants={{
+              hidden: { y: -30, opacity: 0 },
+              visible: {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 0.5,
+                  duration: 1,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+            initial="hidden"
+            animate={controls}
+          >
+            Front-end
+          </motion.p>
           <motion.div
             className="flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white"
             variants={expandSkills}
@@ -129,13 +162,31 @@ export default function Skills() {
           </motion.div>
         </div>
         <div>
-          <p className="pb-2 pl-2 text-2xl">Back-end</p>
+          <motion.p
+            className="pb-2 pl-2 text-2xl"
+            variants={{
+              hidden: { y: -30, opacity: 0 },
+              visible: {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 1.5,
+                  duration: 1,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+            initial="hidden"
+            animate={controls}
+          >
+            Back-end
+          </motion.p>
           <motion.div
             className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white text-purple"
             variants={expandSkills}
             initial="hidden"
             animate={controls}
-            custom={{ leftToRight: false, delay: 1.5 }}
+            custom={{ leftToRight: false, delay: 1 }}
           >
             {backEndLogos.map((item, i) => (
               <div
@@ -146,7 +197,7 @@ export default function Skills() {
                   variants={drawImages}
                   custom={{
                     i: i,
-                    waitTime: 1.5,
+                    waitTime: 1,
                     itemCount: backEndLogos.length - 1,
                     leftToRight: false,
                   }}
@@ -162,13 +213,31 @@ export default function Skills() {
           </motion.div>
         </div>
         <div>
-          <p className="pb-2 pl-2 text-2xl">Miscs</p>
+          <motion.p
+            className="pb-2 pl-2 text-2xl"
+            variants={{
+              hidden: { y: -30, opacity: 0 },
+              visible: {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 3,
+                  duration: 1,
+                  ease: "easeInOut",
+                },
+              },
+            }}
+            initial="hidden"
+            animate={controls}
+          >
+            Miscs
+          </motion.p>
           <motion.div
             className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white"
             variants={expandSkills}
             initial="hidden"
             animate={controls}
-            custom={{ leftToRight: true, delay: 3 }}
+            custom={{ leftToRight: true, delay: 2.5 }}
           >
             {miscsLogos.map((item, i) => (
               <div
@@ -179,7 +248,7 @@ export default function Skills() {
                   variants={drawImages}
                   custom={{
                     i: i,
-                    waitTime: 3,
+                    waitTime: 2.5,
                     itemCount: miscsLogos.length - 1,
                     leftToRight: true,
                   }}

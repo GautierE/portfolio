@@ -1,24 +1,66 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function About() {
+  const animateText = {
+    hidden: { y: 30, opacity: 0 },
+    visible: ({ delay }) => {
+      return {
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay,
+          duration: 0.5,
+          ease: "easeInOut",
+        },
+      };
+    },
+  };
+
   return (
     <div className="sticky w-full bg-white">
       <div className="mx-auto max-w-[1200px] pb-32">
         <div className="pt-48">
-          <h2 className="relative select-none pb-7 font-title text-6xl font-bold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-24 after:bg-purple  after:content-['']">
+          <motion.h2
+            className="relative select-none pb-7 font-title text-6xl font-bold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-24 after:bg-purple  after:content-['']"
+            variants={animateText}
+            custom={{ delay: 0 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             About me
-          </h2>
-          <p className="max-w-[900px] pt-5 text-3xl">
+          </motion.h2>
+          <motion.p
+            className="max-w-[900px] pt-5 text-3xl"
+            custom={{ delay: 0.5 }}
+            variants={animateText}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             I am a computer science graduate developer who has been building
             applications since 2019.
             <br />
             With my expertise in accessibility, performance, and usability, I
             aim to create unique solutions without compromising functionality.
-          </p>
+          </motion.p>
         </div>
         <div className="flex mt-40">
-          <p className="w-1/2 pt-20 mr-20 text-2xl">
+          <motion.p
+            className="w-1/2 pt-20 mr-20 text-2xl"
+            initial={{ x: -200, opacity: 0 }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                duration: 1.5,
+                ease: "easeInOut",
+              },
+            }}
+            viewport={{ once: true }}
+          >
             For 2 years, reselling sneakers has allowed me to combine passion
             and income, making it an extremely rewarding activity in every
             aspect.
@@ -46,7 +88,7 @@ export default function About() {
             rêve de travailler pour moi-même. Je suis désormais en mesure de
             gérer ma propre entreprise, de prendre mes propres décisions et de
             vivre de ma passion ! */}
-          </p>
+          </motion.p>
           <div className="relative h-[601px] w-[450px]">
             <Image
               src={"/about/sneakers.png"}
@@ -59,7 +101,19 @@ export default function About() {
           <div className="relative h-[601px] w-[450px]">
             <Image src={"/about/skate.png"} alt={"Skate picture"} fill={true} />
           </div>
-          <p className="w-1/2 pt-20 ml-20 text-2xl">
+          <motion.p
+            className="w-1/2 pt-20 ml-20 text-2xl"
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+              transition: {
+                duration: 1.5,
+                ease: "easeInOut",
+              },
+            }}
+            viewport={{ once: true }}
+          >
             I have been passionate about skateboarding for 6 years, and for me,
             it&apos;s more than just a hobby it&apos;s an activity that allows
             me to let loose, clear my mind, and focus on the present moment.
@@ -80,7 +134,7 @@ export default function About() {
             et à avoir confiance en moi-même. Le skateboard m&apos;a appris à me
             dépasser et à relever des défis que je n&apos;aurais jamais cru
             possible. */}
-          </p>
+          </motion.p>
         </div>
       </div>
     </div>

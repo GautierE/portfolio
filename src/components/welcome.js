@@ -3,6 +3,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Welcome() {
+  const animateText = {
+    hidden: { y: 30, opacity: 0 },
+    visible: ({ delay }) => {
+      return {
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay,
+          duration: 0.5,
+          ease: "easeInOut",
+        },
+      };
+    },
+  };
+
   return (
     <div className="sticky top-0 flex flex-col h-screen bg-white ">
       <div className="absolute right-0 z-0 w-3/5 h-full">
@@ -15,15 +30,27 @@ export default function Welcome() {
       </div>
       <div className="flex items-center w-full mt-32 h-1/4">
         <div className="relative select-none ml-28">
-          <h1 className="text-black font-title text-8xl">
+          <motion.h1
+            className="text-black font-title text-8xl"
+            variants={animateText}
+            custom={{ delay: 0 }}
+            initial="hidden"
+            whileInView="visible"
+          >
             Hi, my name is{" "}
             <span className="font-bold text-white">Gautier.</span>
-          </h1>
-          <p className="sticky mt-5 text-3xl text-black">
+          </motion.h1>
+          <motion.p
+            className="sticky mt-5 text-3xl text-black"
+            custom={{ delay: 0.5 }}
+            variants={animateText}
+            initial="hidden"
+            whileInView="visible"
+          >
             I&apos;m an independent{" "}
             <span className="text-purple">developer</span> from <br />
             Strasbourg, France.
-          </p>
+          </motion.p>
         </div>
       </div>
       <motion.button
@@ -101,13 +128,23 @@ export default function Welcome() {
         </div>
       </div>
       <motion.span
-        animate={{
-          translateY: -10,
-          transition: {
-            repeat: Infinity,
-            repeatDelay: 5,
+        initial={{ y: 300 }}
+        animate={[
+          {
+            y: 0,
+            transition: {
+              delay: 0.5,
+              duration: 1.5,
+            },
           },
-        }}
+          {
+            translateY: -10,
+            transition: {
+              repeat: Infinity,
+              repeatDelay: 5,
+            },
+          },
+        ]}
         className="absolute left-1/3 bottom-48 text-xl  after:absolute after:left-1/2 after:top-10 after:h-48 after:w-0.5 after:bg-purple after:content-[''] "
       >
         Scroll

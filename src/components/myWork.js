@@ -3,6 +3,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function MyWork() {
+  const animateText = {
+    hidden: { y: 30, opacity: 0 },
+    visible: ({ delay }) => {
+      return {
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay,
+          duration: 0.5,
+          ease: "easeInOut",
+        },
+      };
+    },
+  };
+
   const projectsContent = [
     {
       title: "Cloudmate",
@@ -39,13 +54,25 @@ export default function MyWork() {
   return (
     <div className="sticky top-0 mx-auto my-0 h-[130vh] w-full bg-white">
       <div className="pt-20 ml-20">
-        <h2 className="text-6xl font-bold text-black select-none font-title">
+        <motion.h2
+          className="text-6xl font-bold text-black select-none font-title"
+          variants={animateText}
+          custom={{ delay: 0 }}
+          initial="hidden"
+          whileInView="visible"
+        >
           Take a look at my <br /> recent work
-        </h2>
-        <p className="mt-5 text-xl">
+        </motion.h2>
+        <motion.p
+          className="mt-5 text-xl"
+          custom={{ delay: 0.5 }}
+          variants={animateText}
+          initial="hidden"
+          whileInView="visible"
+        >
           From school to personal projects, <br />
           through my one year work in a company.
-        </p>
+        </motion.p>
       </div>
       <div className="mx-auto mt-10 flex max-w-[1800px] flex-wrap justify-center">
         {projectsContent.map((project, index) => (
@@ -64,10 +91,27 @@ export default function MyWork() {
 }
 
 const Project = ({ title, imageUrl, imageAlt, description, route }) => {
+  const animateProjects = {
+    hidden: { scale: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        duration: 1.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <motion.div
       className="mx-3 mb-7 min-h-[270px] min-w-[48%] max-w-[48%]  bg-white"
       whileHover={{ translateY: -8 }}
+      variants={animateProjects}
+      custom={{ delay: 0 }}
+      initial="hidden"
+      whileInView="visible"
     >
       <div className="flex w-full h-full justify-evenly">
         <div
