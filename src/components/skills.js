@@ -1,7 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 export default function Skills() {
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
@@ -100,9 +103,9 @@ export default function Skills() {
   };
 
   return (
-    <div className="bg-purple-white sticky top-0 flex h-[130vh] flex-col items-center justify-center">
+    <div className="sm:bg-purple-white sticky top-0 flex h-screen flex-col items-center justify-center bg-purple sm:h-[130vh]">
       <motion.h2
-        className="absolute text-6xl font-bold select-none right-32 top-20 font-title"
+        className="absolute text-4xl text-white select-none smtext-6xl left-10 top-10 font-title sm:right-32 sm:left-0 sm:top-20 sm:font-bold sm:text-black"
         variants={animateText}
         initial="hidden"
         animate={controls}
@@ -110,10 +113,10 @@ export default function Skills() {
       >
         Skills
       </motion.h2>
-      <div className="absolute top-[17%] flex h-1/2 w-3/4 flex-col justify-evenly overflow-x-hidden rounded-md bg-white  p-5 shadow">
+      <div className="absolute top-[12%] flex h-5/6 w-[90%] flex-col justify-evenly overflow-x-hidden rounded-md bg-white p-5 shadow sm:top-[17%]  sm:h-1/2 sm:w-3/4">
         <div>
           <motion.p
-            className="pb-2 pl-2 text-2xl"
+            className="pt-2 pl-2 text-xl sm:pb-2 sm:pt-0 sm:text-2xl"
             variants={{
               hidden: { y: -30, opacity: 0 },
               visible: {
@@ -132,7 +135,7 @@ export default function Skills() {
             Front-end
           </motion.p>
           <motion.div
-            className="flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white"
+            className="flex h-[185px] flex-col flex-wrap items-center justify-evenly overflow-x-scroll rounded-lg border-2 border-purple bg-white sm:h-[100px] sm:flex-row sm:flex-nowrap sm:overflow-x-auto sm:rounded-full"
             variants={expandSkills}
             custom={{ leftToRight: true, delay: 0 }}
             initial="hidden"
@@ -141,7 +144,7 @@ export default function Skills() {
             {frontEndLogos.map((item, i) => (
               <motion.div
                 key={i}
-                className="flex flex-col items-center w-full h-full justify-evenly"
+                className="flex h-[85px] w-[135px] flex-col items-center justify-center sm:h-full sm:w-full sm:justify-evenly"
                 variants={drawImages}
                 custom={{
                   i: i,
@@ -163,7 +166,7 @@ export default function Skills() {
         </div>
         <div>
           <motion.p
-            className="pb-2 pl-2 text-2xl"
+            className="pt-2 pl-2 text-xl sm:pb-2 sm:pt-0 sm:text-2xl"
             variants={{
               hidden: { y: -30, opacity: 0 },
               visible: {
@@ -182,7 +185,7 @@ export default function Skills() {
             Back-end
           </motion.p>
           <motion.div
-            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white text-purple"
+            className="flex h-[185px] flex-col flex-wrap items-center justify-evenly overflow-x-scroll rounded-lg border-2 border-purple bg-white sm:h-[100px] sm:flex-row sm:flex-nowrap sm:overflow-x-auto sm:rounded-full"
             variants={expandSkills}
             initial="hidden"
             animate={controls}
@@ -191,7 +194,7 @@ export default function Skills() {
             {backEndLogos.map((item, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center w-full h-full justify-evenly"
+                className="flex h-[85px] w-[135px] flex-col items-center justify-center sm:h-full sm:w-full sm:justify-evenly"
               >
                 <motion.img
                   variants={drawImages}
@@ -203,7 +206,7 @@ export default function Skills() {
                   }}
                   src={item.url}
                   alt={item.desc}
-                  width="32%"
+                  width={isMobile ? "40%" : "32%"}
                   className="p-2 border-2 rounded-full border-purple"
                 />
 
@@ -214,7 +217,7 @@ export default function Skills() {
         </div>
         <div>
           <motion.p
-            className="pb-2 pl-2 text-2xl"
+            className="pt-2 pl-2 text-xl sm:pb-2 sm:pt-0 sm:text-2xl"
             variants={{
               hidden: { y: -30, opacity: 0 },
               visible: {
@@ -233,7 +236,7 @@ export default function Skills() {
             Miscs
           </motion.p>
           <motion.div
-            className=" flex h-[100px] flex-row items-center justify-evenly rounded-full border-2 border-purple bg-white"
+            className="flex h-[185px] flex-col flex-wrap items-center justify-evenly overflow-x-scroll rounded-lg border-2 border-purple bg-white sm:h-[100px] sm:flex-row sm:flex-nowrap sm:overflow-x-auto sm:rounded-full"
             variants={expandSkills}
             initial="hidden"
             animate={controls}
@@ -242,7 +245,7 @@ export default function Skills() {
             {miscsLogos.map((item, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center w-full h-full justify-evenly"
+                className="flex h-[85px] w-[135px] flex-col items-center justify-center sm:h-full sm:w-full sm:justify-evenly"
               >
                 <motion.img
                   variants={drawImages}
@@ -254,7 +257,7 @@ export default function Skills() {
                   }}
                   src={item.url}
                   alt={item.desc}
-                  width="28%"
+                  width={isMobile ? "40%" : "28%"}
                   className="p-2 border-2 rounded-full border-purple"
                 />
                 <p className="whitespace-nowrap">{item.desc}</p>
