@@ -23,7 +23,7 @@ export default function Welcome() {
   return (
     <div className="sticky top-0 flex flex-col w-full h-screen bg-white">
       <motion.button
-        className="sm:z-2 z-10 mr-2 mt-2 flex w-[40%] items-center  justify-center self-end rounded-lg border-2 border-white bg-purple stroke-white py-1 text-xs text-white shadow-lg sm:absolute sm:right-10 sm:top-10 sm:w-auto sm:bg-white sm:stroke-black sm:p-3 sm:text-xl sm:text-black"
+        className="lg:z-2 z-10 mr-2 mt-2 flex w-[40%] items-center  justify-center self-end rounded-lg bg-purple stroke-white px-2 py-1 text-xs text-white shadow-lg md:w-auto md:border-2 md:border-white md:bg-white md:stroke-black md:text-black lg:absolute lg:right-10 lg:top-10 lg:p-3 lg:text-xl"
         whileHover={{
           scale: 1.02,
           color: "#592d8c",
@@ -31,7 +31,7 @@ export default function Welcome() {
           borderColor: "#592d8c",
         }}
       >
-        <span className="sm:mr-2 sm:font-bold">Let&apos;s work together !</span>
+        <span className="md:mr-2 md:font-bold">Let&apos;s work together !</span>
         {/* /welcome/chat_icon.svg code */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,10 +45,10 @@ export default function Welcome() {
           </g>
         </svg>
       </motion.button>
-      <div className="mx-auto flex h-1/4 w-[90%] items-center sm:mt-32 sm:w-full">
-        <div className="relative z-10 select-none sm:ml-28">
+      <div className="mx-auto flex h-1/4 w-[90%] items-center md:w-full lg:mt-32">
+        <div className="relative z-10 select-none md:ml-2 lg:ml-28">
           <motion.h1
-            className="text-5xl font-title sm:text-8xl"
+            className="text-5xl font-title lg:text-8xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -56,10 +56,10 @@ export default function Welcome() {
             viewport={{ once: true }}
           >
             Hi, my name is{" "}
-            <span className="sm:font-bold sm:text-white">Gautier.</span>
+            <span className="md:font-bold md:text-white">Gautier.</span>
           </motion.h1>
           <motion.p
-            className="sticky mt-3 text-lg text-black sm:mt-5 sm:text-3xl"
+            className="sticky mt-3 text-lg text-black md:mt-5 md:text-xl lg:text-3xl"
             custom={{ delay: 0.5 }}
             variants={animateText}
             initial="hidden"
@@ -72,17 +72,17 @@ export default function Welcome() {
           </motion.p>
         </div>
       </div>
-      <div className="relative mx-auto mt-2 h-[45%] w-[90%] sm:absolute sm:right-0 sm:z-0 sm:mt-0 sm:h-full sm:w-3/5">
+      <div className="relative mx-auto mt-2 h-[45%] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5">
         <Image
           src="/welcome/profile_picture.png"
           alt="Profile picture"
-          fill={true}
-          sizes="60%"
+          fill
+          style={{ objectFit: "cover" }}
           priority={true}
         />
       </div>
       <motion.button
-        className="mt-10 flex w-[60%] items-center justify-center self-center rounded border-2 border-purple bg-purple fill-white p-1 text-sm text-white shadow-lg sm:ml-28 sm:mt-0 sm:w-2/12 sm:self-auto sm:rounded-lg sm:p-3 sm:text-2xl"
+        className="mt-5 flex w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:ml-2 md:mt-0 md:w-2/5 md:self-auto md:rounded-lg md:border-2 md:border-purple md:text-lg lg:ml-28 lg:w-2/12 lg:p-3 lg:text-2xl"
         whileHover={{
           scale: 1.02,
           backgroundColor: "#f5f4fc",
@@ -104,8 +104,8 @@ export default function Welcome() {
           <path d="M413.331 117.444c6.17-6.17 13.722-10.351 21.871-12.74V0H.002v512h435.2V314.027l-25.6 25.6V486.4h-384V25.6h384v95.573l3.729-3.729z" />
         </svg>
       </motion.button>
-      <div className="relative flex justify-center w-full mb-5 h-1/6 sm:mb-10 sm:h-1/2 sm:justify-start sm:px-20">
-        <div className="flex self-end justify-start sm:w-1/2">
+      <div className="absolute bottom-0 flex justify-center left-10 md:bottom-10 md:justify-start">
+        <div className="flex self-end justify-start">
           <motion.a
             href="https://github.com/GautierE"
             target="_blank"
@@ -168,7 +168,7 @@ export default function Welcome() {
             },
           },
         ]}
-        className="absolute right-3 bottom-20 text-xl after:absolute after:left-1/2 after:top-10  after:h-48 after:w-0.5 after:bg-purple after:content-[''] sm:right-auto sm:left-1/3 sm:bottom-48 "
+        className="absolute right-3 bottom-10 after:absolute after:left-1/2 after:top-10 after:h-48  after:w-0.5 after:bg-purple after:content-[''] md:right-auto md:left-1/3 md:text-xl lg:bottom-48 "
       >
         Scroll
       </motion.span>

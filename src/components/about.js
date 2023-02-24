@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
 export default function About() {
-  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   const animateText = {
     hidden: { y: 30, opacity: 0 },
@@ -23,10 +23,10 @@ export default function About() {
 
   return (
     <div className="sticky w-full bg-white">
-      <div className="mx-auto w-[90%] max-w-[1200px] pb-32 sm:w-auto">
-        <div className="pt-10 sm:pt-48">
+      <div className="mx-auto w-[90%] max-w-[1200px] pb-32">
+        <div className="pt-10 md:pt-48">
           <motion.h2
-            className="relative select-none pb-7 font-title text-4xl font-bold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-24 after:bg-purple after:content-['']  sm:text-6xl"
+            className="relative select-none pb-7 font-title text-4xl font-bold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-24 after:bg-purple after:content-['']  md:text-6xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -36,7 +36,7 @@ export default function About() {
             About me
           </motion.h2>
           <motion.p
-            className="max-w-[900px] pt-5 text-xl sm:text-3xl"
+            className="max-w-[900px] pt-5 text-xl md:text-3xl"
             custom={{ delay: 0.5 }}
             variants={animateText}
             initial="hidden"
@@ -50,9 +50,9 @@ export default function About() {
             aim to create unique solutions without compromising functionality.
           </motion.p>
         </div>
-        <div className="flex flex-col mt-10 sm:mt-40 sm:flex-row">
+        <div className="flex flex-col mt-10 md:mt-40 md:flex-row">
           <motion.p
-            className="pt-5 text-lg sm:mr-20 sm:w-1/2 sm:pt-20 sm:text-2xl"
+            className="pt-5 text-lg md:mr-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
             initial={{ x: isMobile ? 0 : -200, opacity: 0 }}
             whileInView={{
               x: 0,
@@ -92,26 +92,26 @@ export default function About() {
             gérer ma propre entreprise, de prendre mes propres décisions et de
             vivre de ma passion ! */}
           </motion.p>
-          <div className="relative mt-5 h-[48vh] w-[100%] sm:mt-0 sm:h-[601px] sm:w-[450px]">
+          <div className="relative mt-5 h-[48vh] w-[100%] md:mt-0 md:h-[601px] md:w-[450px]">
             <Image
               src={"/about/sneakers.png"}
               alt={"Sneakers picture"}
-              fill={true}
-              sizes="100%"
+              fill
+              style={{ objectFit: "cover" }}
             />
           </div>
         </div>
-        <div className="flex flex-col-reverse mt-10 sm:mt-32 sm:flex-row">
-          <div className="relative mt-5 h-[48vh] w-[100%] sm:mt-0 sm:h-[601px] sm:w-[450px]">
+        <div className="flex flex-col-reverse mt-10 md:mt-32 md:flex-row">
+          <div className="relative mt-5 h-[48vh] w-[100%] md:mt-0 md:h-[601px] md:w-[450px]">
             <Image
               src={"/about/skate.png"}
               alt={"Skate picture"}
-              fill={true}
-              sizes="100%"
+              fill
+              style={{ objectFit: "cover" }}
             />
           </div>
           <motion.p
-            className="pt-5 text-lg sm:ml-20 sm:w-1/2 sm:pt-20 sm:text-2xl"
+            className="pt-5 text-lg md:ml-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
             initial={{ x: isMobile ? 0 : 200, opacity: 0 }}
             whileInView={{
               x: 0,

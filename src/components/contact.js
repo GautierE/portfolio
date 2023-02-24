@@ -18,10 +18,10 @@ export default function Contact() {
   };
   return (
     <div className="sticky top-0 w-full h-screen my-0 bg-white">
-      <div className="mx-auto flex h-full w-[90%] flex-col items-center justify-center sm:w-auto">
-        <div className="mb-5 text-center sm:mb-10 sm:mb-28 ">
+      <div className="mx-auto flex h-full w-[90%] flex-col items-center justify-center md:w-auto">
+        <div className="mb-5 text-center md:mb-28 ">
           <motion.h2
-            className="mb-3 text-3xl font-bold font-title text-purple sm:text-6xl"
+            className="mb-3 text-3xl font-bold font-title text-purple md:text-6xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -31,7 +31,7 @@ export default function Contact() {
             Send me a message !
           </motion.h2>
           <motion.p
-            className="text-xl sm:text-2xl"
+            className="text-xl md:text-2xl"
             custom={{ delay: 0.5 }}
             variants={animateText}
             initial="hidden"
@@ -42,10 +42,10 @@ export default function Contact() {
             ahead.
           </motion.p>
         </div>
-        <div className="mb-10 flex max-w-[845px] flex-col items-center justify-center sm:mb-20 sm:w-8/12">
-          <div className="flex flex-col justify-around w-full mb-10 sm:mb-20 sm:flex-row">
+        <div className="mb-10 flex w-11/12 max-w-[845px] flex-col items-center justify-center md:mb-20 md:w-8/12">
+          <div className="flex flex-col justify-around w-full mb-5 md:mb-20 md:flex-row">
             <motion.div
-              className="flex flex-col sm:mr-10 sm:w-1/2"
+              className="flex flex-col md:mr-10 md:w-1/2"
               custom={{ delay: 1 }}
               variants={animateText}
               initial="hidden"
@@ -64,7 +64,7 @@ export default function Contact() {
               />
             </motion.div>
             <motion.div
-              className="flex flex-col mt-10 sm:ml-10 sm:mt-0 sm:w-1/2"
+              className="flex flex-col mt-10 md:ml-10 md:mt-0 md:w-1/2"
               custom={{ delay: 1 }}
               variants={animateText}
               initial="hidden"
@@ -105,7 +105,7 @@ export default function Contact() {
           </motion.div>
         </div>
         <motion.button
-          className="flex items-center justify-center p-5 mb-2 border-2 rounded-lg border-purple stroke-purple text-purple sm:mb-0 sm:w-1/6"
+          className="flex items-center justify-center px-3 py-2 mb-1 border-2 rounded-lg border-purple stroke-purple text-purple md:mb-0 md:w-1/6 md:p-5"
           whileHover={{
             scale: 1.05,
             backgroundColor: "#592d8c",
