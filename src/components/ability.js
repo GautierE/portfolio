@@ -41,11 +41,11 @@ export default function Ability() {
   };
 
   return (
-    <div className="px-auto sticky top-0 h-[130vh] w-full bg-white">
-      <div className="mx-auto flex h-[100vh] w-[90%] flex-col items-center justify-center">
-        <div className="w-1/3 text-center mb-14">
+    <div className="px-auto sticky top-0 h-screen w-full bg-white sm:h-[130vh]">
+      <div className="mx-auto flex h-full flex-col items-center sm:h-[100vh] sm:justify-center">
+        <div className="mt-5 w-[90%] text-center sm:mb-14 sm:mt-0 sm:w-1/3">
           <motion.h2
-            className="text-6xl font-bold font- mb-7 font-title"
+            className="text-3xl font-bold font- mb-7 font-title sm:text-6xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -54,7 +54,7 @@ export default function Ability() {
             Specialities
           </motion.h2>
           <motion.p
-            className="text-xl"
+            className="sm:text-xl"
             custom={{ delay: 0.5 }}
             variants={animateText}
             initial="hidden"
@@ -64,62 +64,74 @@ export default function Ability() {
             decided to focus on web and mobile apps.
           </motion.p>
         </div>
-        <div className="flex justify-evenly">
-          <div className="w-1/4 px-5 text-black pb-14 pt-7">
-            <div className="w-[65px] rounded-full border-2 border-purple p-3">
-              <Image
-                src="/ability/figma_logo.svg"
-                alt="Figma logo"
-                width={60}
-                height={60}
-              />
+        <div className="flex h-full w-[90%] flex-col justify-evenly sm:h-auto sm:w-full sm:flex-row">
+          <div className="px-5 pt-3 pb-5 text-black sm:w-1/4 sm:pt-7 sm:pb-14">
+            <div className="flex items-center sm:block">
+              <div className="w-[65px] rounded-full border-2 border-purple p-3">
+                <Image
+                  src="/ability/figma_logo.svg"
+                  alt="Figma logo"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <p className="ml-2 text-xl sm:ml-0 sm:mt-2 sm:text-2xl">
+                Product design
+              </p>
             </div>
-            <p className="mt-2 text-2xl">Product design</p>
-            <p className="mt-5 text-lg">
+            <p className="mt-2 sm:mt-5 sm:text-lg">
               From idea, to wireframes, to prototype, to final version, I
               provide you with stunning and pixel perfect design for your
               website or mobile app.
             </p>
           </div>
           <motion.div
-            className="w-1/4 px-5 text-white border rounded-lg bg-purple pb-14 pt-7"
+            className="px-5 pt-5 pb-5 text-white border rounded-lg bg-purple sm:w-1/4 sm:pt-7 sm:pb-14"
             custom={{ delay: 0 }}
             variants={animateAbility}
             initial="hidden"
             whileInView="visible"
           >
-            <div className="w-[65px] rounded-full border-2 p-3">
-              <Image
-                src="/ability/code_logo.svg"
-                alt="Vs code logo"
-                width={60}
-                height={60}
-              />
+            <div className="flex items-center sm:block">
+              <div className="w-[65px] rounded-full border-2 p-3">
+                <Image
+                  src="/ability/code_logo.svg"
+                  alt="Vs code logo"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <p className="ml-2 text-xl sm:ml-0 sm:mt-2 sm:text-2xl">
+                Web development
+              </p>
             </div>
-            <p className="mt-2 text-2xl">Web development</p>
-            <p className="mt-5 text-lg">
+            <p className="mt-2 sm:mt-5 sm:text-lg">
               Whether I design your website, or you come with your own design, I
               build fully responsive websites that adapt both on desktop and
               mobile devices.
             </p>
           </motion.div>
           <motion.div
-            className="w-1/4 px-5 text-black pb-14 pt-7"
+            className="px-5 pt-3 pb-5 text-black sm:w-1/4 sm:pt-7 sm:pb-14"
             custom={{ delay: 0.7 }}
             variants={animateAbility}
             initial="hidden"
             whileInView="visible"
           >
-            <div className="w-[65px] rounded-full border-2 border-purple p-3">
-              <Image
-                src="/ability/react_native_logo.svg"
-                alt="React native logo"
-                width={60}
-                height={60}
-              />
+            <div className="flex items-center sm:block">
+              <div className="w-[65px] rounded-full border-2 border-purple p-3">
+                <Image
+                  src="/ability/react_native_logo.svg"
+                  alt="React native logo"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <p className="ml-2 text-xl sm:ml-0 sm:mt-2 sm:text-2xl">
+                Mobile development
+              </p>
             </div>
-            <p className="mt-2 text-2xl">Mobile development</p>
-            <p className="mt-5 text-lg">
+            <p className="mt-2 sm:mt-5 sm:text-lg">
               If your ideas go well beyond the web, I can also develop fully
               functional mobile apps for Android and iOS, complete with the
               server-side implementations.
