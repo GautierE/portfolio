@@ -21,7 +21,7 @@ export default function Welcome() {
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
 
   return (
-    <div className="sticky top-0 flex h-screen w-full flex-col bg-white">
+    <div className="sticky top-0 flex flex-col w-full h-screen bg-white">
       <motion.button
         className="sm:z-2 z-10 mr-2 mt-2 flex w-[40%] items-center  justify-center self-end rounded-lg border-2 border-white bg-purple stroke-white py-1 text-xs text-white shadow-lg sm:absolute sm:right-10 sm:top-10 sm:w-auto sm:bg-white sm:stroke-black sm:p-3 sm:text-xl sm:text-black"
         whileHover={{
@@ -48,7 +48,7 @@ export default function Welcome() {
       <div className="mx-auto flex h-1/4 w-[90%] items-center sm:mt-32 sm:w-full">
         <div className="relative z-10 select-none sm:ml-28">
           <motion.h1
-            className="font-title text-5xl sm:text-8xl"
+            className="text-5xl font-title sm:text-8xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -102,8 +102,8 @@ export default function Welcome() {
           <path d="M413.331 117.444c6.17-6.17 13.722-10.351 21.871-12.74V0H.002v512h435.2V314.027l-25.6 25.6V486.4h-384V25.6h384v95.573l3.729-3.729z" />
         </svg>
       </motion.button>
-      <div className="relative mb-5 flex h-1/6 w-full justify-center sm:mb-10 sm:h-1/2 sm:justify-start sm:px-20">
-        <div className="flex justify-start self-end sm:w-1/2">
+      <div className="relative flex justify-center w-full mb-5 h-1/6 sm:mb-10 sm:h-1/2 sm:justify-start sm:px-20">
+        <div className="flex self-end justify-start sm:w-1/2">
           <motion.a
             href="https://github.com/GautierE"
             target="_blank"
@@ -136,7 +136,7 @@ export default function Welcome() {
             href="mailto:gautier.edel.info@gmail.com"
             target="_blank"
             rel="noreferrer"
-            className="ml-5 flex"
+            className="flex ml-5"
             whileHover={{ translateY: -8 }}
           >
             <Image
@@ -166,7 +166,7 @@ export default function Welcome() {
             },
           },
         ]}
-        className="absolute right-5 bottom-20 text-xl after:absolute after:left-1/2 after:top-10  after:h-48 after:w-0.5 after:bg-purple after:content-[''] sm:right-0 sm:left-1/3 sm:bottom-48 "
+        className="absolute right-3 bottom-20 text-xl after:absolute after:left-1/2 after:top-10  after:h-48 after:w-0.5 after:bg-purple after:content-[''] sm:right-auto sm:left-1/3 sm:bottom-48 "
       >
         Scroll
       </motion.span>

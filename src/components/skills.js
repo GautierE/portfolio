@@ -105,7 +105,7 @@ export default function Skills() {
   return (
     <div className="sm:bg-purple-white sticky top-0 flex h-screen flex-col items-center justify-center bg-purple sm:h-[130vh]">
       <motion.h2
-        className="absolute text-4xl text-white select-none smtext-6xl left-10 top-10 font-title sm:right-32 sm:left-0 sm:top-20 sm:font-bold sm:text-black"
+        className="absolute text-4xl text-white select-none left-10 top-10 font-title sm:right-32 sm:left-auto sm:top-20 sm:text-6xl sm:font-bold sm:text-black"
         variants={animateText}
         initial="hidden"
         animate={controls}

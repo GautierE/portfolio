@@ -38,7 +38,7 @@ export default function MyWork() {
       title: "C-Koya Tech",
       description:
         "My work for C-Koya Tech as a fullstack Web & mobile developer.",
-      imageUrl: "/projects/c_koya_tech/ckoya_logo.jpg",
+      imageUrl: "/projects/c_koya_tech/ckoya_logo.png",
       imageAlt: "C-Koya Tech logo",
       route: "c-koya-tech",
     },
@@ -52,10 +52,10 @@ export default function MyWork() {
   ];
 
   return (
-    <div className="sticky top-0 mx-auto my-0 h-[130vh] w-full bg-white">
-      <div className="pt-20 ml-20">
+    <div className="sticky top-0 mx-auto my-0 h-screen w-full bg-white sm:h-[130vh]">
+      <div className="ml-5 h-[21%] pt-6 sm:ml-20 sm:h-auto sm:pt-20">
         <motion.h2
-          className="text-6xl font-bold text-black select-none font-title"
+          className="text-3xl font-bold text-black select-none font-title sm:text-6xl"
           variants={animateText}
           custom={{ delay: 0 }}
           initial="hidden"
@@ -64,7 +64,7 @@ export default function MyWork() {
           Take a look at my <br /> recent work
         </motion.h2>
         <motion.p
-          className="mt-5 text-xl"
+          className="mt-2 text-lg sm:mt-5 sm:text-xl"
           custom={{ delay: 0.5 }}
           variants={animateText}
           initial="hidden"
@@ -74,7 +74,7 @@ export default function MyWork() {
           through my one year work in a company.
         </motion.p>
       </div>
-      <div className="mx-auto mt-10 flex max-w-[1800px] flex-wrap justify-center">
+      <div className="mx-auto mt-5 flex h-[76%] max-w-[1800px] flex-col sm:mt-10 sm:h-auto sm:flex-row sm:flex-wrap sm:justify-center">
         {projectsContent.map((project, index) => (
           <Project
             key={index}
@@ -106,37 +106,37 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
 
   return (
     <motion.div
-      className="mx-3 mb-7 min-h-[270px] min-w-[48%] max-w-[48%]  bg-white"
+      className="mx-auto mb-5 h-full w-[90%] bg-white sm:mb-7 sm:h-auto sm:min-h-[270px] sm:w-auto sm:min-w-[48%]  sm:max-w-[48%]"
       whileHover={{ translateY: -8 }}
       variants={animateProjects}
       custom={{ delay: 0 }}
       initial="hidden"
       whileInView="visible"
     >
-      <div className="flex w-full h-full justify-evenly">
+      <div className="relative flex w-full h-full justify-evenly">
         <div
           className={
-            "relative w-full rounded-tl-3xl rounded-bl-3xl border-2 border-r-0 border-purple pt-10 pl-10"
+            "relative w-full rounded-3xl border-2 border-purple pt-2 pl-5 sm:rounded-br-none sm:rounded-tr-none sm:rounded-tl-3xl sm:rounded-bl-3xl sm:border-r-0 sm:pt-10 sm:pl-10"
           }
         >
-          <h5 className="text-4xl">{title}</h5>
-          <p className="w-5/6 mt-5 text-lg">{description}</p>
+          <h5 className="text-xl sm:text-4xl">{title}</h5>
+          <p className="mt-3 sm:mt-5 sm:w-5/6 sm:text-lg">{description}</p>
           <a
             target="_blank"
             rel="noreferrer"
             href={`/projects/${route}`}
-            className="absolute text-lg underline bottom-7 underline-offset-4"
+            className="underline underline-offset-4 sm:absolute sm:bottom-7 sm:text-lg"
           >
             Details
           </a>
         </div>
-        <div className="relative w-10/12">
+        <div className="absolute right-5 h-[60px] w-[60px] sm:relative sm:h-auto sm:w-10/12">
           <Image
             src={imageUrl}
             alt={imageAlt}
             fill={true}
             sizes="100%"
-            className="border-2 border-l-0 rounded-tr-3xl rounded-br-3xl border-purple"
+            className="sm:rounded-tr-3xl sm:rounded-br-3xl sm:border-2 sm:border-l-0 sm:border-purple"
           />
         </div>
         {/* 
