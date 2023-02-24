@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 export default function Welcome() {
   const animateText = {
@@ -17,32 +18,47 @@ export default function Welcome() {
       };
     },
   };
+  const isMobile = useMediaQuery({ query: "(max-width: 1250px)" });
 
   return (
-    <div className="sticky top-0 flex flex-col h-screen bg-white ">
-      <div className="absolute right-0 z-0 w-3/5 h-full">
-        <Image
-          src="/welcome/profile_picture.png"
-          alt="Profile picture"
-          fill={true}
-          sizes="60%"
-          priority={true}
-        />
-      </div>
-      <div className="flex items-center w-full mt-32 h-1/4">
-        <div className="relative select-none ml-28">
+    <div className="sticky top-0 flex flex-col w-full h-screen bg-white">
+      <motion.button
+        className="sm:z-2 z-10 mr-2 mt-2 flex w-[40%] items-center  justify-center self-end rounded-lg border-2 border-white bg-purple stroke-white py-1 text-xs text-white shadow-lg sm:absolute sm:right-10 sm:top-10 sm:w-auto sm:bg-white sm:stroke-black sm:p-3 sm:text-xl sm:text-black"
+        whileHover={{
+          scale: 1.02,
+          color: "#592d8c",
+          stroke: "#592d8c",
+          borderColor: "#592d8c",
+        }}
+      >
+        <span className="sm:mr-2 sm:font-bold">Let&apos;s work together !</span>
+        {/* /welcome/chat_icon.svg code */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={35}
+          height={35}
+          viewBox="0 0 40 30"
+        >
+          <g fill="#808184">
+            <path d="m6.371 20.055-1.924 4.103a.5.5 0 0 0 .662.665l6.774-3.139a17.79 17.79 0 0 0 2.17.141c7.779 0 14.107-4.896 14.107-10.913C28.161 4.896 21.833 0 14.054 0S-.053 4.896-.053 10.912c0 3.733 2.391 7.12 6.424 9.143zM14.054 1c7.227 0 13.107 4.446 13.107 9.912s-5.88 9.913-13.107 9.913a17.17 17.17 0 0 1-2.187-.15.523.523 0 0 0-.273.042l-5.658 2.621 1.551-3.307a.499.499 0 0 0-.243-.666C3.301 17.542.947 14.382.947 10.912.947 5.446 6.827 1 14.054 1z" />
+            <path d="M7.197 13.328a2.1 2.1 0 0 0 .491.059 1.99 1.99 0 0 0 1.572-.763 2.012 2.012 0 0 0 .369-1.728 1.984 1.984 0 0 0-1.451-1.451 2.014 2.014 0 0 0-2.062.705 2.01 2.01 0 0 0-.369 1.727c.17.71.739 1.279 1.45 1.451zm-.296-2.558a.996.996 0 0 1 .787-.383.987.987 0 0 1 .968.744c.076.317.011.628-.183.874-.244.31-.645.445-1.042.351a.987.987 0 0 1-.713-.713 1.003 1.003 0 0 1 .183-.873zM13.098 13.328a2.1 2.1 0 0 0 .491.059c.617 0 1.189-.278 1.571-.763a2.012 2.012 0 0 0 .369-1.728 1.984 1.984 0 0 0-1.451-1.451 2.016 2.016 0 0 0-2.062.705 2.013 2.013 0 0 0-.37 1.727 1.987 1.987 0 0 0 1.452 1.451zm-.296-2.558a.996.996 0 0 1 .787-.383.986.986 0 0 1 .968.744 1 1 0 0 1-.183.874 1.01 1.01 0 0 1-1.042.351.989.989 0 0 1-.714-.713 1 1 0 0 1 .184-.873zM18.998 13.328a2.1 2.1 0 0 0 .491.059 1.99 1.99 0 0 0 1.572-.763 2.012 2.012 0 0 0 .369-1.728 1.984 1.984 0 0 0-1.451-1.451 2.015 2.015 0 0 0-2.062.705 2.01 2.01 0 0 0-.369 1.727c.171.71.74 1.279 1.45 1.451zm-.296-2.558a.996.996 0 0 1 .787-.383.987.987 0 0 1 .968.744c.076.317.011.628-.183.874-.244.31-.646.445-1.042.351a.989.989 0 0 1-.714-.713 1.007 1.007 0 0 1 .184-.873zM29.908 12.218a.5.5 0 1 0-.286.959c3.847 1.146 6.431 4.009 6.431 7.121 0 2.683-1.917 5.206-5.003 6.585a.5.5 0 0 0-.286.557l.59 2.861-3.17-2.395a.525.525 0 0 0-.373-.096 13.48 13.48 0 0 1-1.916.142c-3.661 0-7.203-1.87-8.613-4.548a.5.5 0 1 0-.884.465c1.575 2.993 5.481 5.083 9.498 5.083.601 0 1.223-.041 1.851-.123l4.065 3.07a.496.496 0 0 0 .568.024.5.5 0 0 0 .223-.523l-.779-3.774c3.236-1.577 5.229-4.354 5.229-7.327 0-3.615-2.804-6.786-7.145-8.081z" />
+          </g>
+        </svg>
+      </motion.button>
+      <div className="mx-auto flex h-1/4 w-[90%] items-center sm:mt-32 sm:w-full">
+        <div className="relative z-10 select-none sm:ml-28">
           <motion.h1
-            className="text-black font-title text-8xl"
+            className="text-5xl font-title sm:text-8xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
             whileInView="visible"
           >
             Hi, my name is{" "}
-            <span className="font-bold text-white">Gautier.</span>
+            <span className="sm:font-bold sm:text-white">Gautier.</span>
           </motion.h1>
           <motion.p
-            className="sticky mt-5 text-3xl text-black"
+            className="sticky mt-3 text-lg text-black sm:mt-5 sm:text-3xl"
             custom={{ delay: 0.5 }}
             variants={animateText}
             initial="hidden"
@@ -54,8 +70,17 @@ export default function Welcome() {
           </motion.p>
         </div>
       </div>
+      <div className="relative mx-auto mt-2 h-[45%] w-[90%] sm:absolute sm:right-0 sm:z-0 sm:mt-0 sm:h-full sm:w-3/5">
+        <Image
+          src="/welcome/profile_picture.png"
+          alt="Profile picture"
+          fill={true}
+          sizes="60%"
+          priority={true}
+        />
+      </div>
       <motion.button
-        className="flex items-center justify-center w-2/12 p-3 text-2xl text-white border-2 rounded-lg shadow-lg ml-28 border-purple bg-purple fill-white"
+        className="mt-10 flex w-[60%] items-center justify-center self-center rounded border-2 border-purple bg-purple fill-white p-1 text-sm text-white shadow-lg sm:ml-28 sm:mt-0 sm:w-2/12 sm:self-auto sm:rounded-lg sm:p-3 sm:text-2xl"
         whileHover={{
           scale: 1.02,
           backgroundColor: "#f5f4fc",
@@ -64,7 +89,7 @@ export default function Welcome() {
         }}
       >
         <span className="mr-5">Download CV</span>
-        {/* /welcome/chat_icon.svg code */}
+        {/* /welcome/cv_icon.svg code */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
@@ -77,21 +102,20 @@ export default function Welcome() {
           <path d="M413.331 117.444c6.17-6.17 13.722-10.351 21.871-12.74V0H.002v512h435.2V314.027l-25.6 25.6V486.4h-384V25.6h384v95.573l3.729-3.729z" />
         </svg>
       </motion.button>
-
-      <div className="relative flex items-center w-full px-20 mb-10 h-1/2">
-        <div className="flex self-end justify-start w-1/2">
+      <div className="relative flex justify-center w-full mb-5 h-1/6 sm:mb-10 sm:h-1/2 sm:justify-start sm:px-20">
+        <div className="flex self-end justify-start sm:w-1/2">
           <motion.a
             href="https://github.com/GautierE"
             target="_blank"
             rel="noreferrer"
             whileHover={{ translateY: -8 }}
+            className="mr-5"
           >
             <Image
               src="/welcome/github_logo.svg"
               alt="Github logo"
               width={50}
               height={50}
-              className="mr-5"
             />
           </motion.a>
           <motion.a
@@ -99,20 +123,20 @@ export default function Welcome() {
             target="_blank"
             rel="noreferrer"
             whileHover={{ translateY: -8 }}
+            className="mx-5"
           >
             <Image
               src="/welcome/linkedin_logo.svg"
               alt="Linkeding logo"
               width={40}
               height={40}
-              className="mx-5"
             />
           </motion.a>
           <motion.a
             href="mailto:gautier.edel.info@gmail.com"
             target="_blank"
             rel="noreferrer"
-            className="flex"
+            className="flex ml-5"
             whileHover={{ translateY: -8 }}
           >
             <Image
@@ -120,7 +144,6 @@ export default function Welcome() {
               alt="Email icon"
               width={40}
               height={40}
-              className="mx-5"
             />
           </motion.a>
         </div>
@@ -143,33 +166,10 @@ export default function Welcome() {
             },
           },
         ]}
-        className="absolute left-1/3 bottom-48 text-xl  after:absolute after:left-1/2 after:top-10 after:h-48 after:w-0.5 after:bg-purple after:content-[''] "
+        className="absolute right-5 bottom-20 text-xl after:absolute after:left-1/2 after:top-10  after:h-48 after:w-0.5 after:bg-purple after:content-[''] sm:right-0 sm:left-1/3 sm:bottom-48 "
       >
         Scroll
       </motion.span>
-      <motion.button
-        className="absolute flex items-center justify-center p-3 text-xl bg-white border-2 border-white rounded-lg shadow-lg z-2 right-10 top-10 stroke-black"
-        whileHover={{
-          scale: 1.02,
-          color: "#592d8c",
-          stroke: "#592d8c",
-          borderColor: "#592d8c",
-        }}
-      >
-        <span className="mr-2 font-bold">Let&apos;s work together !</span>
-        {/* /welcome/chat_icon.svg code */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={35}
-          height={35}
-          viewBox="0 0 40 30"
-        >
-          <g fill="#808184">
-            <path d="m6.371 20.055-1.924 4.103a.5.5 0 0 0 .662.665l6.774-3.139a17.79 17.79 0 0 0 2.17.141c7.779 0 14.107-4.896 14.107-10.913C28.161 4.896 21.833 0 14.054 0S-.053 4.896-.053 10.912c0 3.733 2.391 7.12 6.424 9.143zM14.054 1c7.227 0 13.107 4.446 13.107 9.912s-5.88 9.913-13.107 9.913a17.17 17.17 0 0 1-2.187-.15.523.523 0 0 0-.273.042l-5.658 2.621 1.551-3.307a.499.499 0 0 0-.243-.666C3.301 17.542.947 14.382.947 10.912.947 5.446 6.827 1 14.054 1z" />
-            <path d="M7.197 13.328a2.1 2.1 0 0 0 .491.059 1.99 1.99 0 0 0 1.572-.763 2.012 2.012 0 0 0 .369-1.728 1.984 1.984 0 0 0-1.451-1.451 2.014 2.014 0 0 0-2.062.705 2.01 2.01 0 0 0-.369 1.727c.17.71.739 1.279 1.45 1.451zm-.296-2.558a.996.996 0 0 1 .787-.383.987.987 0 0 1 .968.744c.076.317.011.628-.183.874-.244.31-.645.445-1.042.351a.987.987 0 0 1-.713-.713 1.003 1.003 0 0 1 .183-.873zM13.098 13.328a2.1 2.1 0 0 0 .491.059c.617 0 1.189-.278 1.571-.763a2.012 2.012 0 0 0 .369-1.728 1.984 1.984 0 0 0-1.451-1.451 2.016 2.016 0 0 0-2.062.705 2.013 2.013 0 0 0-.37 1.727 1.987 1.987 0 0 0 1.452 1.451zm-.296-2.558a.996.996 0 0 1 .787-.383.986.986 0 0 1 .968.744 1 1 0 0 1-.183.874 1.01 1.01 0 0 1-1.042.351.989.989 0 0 1-.714-.713 1 1 0 0 1 .184-.873zM18.998 13.328a2.1 2.1 0 0 0 .491.059 1.99 1.99 0 0 0 1.572-.763 2.012 2.012 0 0 0 .369-1.728 1.984 1.984 0 0 0-1.451-1.451 2.015 2.015 0 0 0-2.062.705 2.01 2.01 0 0 0-.369 1.727c.171.71.74 1.279 1.45 1.451zm-.296-2.558a.996.996 0 0 1 .787-.383.987.987 0 0 1 .968.744c.076.317.011.628-.183.874-.244.31-.646.445-1.042.351a.989.989 0 0 1-.714-.713 1.007 1.007 0 0 1 .184-.873zM29.908 12.218a.5.5 0 1 0-.286.959c3.847 1.146 6.431 4.009 6.431 7.121 0 2.683-1.917 5.206-5.003 6.585a.5.5 0 0 0-.286.557l.59 2.861-3.17-2.395a.525.525 0 0 0-.373-.096 13.48 13.48 0 0 1-1.916.142c-3.661 0-7.203-1.87-8.613-4.548a.5.5 0 1 0-.884.465c1.575 2.993 5.481 5.083 9.498 5.083.601 0 1.223-.041 1.851-.123l4.065 3.07a.496.496 0 0 0 .568.024.5.5 0 0 0 .223-.523l-.779-3.774c3.236-1.577 5.229-4.354 5.229-7.327 0-3.615-2.804-6.786-7.145-8.081z" />
-          </g>
-        </svg>
-      </motion.button>
     </div>
   );
 }
