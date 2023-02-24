@@ -20,10 +20,10 @@ export default function About() {
 
   return (
     <div className="sticky w-full bg-white">
-      <div className="mx-auto max-w-[1200px] pb-32">
-        <div className="pt-48">
+      <div className="mx-auto w-[90%] max-w-[1200px] pb-32 sm:w-auto">
+        <div className="pt-10 sm:pt-48">
           <motion.h2
-            className="relative select-none pb-7 font-title text-6xl font-bold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-24 after:bg-purple  after:content-['']"
+            className="relative select-none pb-7 font-title text-4xl font-bold after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-24 after:bg-purple after:content-['']  sm:text-6xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -33,7 +33,7 @@ export default function About() {
             About me
           </motion.h2>
           <motion.p
-            className="max-w-[900px] pt-5 text-3xl"
+            className="max-w-[900px] pt-5 text-xl sm:text-3xl"
             custom={{ delay: 0.5 }}
             variants={animateText}
             initial="hidden"
@@ -47,9 +47,9 @@ export default function About() {
             aim to create unique solutions without compromising functionality.
           </motion.p>
         </div>
-        <div className="flex mt-40">
+        <div className="flex flex-col mt-10 sm:mt-40 sm:flex-row">
           <motion.p
-            className="w-1/2 pt-20 mr-20 text-2xl"
+            className="pt-5 text-lg sm:mr-20 sm:w-1/2 sm:pt-20 sm:text-2xl"
             initial={{ x: -200, opacity: 0 }}
             whileInView={{
               x: 0,
@@ -89,7 +89,7 @@ export default function About() {
             gérer ma propre entreprise, de prendre mes propres décisions et de
             vivre de ma passion ! */}
           </motion.p>
-          <div className="relative h-[601px] w-[450px]">
+          <div className="relative mt-5 h-[48vh] w-[100%] sm:mt-0 sm:h-[601px] sm:w-[450px]">
             <Image
               src={"/about/sneakers.png"}
               alt={"Sneakers picture"}
@@ -98,8 +98,8 @@ export default function About() {
             />
           </div>
         </div>
-        <div className="flex mt-32">
-          <div className="relative h-[601px] w-[450px]">
+        <div className="flex flex-col-reverse mt-10 sm:mt-32 sm:flex-row">
+          <div className="relative mt-5 h-[48vh] w-[100%] sm:mt-0 sm:h-[601px] sm:w-[450px]">
             <Image
               src={"/about/skate.png"}
               alt={"Skate picture"}
@@ -108,7 +108,7 @@ export default function About() {
             />
           </div>
           <motion.p
-            className="w-1/2 pt-20 ml-20 text-2xl"
+            className="pt-5 text-lg sm:ml-20 sm:w-1/2 sm:pt-20 sm:text-2xl"
             initial={{ x: 200, opacity: 0 }}
             whileInView={{
               x: 0,
