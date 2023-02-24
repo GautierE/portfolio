@@ -1,8 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 export default function About() {
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+
   const animateText = {
     hidden: { y: 30, opacity: 0 },
     visible: ({ delay }) => {
@@ -50,7 +53,7 @@ export default function About() {
         <div className="flex flex-col mt-10 sm:mt-40 sm:flex-row">
           <motion.p
             className="pt-5 text-lg sm:mr-20 sm:w-1/2 sm:pt-20 sm:text-2xl"
-            initial={{ x: -200, opacity: 0 }}
+            initial={{ x: isMobile ? 0 : -200, opacity: 0 }}
             whileInView={{
               x: 0,
               opacity: 1,
@@ -109,7 +112,7 @@ export default function About() {
           </div>
           <motion.p
             className="pt-5 text-lg sm:ml-20 sm:w-1/2 sm:pt-20 sm:text-2xl"
-            initial={{ x: 200, opacity: 0 }}
+            initial={{ x: isMobile ? 0 : 200, opacity: 0 }}
             whileInView={{
               x: 0,
               opacity: 1,

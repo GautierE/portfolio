@@ -53,13 +53,14 @@ export default function MyWork() {
 
   return (
     <div className="sticky top-0 mx-auto my-0 h-screen w-full bg-white sm:h-[130vh]">
-      <div className="ml-5 h-[21%] pt-6 sm:ml-20 sm:h-auto sm:pt-20">
+      <div className="pt-2 ml-5 sm:ml-20 sm:h-auto sm:pt-20">
         <motion.h2
           className="text-3xl font-bold text-black select-none font-title sm:text-6xl"
           variants={animateText}
           custom={{ delay: 0 }}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
         >
           Take a look at my <br /> recent work
         </motion.h2>
@@ -69,12 +70,13 @@ export default function MyWork() {
           variants={animateText}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
         >
           From school to personal projects, <br />
           through my one year work in a company.
         </motion.p>
       </div>
-      <div className="mx-auto mt-5 flex h-[76%] max-w-[1800px] flex-col sm:mt-10 sm:h-auto sm:flex-row sm:flex-wrap sm:justify-center">
+      <div className="mx-auto mt-2 flex h-[76%] max-w-[1800px] flex-col sm:mt-10 sm:h-auto sm:flex-row sm:flex-wrap sm:justify-center">
         {projectsContent.map((project, index) => (
           <Project
             key={index}
@@ -112,6 +114,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
       custom={{ delay: 0 }}
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true }}
     >
       <div className="relative flex w-full h-full justify-evenly">
         <div
@@ -119,8 +122,10 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             "relative w-full rounded-3xl border-2 border-purple pt-2 pl-5 sm:rounded-br-none sm:rounded-tr-none sm:rounded-tl-3xl sm:rounded-bl-3xl sm:border-r-0 sm:pt-10 sm:pl-10"
           }
         >
-          <h5 className="text-xl sm:text-4xl">{title}</h5>
-          <p className="mt-3 sm:mt-5 sm:w-5/6 sm:text-lg">{description}</p>
+          <h5 className="text-xl max-[376px]:text-lg sm:text-4xl">{title}</h5>
+          <p className="mt-3 max-[376px]:text-xs sm:mt-5 sm:w-5/6 sm:text-lg">
+            {description}
+          </p>
           <a
             target="_blank"
             rel="noreferrer"

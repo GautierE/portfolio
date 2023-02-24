@@ -53,6 +53,7 @@ export default function Welcome() {
             custom={{ delay: 0 }}
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
           >
             Hi, my name is{" "}
             <span className="sm:font-bold sm:text-white">Gautier.</span>
@@ -63,6 +64,7 @@ export default function Welcome() {
             variants={animateText}
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
           >
             I&apos;m an independent{" "}
             <span className="text-purple">developer</span> from <br />
