@@ -50,9 +50,9 @@ export default function About() {
             aim to create unique solutions without compromising functionality.
           </motion.p>
         </div>
-        <div className="flex flex-col mt-10 md:mt-40 md:flex-row">
+        <div className="flex flex-col items-center mt-10 md:mt-40 md:flex-row">
           <motion.p
-            className="pt-5 text-lg md:mr-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
+            className="pt-5 text-lg text-justify md:mr-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
             initial={{ x: isMobile ? 0 : -200, opacity: 0 }}
             whileInView={{
               x: 0,
@@ -101,7 +101,7 @@ export default function About() {
             />
           </div>
         </div>
-        <div className="flex flex-col-reverse mt-10 md:mt-32 md:flex-row">
+        <div className="flex flex-col-reverse items-center mt-10 md:mt-32 md:flex-row">
           <div className="relative mt-5 h-[48vh] w-[100%] md:mt-0 md:h-[601px] md:w-[450px]">
             <Image
               src={"/about/skate.png"}
@@ -111,7 +111,7 @@ export default function About() {
             />
           </div>
           <motion.p
-            className="pt-5 text-lg md:ml-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
+            className="pt-5 text-lg text-justify md:ml-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
             initial={{ x: isMobile ? 0 : 200, opacity: 0 }}
             whileInView={{
               x: 0,
