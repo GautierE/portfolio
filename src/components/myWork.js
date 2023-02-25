@@ -129,8 +129,6 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             {description}
           </p>
           <a
-            target="_blank"
-            rel="noreferrer"
             href={`/projects/${route}`}
             className="max-[376px]:text-xs underline underline-offset-4 md:absolute md:bottom-7 md:text-lg"
           >

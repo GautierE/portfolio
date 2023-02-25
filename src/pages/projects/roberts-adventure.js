@@ -54,7 +54,38 @@ export default function RobertsAdventure() {
 
   return (
     <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
-      <h2 className="mt-20 mb-20 text-3xl font-bold text-center text-black select-none font-title md:text-6xl">
+      <motion.button
+        onClick={() =>
+          document.referrer.includes("localhost:3000/")
+            ? history.back()
+            : (window.location.href = "/")
+        }
+        className="flex items-center self-center w-auto p-2 mt-10 text-xl border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:absolute lg:mt-0 lg:p-4"
+        whileHover={{
+          scale: 1.02,
+          color: "#592d8c",
+          stroke: "#592d8c",
+          borderColor: "#592d8c",
+        }}
+      >
+        {/* /projects/backk_arrow.svg code */}
+        <svg
+          width="35px"
+          height="35px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 18V14C19 11.7909 17.2091 10 15 10H5M5 10L9 6M5 10L9 14"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <span className="md:mr-2 md:font-bold">Go back !</span>
+      </motion.button>
+      <h2 className="mt-10 mb-20 text-3xl font-bold text-center text-black select-none font-title md:text-6xl lg:mt-20">
         Robert&apos;s Adventure
       </h2>
       <div>
