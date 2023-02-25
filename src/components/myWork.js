@@ -52,9 +52,9 @@ export default function MyWork() {
   ];
 
   return (
-    <div className="sticky top-0 h-screen bg-white md:h-[120vh]">
-      <div className="mx-auto flex h-screen w-[90%] flex-col md:w-full">
-        <div className="pt-5 md:ml-20 md:pt-20">
+    <div className="sticky h-full bg-white tall:top-0 tall:h-screen">
+      <div className="mx-auto flex h-full w-[90%] flex-col md:w-full">
+        <div className="pt-5 md:ml-20 md:pt-10 xl:pt-0">
           <motion.h2
             className="text-3xl font-bold text-black select-none font-title md:text-6xl"
             variants={animateText}
@@ -124,15 +124,15 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             "relative w-full rounded-3xl border-2 border-purple pt-2 pl-5 md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl md:rounded-bl-3xl md:border-r-0 md:pt-10 md:pl-10"
           }
         >
-          <h5 className="text-xl max-[376px]:text-lg md:text-4xl">{title}</h5>
-          <p className="mt-5 max-[376px]:text-xs md:w-5/6 md:text-lg">
+          <h5 className="max-[376px]:text-lg text-xl md:text-4xl">{title}</h5>
+          <p className="max-[376px]:text-xs mt-5 md:w-5/6 md:text-lg">
             {description}
           </p>
           <a
             target="_blank"
             rel="noreferrer"
             href={`/projects/${route}`}
-            className="underline underline-offset-4 max-[376px]:text-xs md:absolute md:bottom-7 md:text-lg"
+            className="max-[376px]:text-xs underline underline-offset-4 md:absolute md:bottom-7 md:text-lg"
           >
             Details
           </a>
@@ -142,6 +142,8 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             src={imageUrl}
             alt={imageAlt}
             fill
+            sizes="(max-width: 767px) 60px,
+            60%"
             style={{ objectFit: "cover" }}
             className="md:rounded-tr-3xl md:rounded-br-3xl"
           />

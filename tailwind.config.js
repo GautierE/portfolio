@@ -15,7 +15,10 @@ module.exports = {
       colors: {
         purple: "#592d8c",
       },
-      extend: {},
+      screens: {
+        tall: { raw: "(min-height: 705px)" },
+        xxl: { raw: "(min-width: 1750px)" },
+      },
     },
   },
   plugins: [],

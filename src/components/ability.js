@@ -41,9 +41,9 @@ export default function Ability() {
   };
 
   return (
-    <div className="px-auto sticky top-0 h-screen w-full bg-white lg:h-[130vh]">
-      <div className="mx-auto flex h-full flex-col items-center lg:h-[100vh] lg:justify-center">
-        <div className="mt-10 w-[90%] text-center lg:mb-14 lg:mt-0 lg:w-1/3">
+    <div className="px-auto sticky w-full bg-white lg:h-[130vh] tall:top-0 tall:h-screen">
+      <div className="flex flex-col items-center h-full mx-auto xl:h-screen xl:justify-center">
+        <div className="mt-10 w-[90%] text-center lg:mb-14 lg:mt-5 lg:w-1/3">
           <motion.h2
             className="mb-3 text-3xl font-bold font-title md:text-4xl lg:text-6xl"
             variants={animateText}

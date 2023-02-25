@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
 
 export default function Welcome() {
   const animateText = {
@@ -18,10 +17,9 @@ export default function Welcome() {
       };
     },
   };
-  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
 
   return (
-    <div className="sticky top-0 flex flex-col w-full h-screen bg-white">
+    <div className="sticky flex flex-col w-full h-screen bg-white tall:top-0">
       <motion.button
         className="lg:z-2 z-10 mr-2 mt-2 flex w-[40%] items-center justify-evenly self-end rounded-lg bg-purple stroke-white px-2 py-1 text-xs text-white shadow-lg md:w-auto md:border-2 md:border-white md:bg-white md:stroke-black md:text-black lg:absolute lg:right-10 lg:top-10 lg:p-3 lg:text-xl"
         whileHover={{
@@ -72,16 +70,19 @@ export default function Welcome() {
           </motion.p>
         </div>
       </div>
-      <div className="relative mx-auto h-[45%] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5">
+      <div className="relative mx-auto h-[50vh] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5">
         <Image
           src="/welcome/profile_picture.png"
           alt="Profile picture"
           fill
+          sizes="(max-width: 767px) 85vw,
+          (max-width: 1199px) 56vw,
+          60%"
           style={{ objectFit: "cover" }}
           priority={true}
         />
         <motion.h1
-          className="z-10 hidden font-title text-5xl md:absolute  md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] min-[1750px]:left-[-655px] min-[1750px]:text-8xl"
+          className="z-10 hidden font-title text-5xl md:absolute  md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] xxl:left-[-655px] xxl:text-8xl"
           variants={animateText}
           custom={{ delay: 0 }}
           initial="hidden"
@@ -92,7 +93,7 @@ export default function Welcome() {
           <span className="md:font-bold md:text-white">Gautier.</span>
         </motion.h1>
         <motion.p
-          className="z-10 hidden text-lg text-black md:absolute  md:left-[-325px] md:top-40 md:block md:text-xl lg:left-[-400px] lg:text-2xl xl:left-[-485px] xl:text-3xl 2xl:left-[-495px] min-[1750px]:left-[-655px] min-[1750px]:top-48"
+          className="z-10 hidden text-lg text-black md:absolute  md:left-[-325px] md:top-40 md:block md:text-xl lg:left-[-400px] lg:text-2xl xl:left-[-485px] xl:text-3xl 2xl:left-[-495px] xxl:left-[-655px] xxl:top-48"
           custom={{ delay: 0.5 }}
           variants={animateText}
           initial="hidden"
@@ -104,7 +105,7 @@ export default function Welcome() {
           Strasbourg, France.
         </motion.p>
         <motion.button
-          className="hidden w-[60%] items-center justify-center self-center  rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:left-[-325px] md:top-64 md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px]  lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl  2xl:left-[-495px] min-[1750px]:top-72 min-[1750px]:left-[-655px]"
+          className="hidden w-[60%] items-center justify-center self-center  rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:left-[-325px] md:top-64 md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px]  lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl  2xl:left-[-495px] xxl:top-72 xxl:left-[-655px]"
           whileHover={{
             scale: 1.02,
             backgroundColor: "#f5f4fc",

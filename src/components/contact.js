@@ -17,7 +17,7 @@ export default function Contact() {
     },
   };
   return (
-    <div className="sticky top-0 w-full h-screen my-0 bg-white">
+    <div className="sticky w-full my-0 mt-5 bg-white tall:top-0 tall:mt-0 tall:h-screen">
       <div className="mx-auto flex h-full w-[90%] flex-col items-center justify-center md:w-auto">
         <div className="mb-5 text-center md:mb-28 ">
           <motion.h2

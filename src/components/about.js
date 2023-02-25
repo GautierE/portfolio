@@ -94,6 +94,8 @@ export default function About() {
               src={"/about/sneakers.png"}
               alt={"Sneakers picture"}
               fill
+              sizes="(max-width: 767px) 100%,
+              450px"
               style={{ objectFit: "cover" }}
             />
           </div>
@@ -104,6 +106,8 @@ export default function About() {
               src={"/about/skate.png"}
               alt={"Skate picture"}
               fill
+              sizes="(max-width: 767px) 100%,
+              450px"
               style={{ objectFit: "cover" }}
             />
           </div>
