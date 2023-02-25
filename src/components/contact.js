@@ -112,7 +112,7 @@ export default function Contact() {
             color: "rgb(255, 255, 255)",
             stroke: "rgb(255, 255, 255)",
           }}
-          custom={{ delay: 1.2 }}
+          custom={{ delay: 1 }}
           variants={animateText}
           initial="hidden"
           whileInView="visible"

@@ -54,7 +54,7 @@ export default function RobertsAdventure() {
 
   return (
     <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
-      <h2 className="mt-20 mb-20 text-6xl font-bold text-center text-black select-none font-title">
+      <h2 className="mt-20 mb-20 text-3xl font-bold text-center text-black select-none font-title md:text-6xl">
         Robert&apos;s Adventure
       </h2>
       <div>
@@ -101,7 +101,7 @@ export default function RobertsAdventure() {
         style={{
           maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
         }}
-        className="py-5 mx-auto text-lg border-y-2 border-purple "
+        className="py-5 mx-auto text-justify border-y-2 border-purple md:text-lg "
       >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -148,12 +148,18 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
   return (
     <div
       style={{ flexBasis: width }}
-      className={`flex max-h-[40vw] min-h-[38vw] w-full  flex-[50%] shrink-0 grow-0 flex-col items-center justify-evenly bg-white shadow`}
+      className={`flex h-[80vh] w-full flex-[50%] shrink-0 grow-0  flex-col items-center justify-evenly bg-white shadow`}
     >
       <div className="relative mt-5 mb-5 h-[95%] w-11/12">
-        <Image src={imageUrl} alt={imageAlt} fill={true} />
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          fill={true}
+          style={{ objectFit: "cover" }}
+          priority
+        />
       </div>
-      <div className="mb-3 h-[5%] w-full text-center">
+      <div className="mb-5 h-[5%] w-full text-center">
         <p className="text-lg">{caption}</p>
       </div>
     </div>

@@ -54,7 +54,7 @@ export default function MyWork() {
   return (
     <div className="sticky h-full bg-white tall:top-0 tall:h-screen">
       <div className="mx-auto flex h-full w-[90%] flex-col md:w-full">
-        <div className="pt-5 md:ml-20 md:pt-10 xl:pt-0">
+        <div className="pt-5 md:ml-20 md:pt-10 xl:pt-10">
           <motion.h2
             className="text-3xl font-bold text-black select-none font-title md:text-6xl"
             variants={animateText}
