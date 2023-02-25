@@ -23,7 +23,7 @@ export default function Welcome() {
   return (
     <div className="sticky top-0 flex flex-col w-full h-screen bg-white">
       <motion.button
-        className="lg:z-2 z-10 mr-2 mt-2 flex w-[40%] items-center  justify-center self-end rounded-lg bg-purple stroke-white px-2 py-1 text-xs text-white shadow-lg md:w-auto md:border-2 md:border-white md:bg-white md:stroke-black md:text-black lg:absolute lg:right-10 lg:top-10 lg:p-3 lg:text-xl"
+        className="lg:z-2 z-10 mr-2 mt-2 flex w-[40%] items-center justify-evenly self-end rounded-lg bg-purple stroke-white px-2 py-1 text-xs text-white shadow-lg md:w-auto md:border-2 md:border-white md:bg-white md:stroke-black md:text-black lg:absolute lg:right-10 lg:top-10 lg:p-3 lg:text-xl"
         whileHover={{
           scale: 1.02,
           color: "#592d8c",
@@ -81,7 +81,7 @@ export default function Welcome() {
           priority={true}
         />
         <motion.h1
-          className="z-10 hidden font-title text-5xl md:absolute md:left-[-325px] md:top-20 md:block lg:text-8xl"
+          className="z-10 hidden font-title text-5xl md:absolute  md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] min-[1750px]:left-[-655px] min-[1750px]:text-8xl"
           variants={animateText}
           custom={{ delay: 0 }}
           initial="hidden"
@@ -92,7 +92,7 @@ export default function Welcome() {
           <span className="md:font-bold md:text-white">Gautier.</span>
         </motion.h1>
         <motion.p
-          className="z-10 hidden text-lg text-black md:absolute md:left-[-325px] md:top-40 md:block md:text-xl lg:text-3xl"
+          className="z-10 hidden text-lg text-black md:absolute  md:left-[-325px] md:top-40 md:block md:text-xl lg:left-[-400px] lg:text-2xl xl:left-[-485px] xl:text-3xl 2xl:left-[-495px] min-[1750px]:left-[-655px] min-[1750px]:top-48"
           custom={{ delay: 0.5 }}
           variants={animateText}
           initial="hidden"
@@ -104,7 +104,7 @@ export default function Welcome() {
           Strasbourg, France.
         </motion.p>
         <motion.button
-          className="hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:left-[-325px] md:top-64 md:flex md:w-2/5  md:rounded-lg md:border-2 md:border-purple md:text-lg  lg:w-2/12 lg:p-3 lg:text-2xl"
+          className="hidden w-[60%] items-center justify-center self-center  rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:left-[-325px] md:top-64 md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px]  lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl  2xl:left-[-495px] min-[1750px]:top-72 min-[1750px]:left-[-655px]"
           whileHover={{
             scale: 1.02,
             backgroundColor: "#f5f4fc",
@@ -214,7 +214,7 @@ export default function Welcome() {
             },
           },
         ]}
-        className="absolute right-3 bottom-10 after:absolute after:left-1/2 after:top-10 after:h-48  after:w-0.5 after:bg-purple after:content-[''] md:right-auto md:left-1/3 md:text-xl lg:bottom-48 "
+        className="absolute right-3 bottom-10 after:absolute after:left-1/2 after:top-10 after:h-48  after:w-0.5 after:bg-purple after:content-[''] md:right-auto md:left-1/3 md:text-xl xl:bottom-48 "
       >
         Scroll
       </motion.span>

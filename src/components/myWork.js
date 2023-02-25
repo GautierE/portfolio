@@ -56,7 +56,7 @@ export default function MyWork() {
       <div className="mx-auto flex h-screen w-[90%] flex-col md:w-full">
         <div className="pt-5 md:ml-20 md:pt-20">
           <motion.h2
-            className="select-none font-title text-3xl font-bold text-black md:text-6xl"
+            className="text-3xl font-bold text-black select-none font-title md:text-6xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -110,7 +110,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
 
   return (
     <motion.div
-      className="mx-auto mb-5 w-full grow bg-white md:mb-7 md:w-[48%]"
+      className="mx-auto mb-5 w-full bg-white md:mb-7 md:w-[48%]"
       whileHover={{ translateY: -8 }}
       variants={animateProjects}
       custom={{ delay: 0 }}
@@ -118,7 +118,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="relative flex h-full w-full justify-evenly">
+      <div className="relative flex w-full h-full justify-evenly">
         <div
           className={
             "relative w-full rounded-3xl border-2 border-purple pt-2 pl-5 md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl md:rounded-bl-3xl md:border-r-0 md:pt-10 md:pl-10"
@@ -137,7 +137,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             Details
           </a>
         </div>
-        <div className="absolute right-2 h-[60px] w-[60px] md:relative md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple">
+        <div className="absolute right-2 h-[60px] w-[60px] md:relative md:right-auto md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple">
           <Image
             src={imageUrl}
             alt={imageAlt}

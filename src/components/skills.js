@@ -103,9 +103,9 @@ export default function Skills() {
   };
 
   return (
-    <div className="lg:bg-purple-white sticky top-0 flex h-[110vh] flex-col items-center justify-center bg-purple lg:h-[130vh]">
+    <div className="xl:bg-purple-white sticky top-0 flex h-[110vh] flex-col items-center justify-center bg-purple xl:h-[130vh]">
       <motion.h2
-        className="absolute text-4xl text-white select-none left-10 top-5 font-title lg:right-32 lg:left-auto lg:top-20 lg:text-6xl lg:font-bold lg:text-black"
+        className="absolute text-4xl text-white select-none left-10 top-5 font-title xl:right-32 xl:left-auto xl:top-20 xl:text-6xl xl:font-bold xl:text-black"
         variants={animateText}
         initial="hidden"
         animate={controls}
@@ -113,10 +113,10 @@ export default function Skills() {
       >
         Skills
       </motion.h2>
-      <div className="absolute top-[9%] flex h-4/5 w-[90%] flex-col justify-start overflow-x-hidden rounded-md bg-white px-2 shadow lg:top-[17%] lg:h-1/2 lg:w-3/4  lg:justify-evenly lg:p-5">
+      <div className="absolute top-[9%] flex h-4/5 w-[90%] flex-col justify-start overflow-x-hidden rounded-md bg-white px-2 shadow xl:top-[17%] xl:h-1/2 xl:w-3/4  xl:justify-evenly xl:p-5">
         <div className="h-[30%]">
           <motion.p
-            className="pt-2 pl-2 text-lg lg:pb-2 lg:pt-0 lg:text-2xl"
+            className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl"
             variants={{
               hidden: { y: -30, opacity: 0 },
               visible: {
@@ -135,7 +135,7 @@ export default function Skills() {
             Front-end
           </motion.p>
           <motion.div
-            className="flex h-[90%] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg   border-2 border-purple bg-white lg:h-[100px] lg:flex-row lg:flex-nowrap lg:overflow-x-auto lg:overflow-y-auto lg:rounded-full"
+            className="flex h-[90%] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg   border-2 border-purple bg-white xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:overflow-y-auto xl:rounded-full"
             variants={expandSkills}
             custom={{ leftToRight: true, delay: 0 }}
             initial="hidden"
@@ -144,7 +144,7 @@ export default function Skills() {
             {frontEndLogos.map((item, i) => (
               <motion.div
                 key={i}
-                className="flex h-[50%] w-[135px] flex-col items-center justify-center lg:h-full lg:w-full lg:justify-evenly"
+                className="flex h-[50%] w-[135px] flex-col items-center justify-center xl:h-full xl:w-full xl:justify-evenly"
                 variants={drawImages}
                 custom={{
                   i: i,
@@ -159,14 +159,14 @@ export default function Skills() {
                   width="40%"
                   className="p-2 border-2 rounded-full border-purple"
                 />
-                <p className="whitespace-nowrap">{item.desc}</p>
+                <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
         <div className="mt-2 h-[30%]">
           <motion.p
-            className="pt-2 pl-2 text-lg lg:pb-2 lg:pt-0 lg:text-2xl"
+            className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl"
             variants={{
               hidden: { y: -30, opacity: 0 },
               visible: {
@@ -185,7 +185,7 @@ export default function Skills() {
             Back-end
           </motion.p>
           <motion.div
-            className="flex h-[90%] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg   border-2 border-purple bg-white lg:h-[100px] lg:flex-row lg:flex-nowrap lg:overflow-x-auto lg:overflow-y-auto lg:rounded-full"
+            className="flex h-[90%] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg   border-2 border-purple bg-white xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:overflow-y-auto xl:rounded-full"
             variants={expandSkills}
             initial="hidden"
             animate={controls}
@@ -194,7 +194,7 @@ export default function Skills() {
             {backEndLogos.map((item, i) => (
               <div
                 key={i}
-                className="flex h-[50%] w-[135px] flex-col items-center justify-center lg:h-full lg:w-full lg:justify-evenly"
+                className="flex h-[50%] w-[135px] flex-col items-center justify-center xl:h-full xl:w-full xl:justify-evenly"
               >
                 <motion.img
                   variants={drawImages}
@@ -210,14 +210,14 @@ export default function Skills() {
                   className="p-2 border-2 rounded-full border-purple"
                 />
 
-                <p className="whitespace-nowrap">{item.desc}</p>
+                <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </div>
             ))}
           </motion.div>
         </div>
         <div className="mt-2 h-[30%]">
           <motion.p
-            className="pt-2 pl-2 text-lg lg:pb-2 lg:pt-0 lg:text-2xl"
+            className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl"
             variants={{
               hidden: { y: -30, opacity: 0 },
               visible: {
@@ -236,7 +236,7 @@ export default function Skills() {
             Miscs
           </motion.p>
           <motion.div
-            className="flex h-[90%] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll  rounded-lg border-2 border-purple bg-white lg:h-[100px] lg:flex-row lg:flex-nowrap lg:overflow-x-auto lg:overflow-y-auto lg:rounded-full"
+            className="flex h-[90%] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll  rounded-lg border-2 border-purple bg-white xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:overflow-y-auto xl:rounded-full"
             variants={expandSkills}
             initial="hidden"
             animate={controls}
@@ -245,7 +245,7 @@ export default function Skills() {
             {miscsLogos.map((item, i) => (
               <div
                 key={i}
-                className="flex h-[50%] w-[135px] flex-col items-center justify-center lg:h-full lg:w-full lg:justify-evenly"
+                className="flex h-[50%] w-[135px] flex-col items-center justify-center xl:h-full xl:w-full xl:justify-evenly"
               >
                 <motion.img
                   variants={drawImages}
@@ -260,7 +260,7 @@ export default function Skills() {
                   width={isMobile ? "40%" : "28%"}
                   className="p-2 border-2 rounded-full border-purple"
                 />
-                <p className="whitespace-nowrap">{item.desc}</p>
+                <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </div>
             ))}
           </motion.div>
