@@ -124,21 +124,23 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
       <div className="relative flex w-full h-full justify-evenly">
         <div
           className={
-            "relative w-full rounded-3xl border-2 border-purple pt-2 pl-5 md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl md:rounded-bl-3xl md:border-r-0 md:pt-10 md:pl-10"
+            "relative flex w-full flex-col rounded-3xl border-2 border-purple pt-2 pl-5 md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl md:rounded-bl-3xl md:border-r-0 md:pt-10 md:pl-10"
           }
         >
           <h5 className="max-[376px]:text-lg text-xl md:text-4xl">{title}</h5>
-          <p className="max-[376px]:text-xs mt-5 md:w-5/6 md:text-lg">
-            {description}
-          </p>
-          {route !== "portfolio" && (
-            <a
-              href={`/projects/${route}`}
-              className="max-[376px]:text-xs underline underline-offset-4 md:text-lg"
-            >
-              Details
-            </a>
-          )}
+          <div className="flex flex-col justify-around h-full">
+            <p className="max-[376px]:text-xs mt-5 md:w-5/6 md:text-lg">
+              {description}
+            </p>
+            {route !== "portfolio" && (
+              <a
+                href={`/projects/${route}`}
+                className="max-[376px]:text-xs underline underline-offset-4 md:text-lg"
+              >
+                Details
+              </a>
+            )}
+          </div>
         </div>
         <div className="absolute right-2 h-[60px] w-[60px] md:relative md:right-0 md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple">
           <Image

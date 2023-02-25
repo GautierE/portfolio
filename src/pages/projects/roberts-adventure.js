@@ -2,33 +2,45 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimationControls } from "framer-motion";
 import useResizeObserver from "@react-hook/resize-observer";
+import robertTitle from "../../../public/projects/robert/robert_title.png";
+import game1 from "../../../public/projects/robert/game1.png";
+import game2 from "../../../public/projects/robert/game2.png";
+import game3 from "../../../public/projects/robert/game3.png";
+import menu from "../../../public/projects/robert/menu.png";
+import levelSelection from "../../../public/projects/robert/level_selection.png";
+import questions from "../../../public/projects/robert/questions.png";
 
 export default function RobertsAdventure() {
   const carouselContent = [
     {
       caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      imageUrl: game1,
+      imageAlt: "Game screenshot",
     },
     {
       caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      imageUrl: game2,
+      imageAlt: "Game screenshot",
     },
     {
       caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      imageUrl: game3,
+      imageAlt: "Game screenshot",
     },
     {
-      caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      caption: "Home menu",
+      imageUrl: menu,
+      imageAlt: "Home menu",
     },
     {
-      caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      caption: "Level selection menu",
+      imageUrl: levelSelection,
+      imageAlt: "Level selection menu",
+    },
+    {
+      caption: "Question to get an extra life",
+      imageUrl: questions,
+      imageAlt: "Question to get an extra life",
     },
   ];
 
@@ -87,9 +99,11 @@ export default function RobertsAdventure() {
         </svg>
         <span className="md:mr-2 md:font-bold">Go back !</span>
       </motion.button>
-      <h2 className="mt-10 mb-10 text-3xl font-bold text-center text-black select-none font-title md:text-6xl lg:mt-20">
-        Robert&apos;s Adventure
-      </h2>
+      <Image
+        src={robertTitle}
+        alt="Robert's adventure"
+        className="self-center w-4/5 mt-5 rounded-lg lg:w-1/2"
+      />
       <div>
         <div className="flex justify-center">
           <button onClick={moveToPrevious} className="mr-5">
@@ -130,48 +144,53 @@ export default function RobertsAdventure() {
           ))}
         </div>
       </div>
+      <motion.a
+        className="flex items-center self-center px-4 py-2 mb-5 text-xl text-white bg-black border-2 border-black rounded-lg fill-white"
+        whileHover={{
+          scale: 1.02,
+          color: "#000000",
+          fill: "#000000",
+          backgroundColor: "#ffffff",
+        }}
+        href="https://github.com/GautierE/Roberts-Adventures"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Github
+        <GithubIcon width={40} height={40} />
+      </motion.a>
       <div
         style={{
           maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
         }}
         className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          laoreet tincidunt sodales. Phasellus non placerat justo. In accumsan
-          quis justo vitae molestie. Suspendisse hendrerit, massa in ultricies
-          euismod, justo dolor convallis lacus, quis vehicula velit metus quis
-          odio. Praesent sodales ex at tincidunt porttitor. Pellentesque nec
-          auctor enim. Aenean at urna ut metus dictum tempor. Curabitur quis ex
-          quis justo malesuada efficitur. Mauris malesuada semper ultricies.
-          Quisque ac nulla ut nibh laoreet pharetra.
-        </p>
+        <b>What is &quot;Robert&apos;s Adventure&quot; ?</b>
         <br />
-        <p>
-          Nunc mi odio, luctus quis sapien sed, consectetur sodales est. Proin
-          varius tempor diam eu lobortis. In hac habitasse platea dictumst.
-          Integer tincidunt interdum arcu, in dapibus magna posuere ut. Donec
-          tempus massa a urna ullamcorper, eget varius sapien pulvinar. Aliquam
-          pellentesque finibus urna, sed pellentesque arcu viverra a. Integer a
-          odio ut lectus imperdiet congue. Praesent pellentesque massa quis diam
-          ullamcorper, in semper arcu consequat. Nunc blandit pretium justo vel
-          tempor. Donec varius dui a cursus tristique. Nullam eget nunc gravida,
-          fringilla tellus sit amet, dignissim nisi. Etiam auctor odio est, sit
-          amet commodo enim aliquet ac. Fusce nec tempor tortor.
-        </p>
+        Robert&apos;s Adventure is a free serious game that we with two other
+        students developed during the year 2020/2021 at the Robert Schuman
+        Institute of Technology (IUT).
         <br />
-        <p>
-          Donec vitae sollicitudin urna, quis elementum ante. Suspendisse in ex
-          sit amet ipsum semper suscipit et id lacus. Pellentesque non commodo
-          dui, nec rhoncus eros. Integer mollis magna purus, in lacinia mauris
-          iaculis in. Ut sed ante vel quam auctor auctor. Donec nec eleifend
-          lacus. Integer quis libero quam. Sed malesuada eros nibh, sed maximus
-          massa condimentum et. Aenean elementum tortor eget placerat egestas.
-          Donec nec sollicitudin odio, quis semper tortor. Curabitur sagittis
-          finibus dapibus. Sed ut venenatis urna. Aenean dignissim efficitur
-          dolor et egestas. Donec faucibus augue diam, et pharetra ante
-          porttitor in.
-        </p>
+        <br />
+        <b>Game overview:</b>
+        <br />
+        The game is based on rhythm, you control a small character who must
+        navigate through deadly traps using a grappling hook. The game is
+        divided into levels, which can be modified at the player&apos;s
+        discretion in order to test what characterizes &quot;flow&quot; and the
+        feeling of self-efficacy. The game also offers an endless mode in which
+        the player&apos;s objective is to go as far as possible with increasing
+        difficulty.
+        <br />
+        <br />
+        The main goal is to reach the end of the level by dodging obstacles and
+        projectiles using the grappling hook, which allows the player to cling
+        to surfaces and gain speed. The player loses when they collide with an
+        obstacle. It is also possible to obtain bonuses throughout the game that
+        allow the player to stay alive longer. To help the player understand the
+        different principles involved, they can check or uncheck checkboxes
+        before starting the game to enable or disable certain features that
+        highlight the principles of &quot;flow&quot; and self-efficacy.
       </div>
     </div>
   );
@@ -209,3 +228,16 @@ const useSize = (target) => {
   useResizeObserver(target, (entry) => setSize(entry.contentRect));
   return size;
 };
+
+const GithubIcon = ({ height, width }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>{"github"}</title>
+    <path fill="none" d="M0 0h24v24H0z" />
+    <path d="M12 2a10 10 0 0 0-3.16 19.5c.5.08.66-.23.66-.5v-1.69C6.73 19.91 6.14 18 6.14 18A2.69 2.69 0 0 0 5 16.5c-.91-.62.07-.6.07-.6a2.1 2.1 0 0 1 1.53 1 2.15 2.15 0 0 0 2.91.83 2.16 2.16 0 0 1 .63-1.34C8 16.17 5.62 15.31 5.62 11.5a3.87 3.87 0 0 1 1-2.71 3.58 3.58 0 0 1 .1-2.64s.84-.27 2.75 1a9.63 9.63 0 0 1 5 0c1.91-1.29 2.75-1 2.75-1a3.58 3.58 0 0 1 .1 2.64 3.87 3.87 0 0 1 1 2.71c0 3.82-2.34 4.66-4.57 4.91a2.39 2.39 0 0 1 .69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2Z" />
+  </svg>
+);
