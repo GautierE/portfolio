@@ -134,7 +134,7 @@ export default function Skills() {
       >
         Skills
       </motion.h2>
-      <div className="flex h-[90%] w-[90%] flex-col justify-evenly overflow-x-hidden rounded-md bg-white px-2 shadow md:h-4/5 xl:top-[17%] xl:w-3/4  xl:justify-evenly xl:p-5">
+      <div className="flex h-[90%] w-[90%] flex-col justify-evenly overflow-x-hidden rounded-md bg-white px-2 shadow md:h-4/5 xl:top-[17%] xl:w-3/4 xl:justify-evenly xl:p-5">
         <div>
           <motion.p
             className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl"
@@ -156,7 +156,7 @@ export default function Skills() {
             Front-end
           </motion.p>
           <motion.div
-            className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg border-2   border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:rounded-full"
+            className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg border-2 border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:rounded-full"
             variants={expandSkills}
             custom={{ leftToRight: true, delay: 0 }}
             initial="hidden"
@@ -213,7 +213,7 @@ export default function Skills() {
             Back-end
           </motion.p>
           <motion.div
-            className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg border-2   border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:rounded-full"
+            className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg border-2 border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:rounded-full"
             variants={expandSkills}
             initial="hidden"
             animate={controls}
@@ -263,7 +263,7 @@ export default function Skills() {
             Miscs
           </motion.p>
           <motion.div
-            className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg  border-2 border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:rounded-full"
+            className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg border-2 border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:rounded-full"
             variants={expandSkills}
             initial="hidden"
             animate={controls}

@@ -112,21 +112,7 @@ export default function RobertsAdventure() {
           borderColor: "#592d8c",
         }}
       >
-        {/* /projects/backk_arrow.svg code */}
-        <svg
-          width="35px"
-          height="35px"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M19 18V14C19 11.7909 17.2091 10 15 10H5M5 10L9 6M5 10L9 14"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <BackArrow width={35} height={35} />
         <span className="md:mr-2 md:font-bold">Go back !</span>
       </motion.button>
       <div className="flex flex-col items-center justify-center md:flex-row">
@@ -252,3 +238,20 @@ const useSize = (target) => {
   useResizeObserver(target, (entry) => setSize(entry.contentRect));
   return size;
 };
+
+const BackArrow = ({ height, width }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19 18V14C19 11.7909 17.2091 10 15 10H5M5 10L9 6M5 10L9 14"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
