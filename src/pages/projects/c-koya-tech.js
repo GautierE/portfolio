@@ -6,7 +6,7 @@ import cKoyaLogo from "../../../public/projects/c_koya_tech/ckoya_logo.png";
 import calendarPlanning from "../../../public/projects/c_koya_tech/calendarPlanning.png";
 import chantierDetails from "../../../public/projects/c_koya_tech/chantierDetails.png";
 import clockingIn from "../../../public/projects/c_koya_tech/clockingIn.png";
-import editListing from "../../../public/projects/c_koya_tech/editListing.png";
+import editListing from "../../../public/projects/c_koya_tech/edit_listing.png";
 import eventEdit from "../../../public/projects/c_koya_tech/eventEdit.png";
 import holidayManagement from "../../../public/projects/c_koya_tech/holidayManagement.png";
 import listing from "../../../public/projects/c_koya_tech/listing.png";
