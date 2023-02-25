@@ -80,7 +80,7 @@ export default function MyWork() {
             through my one year work in a company.
           </motion.p>
         </div>
-        <div className="mx-auto mt-2 flex h-full max-w-[1800px] flex-col md:mt-0 md:flex-row md:flex-wrap md:justify-center">
+        <div className="mx-auto mt-2 flex h-full max-w-[1800px] flex-col md:mt-5 md:flex-row md:flex-wrap md:justify-center">
           {projectsContent.map((project, index) => (
             <Project
               key={index}
