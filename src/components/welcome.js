@@ -70,7 +70,7 @@ export default function Welcome() {
           </motion.p>
         </div>
       </div>
-      <div className="relative mx-auto h-[50vh] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5">
+      <div className="relative mx-auto h-[45vh] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5">
         <Image
           src="/welcome/profile_picture.png"
           alt="Profile picture"
