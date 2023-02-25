@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import cloudMateLogo from "../../public/projects/cloudmate/cloudmate_logo.png";
+import cKoyaLogo from "../../public/projects/c_koya_tech/ckoya_logo.png";
+import robertLogo from "../../public/projects/robert/robert_logo.png";
 
 export default function MyWork() {
   const animateText = {
@@ -23,7 +26,7 @@ export default function MyWork() {
       title: "Cloudmate",
       description:
         "A web-based tool to help sneaker resellers mainly through Paypal payment automation.",
-      imageUrl: "/projects/cloudmate/cloudmate_logo.png",
+      imageUrl: cloudMateLogo,
       imageAlt: "Cloudmate logo",
       route: "cloudmate",
     },
@@ -31,21 +34,21 @@ export default function MyWork() {
       title: "C-Koya Tech",
       description:
         "My work for C-Koya Tech as a fullstack Web & mobile developer.",
-      imageUrl: "/projects/c_koya_tech/ckoya_logo.png",
+      imageUrl: cKoyaLogo,
       imageAlt: "C-Koya Tech logo",
       route: "c-koya-tech",
     },
     {
       title: "Robert's Adventure",
       description: "A serious game created for a school project using Unity.",
-      imageUrl: "/projects/robert/robert_logo.png",
-      imageAlt: "Robert's adventure screenshot",
+      imageUrl: robertLogo,
+      imageAlt: "Robert's adventure logo",
       route: "roberts-adventure",
     },
     {
       title: "Portfolio",
       description: "My personal website.",
-      imageUrl: "/projects/cloudmate/cloudmate_logo.png",
+      imageUrl: cloudMateLogo,
       imageAlt: "a",
       route: "portfolio",
     },
@@ -77,7 +80,7 @@ export default function MyWork() {
             through my one year work in a company.
           </motion.p>
         </div>
-        <div className="mx-auto mt-2 flex h-full max-w-[1800px] flex-col md:mt-10 md:flex-row md:flex-wrap md:justify-center">
+        <div className="mx-auto mt-2 flex h-full max-w-[1800px] flex-col md:mt-0 md:flex-row md:flex-wrap md:justify-center">
           {projectsContent.map((project, index) => (
             <Project
               key={index}
@@ -131,20 +134,18 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
           {route !== "portfolio" && (
             <a
               href={`/projects/${route}`}
-              className="max-[376px]:text-xs underline underline-offset-4 md:absolute md:bottom-7 md:text-lg"
+              className="max-[376px]:text-xs underline underline-offset-4 md:text-lg"
             >
               Details
             </a>
           )}
         </div>
-        <div className="absolute right-2 h-[60px] w-[60px] md:relative md:right-auto md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple">
+        <div className="absolute right-2 h-[60px] w-[60px] md:relative md:right-0 md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple">
           <Image
             src={imageUrl}
             alt={imageAlt}
             fill
-            sizes="(max-width: 767px) 60px,
-            60%"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "contain" }}
             className="md:rounded-tr-3xl md:rounded-br-3xl"
           />
         </div>

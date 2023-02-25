@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import figmaLogo from "../../public/ability/figma_logo.svg";
+import codeLogo from "../../public/ability/code_logo.svg";
+import reactLogo from "../../public/ability/react_native_logo.svg";
 
 export default function Ability() {
   const animateText = {
@@ -71,7 +74,7 @@ export default function Ability() {
             <div className="flex items-center lg:block">
               <div className="w-[65px] rounded-full border-2 border-purple p-3">
                 <Image
-                  src="/ability/figma_logo.svg"
+                  src={figmaLogo}
                   alt="Figma logo"
                   width={60}
                   height={60}
@@ -99,7 +102,7 @@ export default function Ability() {
             <div className="flex items-center lg:block">
               <div className="w-[65px] rounded-full border-2 p-3">
                 <Image
-                  src="/ability/code_logo.svg"
+                  src={codeLogo}
                   alt="Vs code logo"
                   width={60}
                   height={60}
@@ -126,7 +129,7 @@ export default function Ability() {
             <div className="flex items-center lg:block">
               <div className="w-[65px] rounded-full border-2 border-purple p-3">
                 <Image
-                  src="/ability/react_native_logo.svg"
+                  src={reactLogo}
                   alt="React native logo"
                   width={60}
                   height={60}

@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import sneakerPicture from "../../public/about/sneakers.png";
+import skatePicture from "../../public/about/skate.png";
 
 export default function About() {
   const animateText = {
@@ -91,7 +93,7 @@ export default function About() {
           </motion.p>
           <div className="relative mt-5 h-[48vh] w-[100%] md:mt-0 md:h-[601px] md:w-[450px]">
             <Image
-              src={"/about/sneakers.png"}
+              src={sneakerPicture}
               alt={"Sneakers picture"}
               fill
               sizes="(max-width: 767px) 100%,
@@ -103,7 +105,7 @@ export default function About() {
         <div className="flex flex-col-reverse items-center mt-10 md:mt-32 md:flex-row">
           <div className="relative mt-5 h-[48vh] w-[100%] md:mt-0 md:h-[601px] md:w-[450px]">
             <Image
-              src={"/about/skate.png"}
+              src={skatePicture}
               alt={"Skate picture"}
               fill
               sizes="(max-width: 767px) 100%,

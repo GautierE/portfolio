@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import profilePicture from "../../public/welcome/profile_picture.png";
+import githubLogo from "../../public/welcome/github_logo.svg";
+import linkedinLogo from "../../public/welcome/linkedin_logo.svg";
+import emailIcon from "../../public/welcome/email_icon.svg";
 
 export default function Welcome() {
   const animateText = {
@@ -78,7 +82,7 @@ export default function Welcome() {
       </div>
       <div className="relative mx-auto h-[45vh] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5">
         <Image
-          src="/welcome/profile_picture.png"
+          src={profilePicture}
           alt="Profile picture"
           fill
           sizes="(max-width: 767px) 85vw,
@@ -166,12 +170,7 @@ export default function Welcome() {
             whileHover={{ translateY: -8 }}
             className="mr-5"
           >
-            <Image
-              src="/welcome/github_logo.svg"
-              alt="Github logo"
-              width={50}
-              height={50}
-            />
+            <Image src={githubLogo} alt="Github logo" width={50} height={50} />
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/gautier-edel/"
@@ -181,7 +180,7 @@ export default function Welcome() {
             className="mx-5"
           >
             <Image
-              src="/welcome/linkedin_logo.svg"
+              src={linkedinLogo}
               alt="Linkeding logo"
               width={40}
               height={40}
@@ -194,12 +193,7 @@ export default function Welcome() {
             className="flex ml-5"
             whileHover={{ translateY: -8 }}
           >
-            <Image
-              src="/welcome/email_icon.svg"
-              alt="Email icon"
-              width={40}
-              height={40}
-            />
+            <Image src={emailIcon} alt="Email icon" width={40} height={40} />
           </motion.a>
         </div>
       </div>

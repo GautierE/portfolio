@@ -1,10 +1,31 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
+import htmlLogo from "../../public/skills/html_logo.svg";
+import cssLogo from "../../public/skills/css_logo.svg";
+import jsLogo from "../../public/skills/js_logo.svg";
+import nextjsLogo from "../../public/skills/nextjs_logo.svg";
+import reactLogo from "../../public/skills/react_logo.svg";
+import jqueryLogo from "../../public/skills/jquery_logo.svg";
+import tailwindLogo from "../../public/skills/tailwind_logo.svg";
+import bootstrapLogo from "../../public/skills/bootstrap_logo.svg";
+import framermotionLogo from "../../public/skills/framermotion_logo.webp";
+import phpLogo from "../../public/skills/php_logo.svg";
+import symfonyLogo from "../../public/skills/symfony_logo.svg";
+import doctrineLogo from "../../public/skills/doctrine_logo.svg";
+import nodeLogo from "../../public/skills/node_logo.svg";
+import expressLogo from "../../public/skills/express_logo.svg";
+import sequelizeLogo from "../../public/skills/sequelize_logo.svg";
+import mysqlLogo from "../../public/skills/mysql_logo.svg";
+import sqliteLogo from "../../public/skills/sqlite_logo.svg";
+import gitLogo from "../../public/skills/git_logo.svg";
+import agileIcon from "../../public/skills/agile_icon.svg";
+import scrumIcon from "../../public/skills/scrum_icon.svg";
+import chromeLogo from "../../public/skills/chrome_logo.svg";
+import webscrappingIcon from "../../public/skills/webscrapping_icon.svg";
+import oauthLogo from "../../public/skills/oauth_logo.svg";
+import apiIcon from "../../public/skills/api_icon.svg";
 
 export default function Skills() {
-  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
-
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
@@ -16,40 +37,40 @@ export default function Skills() {
   }, [isInView, controls]);
 
   const frontEndLogos = [
-    { url: "/skills/html_logo.svg", desc: "HTML" },
-    { url: "/skills/css_logo.svg", desc: "CSS" },
-    { url: "/skills/js_logo.svg", desc: "Javascript" },
-    { url: "/skills/nextjs_logo.svg", desc: "Next.js" },
-    { url: "/skills/react_logo.svg", desc: "React" },
-    { url: "/skills/jquery_logo.svg", desc: "jQuery" },
-    { url: "/skills/tailwind_logo.svg", desc: "Tailwind CSS" },
-    { url: "/skills/bootstrap_logo.svg", desc: "Bootstrap" },
-    { url: "/skills/framermotion_logo.webp", desc: "Framer Motion" },
-    { url: "/skills/react_logo.svg", desc: "React Native" },
+    { url: htmlLogo, desc: "HTML" },
+    { url: cssLogo, desc: "CSS" },
+    { url: jsLogo, desc: "Javascript" },
+    { url: nextjsLogo, desc: "Next.js" },
+    { url: reactLogo, desc: "React" },
+    { url: jqueryLogo, desc: "jQuery" },
+    { url: tailwindLogo, desc: "Tailwind CSS" },
+    { url: bootstrapLogo, desc: "Bootstrap" },
+    { url: framermotionLogo, desc: "Framer Motion" },
+    { url: reactLogo, desc: "React Native" },
   ];
 
   const backEndLogos = [
-    { url: "../../skills/php_logo.svg", desc: "PHP" },
-    { url: "../../skills/symfony_logo.svg", desc: "Symfony" },
-    { url: "../../skills/doctrine_logo.svg", desc: "Doctrine" },
-    { url: "../../skills/node_logo.svg", desc: "Node.js" },
-    { url: "../../skills/express_logo.svg", desc: "Express.js" },
-    { url: "../../skills/sequelize_logo.svg", desc: "Sequelize" },
-    { url: "../../skills/mysql_logo.svg", desc: "MySQL" },
-    { url: "../../skills/sqlite_logo.svg", desc: "SQLite" },
+    { url: phpLogo, desc: "PHP" },
+    { url: symfonyLogo, desc: "Symfony" },
+    { url: doctrineLogo, desc: "Doctrine" },
+    { url: nodeLogo, desc: "Node.js" },
+    { url: expressLogo, desc: "Express.js" },
+    { url: sequelizeLogo, desc: "Sequelize" },
+    { url: mysqlLogo, desc: "MySQL" },
+    { url: sqliteLogo, desc: "SQLite" },
   ];
 
   const miscsLogos = [
-    { url: "../../skills/git_logo.svg", desc: "Git" },
-    { url: "../../skills/agile_icon.svg", desc: "Agile" },
-    { url: "../../skills/scrum_icon.svg", desc: "Scrum" },
-    { url: "../../skills/chrome_logo.svg", desc: "Chrome extension" },
+    { url: gitLogo, desc: "Git" },
+    { url: agileIcon, desc: "Agile" },
+    { url: scrumIcon, desc: "Scrum" },
+    { url: chromeLogo, desc: "Chrome extension" },
     {
-      url: "../../skills/webscrapping_icon.svg",
+      url: webscrappingIcon,
       desc: "Web scrapping/automation",
     },
-    { url: "../../skills/oauth_logo.svg", desc: "Oauth" },
-    { url: "../../skills/api_icon.svg", desc: "RESTful API" },
+    { url: oauthLogo, desc: "Oauth" },
+    { url: apiIcon, desc: "RESTful API" },
   ];
 
   const animateText = {
@@ -114,7 +135,7 @@ export default function Skills() {
         Skills
       </motion.h2>
       <div className="flex h-[90%] w-[90%] flex-col justify-evenly overflow-x-hidden rounded-md bg-white px-2 shadow md:h-4/5 xl:top-[17%] xl:w-3/4  xl:justify-evenly xl:p-5">
-        <div className="">
+        <div>
           <motion.p
             className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl"
             variants={{
@@ -161,7 +182,7 @@ export default function Skills() {
                     itemCount: frontEndLogos.length - 1,
                     leftToRight: true,
                   }}
-                  src={item.url}
+                  src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
                   className="p-2 border-2 rounded-full border-purple"
@@ -171,7 +192,7 @@ export default function Skills() {
             ))}
           </motion.div>
         </div>
-        <div className="">
+        <div>
           <motion.p
             className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl"
             variants={{
@@ -211,7 +232,7 @@ export default function Skills() {
                     itemCount: backEndLogos.length - 1,
                     leftToRight: false,
                   }}
-                  src={item.url}
+                  src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
                   className="p-2 border-2 rounded-full border-purple"
@@ -221,7 +242,7 @@ export default function Skills() {
             ))}
           </motion.div>
         </div>
-        <div className="">
+        <div>
           <motion.p
             className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl"
             variants={{
@@ -261,7 +282,7 @@ export default function Skills() {
                     itemCount: miscsLogos.length - 1,
                     leftToRight: true,
                   }}
-                  src={item.url}
+                  src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
                   className="p-2 border-2 rounded-full border-purple"

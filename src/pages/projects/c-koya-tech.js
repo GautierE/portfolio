@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimationControls } from "framer-motion";
 import useResizeObserver from "@react-hook/resize-observer";
+import cKoyaLogo from "../../../public/projects/c_koya_tech/ckoya_logo.png";
 import calendarPlanning from "../../../public/projects/c_koya_tech/calendarPlanning.png";
 import chantierDetails from "../../../public/projects/c_koya_tech/chantierDetails.png";
 import clockingIn from "../../../public/projects/c_koya_tech/clockingIn.png";
@@ -128,9 +129,12 @@ export default function RobertsAdventure() {
         </svg>
         <span className="md:mr-2 md:font-bold">Go back !</span>
       </motion.button>
-      <h2 className="mt-10 mb-10 text-3xl font-bold text-center text-black select-none font-title md:text-6xl lg:mt-20">
-        C-Koya Tech
-      </h2>
+      <div className="flex flex-col items-center justify-center md:flex-row">
+        <h2 className="mt-5 text-3xl font-bold text-center text-black select-none font-title md:mt-0 md:text-6xl">
+          C-Koya Tech
+        </h2>
+        <Image src={cKoyaLogo} alt={"C-Koya logo"} priority />
+      </div>
       <p className="text-center md:text-lg">
         Sorry for the low quality screenshots, I unfortunately don&apos;t have
         access to these projects anymore.
