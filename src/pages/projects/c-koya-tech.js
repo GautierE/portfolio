@@ -2,33 +2,74 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimationControls } from "framer-motion";
 import useResizeObserver from "@react-hook/resize-observer";
+import calendarPlanning from "../../../public/projects/c_koya_tech/calendarPlanning.png";
+import chantierDetails from "../../../public/projects/c_koya_tech/chantierDetails.png";
+import clockingIn from "../../../public/projects/c_koya_tech/clockingIn.png";
+import editListing from "../../../public/projects/c_koya_tech/editListing.png";
+import eventEdit from "../../../public/projects/c_koya_tech/eventEdit.png";
+import holidayManagement from "../../../public/projects/c_koya_tech/holidayManagement.png";
+import listing from "../../../public/projects/c_koya_tech/listing.png";
+import mobileAll from "../../../public/projects/c_koya_tech/mobileAll.png";
+import poseEventEdit from "../../../public/projects/c_koya_tech/poseEventEdit.png";
+import totalClockingIn from "../../../public/projects/c_koya_tech/totalClockingIn.png";
 
 export default function RobertsAdventure() {
   const carouselContent = [
     {
-      caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      caption:
+        "Calendar to manage cottages installation and employees absences",
+      imageUrl: calendarPlanning,
+      imageAlt:
+        "Calendar to manage cottages installation and employees absences",
     },
     {
-      caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      caption: "Installation event creation modal",
+      imageUrl: poseEventEdit,
+      imageAlt: "Installation event creation modal",
     },
     {
-      caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      caption: "Absence event creation modal",
+      imageUrl: eventEdit,
+      imageAlt: "Absence event creation modal",
     },
     {
-      caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      caption: "Project details page",
+      imageUrl: chantierDetails,
+      imageAlt: "Project details page",
     },
     {
-      caption: "Game screenshot",
-      imageUrl: "/projects/robert/robert_background.png",
-      imageAlt: "a",
+      caption: "Typical listing",
+      imageUrl: listing,
+      imageAlt: "Typical listing",
+    },
+    {
+      caption: "Typical edit listing (Symfony) form",
+      imageUrl: editListing,
+      imageAlt: "Typical edit listing (Symfony) form",
+    },
+    {
+      caption: "Holiday management calendar",
+      imageUrl: holidayManagement,
+      imageAlt: "Holiday management calendar",
+    },
+    {
+      caption: "C-Koya Tech employee clocking in management page",
+      imageUrl: clockingIn,
+      imageAlt: "C-Koya Tech employee clocking in management page",
+    },
+    {
+      caption:
+        "Weekly total clocking of C-Koya Tech employees on different projects",
+      imageUrl: totalClockingIn,
+      imageAlt:
+        "Weekly total clocking of C-Koya Tech employees on different projects",
+    },
+    {
+      caption:
+        "Mobile screens for entering/moving/removing pallets in a warehouse",
+      imageUrl: mobileAll,
+      imageAlt:
+        "Mobile screens for entering/moving/removing pallets in a warehouse",
     },
   ];
 
@@ -88,8 +129,12 @@ export default function RobertsAdventure() {
         <span className="md:mr-2 md:font-bold">Go back !</span>
       </motion.button>
       <h2 className="mt-10 mb-10 text-3xl font-bold text-center text-black select-none font-title md:text-6xl lg:mt-20">
-        Robert&apos;s Adventure
+        C-Koya Tech
       </h2>
+      <p className="text-center md:text-lg">
+        Sorry for the low quality screenshots, I unfortunately don&apos;t have
+        access to these projects anymore.
+      </p>
       <div>
         <div className="flex justify-center">
           <button onClick={moveToPrevious} className="mr-5">
@@ -183,14 +228,8 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
       style={{ flexBasis: width }}
       className={`flex h-[80vh] w-full flex-[50%] shrink-0 grow-0  flex-col items-center justify-evenly bg-white shadow`}
     >
-      <div className="relative mt-5 mb-5 h-[95%] w-11/12">
-        <Image
-          src={imageUrl}
-          alt={imageAlt}
-          fill={true}
-          style={{ objectFit: "cover" }}
-          priority
-        />
+      <div className="relative mt-5 mb-5">
+        <Image src={imageUrl} alt={imageAlt} priority />
       </div>
       <div className="mb-5 h-[5%] w-full text-center">
         <p className="text-lg">{caption}</p>

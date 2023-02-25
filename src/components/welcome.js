@@ -28,6 +28,12 @@ export default function Welcome() {
           stroke: "#592d8c",
           borderColor: "#592d8c",
         }}
+        onClick={() =>
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          })
+        }
       >
         <span className="md:mr-2 md:font-bold">Let&apos;s work together !</span>
         {/* /welcome/chat_icon.svg code */}

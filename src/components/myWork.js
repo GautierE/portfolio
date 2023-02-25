@@ -22,17 +22,10 @@ export default function MyWork() {
     {
       title: "Cloudmate",
       description:
-        "Web-based tool to help sneaker resellers mainly through Paypal payment automation.",
+        "A web-based tool to help sneaker resellers mainly through Paypal payment automation.",
       imageUrl: "/projects/cloudmate/cloudmate_logo.png",
       imageAlt: "Cloudmate logo",
       route: "cloudmate",
-    },
-    {
-      title: "Robert's Adventure",
-      description: "A serious game created for a school project using Unity.",
-      imageUrl: "/projects/robert/robert_logo.png",
-      imageAlt: "Robert's adventure screenshot",
-      route: "roberts-adventure",
     },
     {
       title: "C-Koya Tech",
@@ -41,6 +34,13 @@ export default function MyWork() {
       imageUrl: "/projects/c_koya_tech/ckoya_logo.png",
       imageAlt: "C-Koya Tech logo",
       route: "c-koya-tech",
+    },
+    {
+      title: "Robert's Adventure",
+      description: "A serious game created for a school project using Unity.",
+      imageUrl: "/projects/robert/robert_logo.png",
+      imageAlt: "Robert's adventure screenshot",
+      route: "roberts-adventure",
     },
     {
       title: "Portfolio",
@@ -128,12 +128,14 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
           <p className="max-[376px]:text-xs mt-5 md:w-5/6 md:text-lg">
             {description}
           </p>
-          <a
-            href={`/projects/${route}`}
-            className="max-[376px]:text-xs underline underline-offset-4 md:absolute md:bottom-7 md:text-lg"
-          >
-            Details
-          </a>
+          {route !== "portfolio" && (
+            <a
+              href={`/projects/${route}`}
+              className="max-[376px]:text-xs underline underline-offset-4 md:absolute md:bottom-7 md:text-lg"
+            >
+              Details
+            </a>
+          )}
         </div>
         <div className="absolute right-2 h-[60px] w-[60px] md:relative md:right-auto md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple">
           <Image
