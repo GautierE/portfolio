@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import cloudMateLogo from "../../public/projects/cloudmate/cloudmate_logo.png";
 import cKoyaLogo from "../../public/projects/c_koya_tech/ckoya_logo.png";
 import robertLogo from "../../public/projects/robert/robert_logo.png";
+import portfolioLogo from "../../public/projects/portfolio_logo.png";
 
 export default function MyWork() {
   const animateText = {
@@ -49,7 +50,7 @@ export default function MyWork() {
     {
       title: "Portfolio",
       description: "My personal website.",
-      imageUrl: cloudMateLogo,
+      imageUrl: portfolioLogo,
       imageAlt: "a",
       route: "portfolio",
     },

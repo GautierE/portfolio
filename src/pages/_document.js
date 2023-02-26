@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta charSet="utf-8" />
+        <link rel="shortcut icon" href="/portfolio.ico" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Ubuntu"
