@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 export default function Contact() {
+  const [formContent, setFormContent] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const animateText = {
     hidden: { y: 30, opacity: 0 },
     visible: ({ delay }) => {
@@ -16,6 +22,30 @@ export default function Contact() {
       };
     },
   };
+
+  const handleSubmit = () => {
+    if (formContent.name === "") {
+      toast.warning("Name field must be filled");
+    } else if (formContent.email === "" || !validateEmail(formContent.email)) {
+      toast.warning("Email field is either empty or is not an email format");
+    } else if (formContent.message === "") {
+      toast.warning("Don't you want to send me a message ? 😢");
+    } else {
+      fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(formContent),
+      })
+        .then((res) => res.json())
+        .then((data) => toast.success(data.message))
+        .catch((error) => toast.error(error));
+    }
+  };
+
+  const validateEmail = (email) => {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
+
   return (
     <div className="sticky w-full my-0 mt-5 bg-white tall:top-0 tall:mt-0 tall:h-screen">
       <div className="mx-auto flex h-full w-[90%] flex-col items-center justify-center md:w-auto">
@@ -61,6 +91,11 @@ export default function Contact() {
                 placeholder="Enter your name"
                 type="text"
                 required
+                onChange={(e) =>
+                  setFormContent((old) => {
+                    return { ...old, name: e.target.value };
+                  })
+                }
               />
             </motion.div>
             <motion.div
@@ -78,8 +113,13 @@ export default function Contact() {
                 className="p-4 text-lg bg-transparent border-b border-purple "
                 id="email"
                 placeholder="Enter your email"
-                type="text"
+                type="email"
                 required
+                onChange={(e) =>
+                  setFormContent((old) => {
+                    return { ...old, email: e.target.value };
+                  })
+                }
               />
             </motion.div>
           </div>
@@ -101,6 +141,11 @@ export default function Contact() {
               type="text"
               required
               minLength={30}
+              onChange={(e) =>
+                setFormContent((old) => {
+                  return { ...old, message: e.target.value };
+                })
+              }
             />
           </motion.div>
         </div>
@@ -117,6 +162,7 @@ export default function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          onClick={handleSubmit}
         >
           <span className="mr-5 font-bold">SEND</span>
           <svg

@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-    .bordered-text {
-        text-shadow: -1px -1px 0 #3B4472, 1px -1px 0 #3B4472, -1px 1px 0 #3B4472, 1px 1px 0 #3B4472;
-    }
-    .rounded-stroke {
-        stroke-linecap: round;
+    *:focus {
+        outline: none;
     }
     .bg-purple-white {
         background: linear-gradient(to right, #592d8c 0%, #592d8c 75%, #f5f4fc 33%, #f5f4fc 100%);
     }
-    *:focus {
-        outline: none;
+    .toast-purple-bar {
+        background: #592d8c !important;
     }
+}
+
+:root {
+    --toastify-icon-color-info: #592d8c !important;
+    --toastify-icon-color-success: #592d8c !important;
+    --toastify-icon-color-warning: #592d8c !important;
+    --toastify-icon-color-error: #592d8c !important;
 }
