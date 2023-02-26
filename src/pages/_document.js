@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Gautier EDEL</title>
         <meta charSet="utf-8" />
         <link
           rel="stylesheet"

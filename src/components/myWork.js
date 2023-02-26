@@ -127,15 +127,15 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             "relative flex w-full flex-col rounded-3xl border-2 border-purple pt-2 pl-5 md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl md:rounded-bl-3xl md:border-r-0 md:pt-10 md:pl-10"
           }
         >
-          <h5 className="max-[376px]:text-lg text-xl md:text-4xl">{title}</h5>
+          <h5 className="text-xl md:text-4xl tiny:text-lg">{title}</h5>
           <div className="flex flex-col justify-around h-full">
-            <p className="max-[376px]:text-xs mt-5 md:w-5/6 md:text-lg">
+            <p className="mt-5 md:w-5/6 md:text-lg tiny:text-xs">
               {description}
             </p>
             {route !== "portfolio" && (
               <a
                 href={`/projects/${route}`}
-                className="max-[376px]:text-xs underline underline-offset-4 md:text-lg"
+                className="underline underline-offset-4 md:text-lg tiny:text-xs"
               >
                 Details
               </a>
@@ -147,6 +147,8 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             src={imageUrl}
             alt={imageAlt}
             fill
+            sizes="(max-width: 767px) 60px,
+            60%"
             style={{ objectFit: "contain" }}
             className="md:rounded-tr-3xl md:rounded-br-3xl"
           />

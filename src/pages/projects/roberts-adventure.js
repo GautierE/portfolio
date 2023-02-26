@@ -229,13 +229,7 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
       className={`flex h-[80vh] w-full flex-[50%] shrink-0 grow-0  flex-col items-center justify-evenly bg-white shadow`}
     >
       <div className="relative mt-5 mb-5 h-[95%] w-11/12">
-        <Image
-          src={imageUrl}
-          alt={imageAlt}
-          fill={true}
-          style={{ objectFit: "cover" }}
-          priority
-        />
+        <Image src={imageUrl} alt={imageAlt} priority />
       </div>
       <div className="mb-5 h-[5%] w-full text-center">
         <p className="text-lg">{caption}</p>
