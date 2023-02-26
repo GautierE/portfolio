@@ -127,14 +127,14 @@ export default function RobertsAdventure() {
   };
 
   return (
-    <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
+    <>
       <motion.button
         onClick={() =>
           document.referrer.includes("localhost:3000/")
             ? history.back()
             : (window.location.href = "/")
         }
-        className="flex items-center self-center w-auto p-2 mt-10 text-xl border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:absolute lg:mt-0 lg:p-4"
+        className="z-10 flex items-center self-center w-auto p-2 mx-auto mt-10 text-xl border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
         whileHover={{
           scale: 1.02,
           color: "#592d8c",
@@ -145,79 +145,81 @@ export default function RobertsAdventure() {
         <BackArrow width={35} height={35} />
         <span className="md:mr-2 md:font-bold">Go back !</span>
       </motion.button>
-      <div className="flex flex-col items-center justify-center md:flex-row">
-        <h2 className="mt-5 text-3xl font-bold text-center text-black select-none font-title md:mt-0 md:text-6xl">
-          C-Koya Tech
-        </h2>
-        <Image src={cKoyaLogo} alt={"C-Koya logo"} priority />
-      </div>
-      <p className="text-center md:text-lg">
-        Sorry for the low quality screenshots, I unfortunately don&apos;t have
-        access to these projects anymore.
-      </p>
-      <div>
-        <div className="flex justify-center">
-          <button onClick={moveToPrevious} className="mr-5">
-            ◀
-          </button>
-          <div className="w-10/12 overflow-hidden">
-            <motion.div
-              className="flex"
-              ref={carouselContainer}
-              animate={controls}
-            >
-              {carouselSize &&
-                carouselContent.map((item, index) => (
-                  <CarouselItem
-                    key={index}
-                    caption={item.caption}
-                    imageUrl={item.imageUrl}
-                    imageAlt={item.imageAlt}
-                    width={carouselSize.width}
-                  />
-                ))}
-            </motion.div>
-          </div>
-          <button onClick={moveToNext} className="ml-5">
-            ▶
-          </button>
+      <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
+        <div className="flex flex-col items-center justify-center md:flex-row">
+          <h2 className="mt-5 text-3xl font-bold text-center text-black select-none font-title md:mt-0 md:text-6xl">
+            C-Koya Tech
+          </h2>
+          <Image src={cKoyaLogo} alt={"C-Koya logo"} priority />
         </div>
-        <div className="flex justify-center mx-auto mt-5 mb-10">
-          {carouselContent.map((item, index) => (
-            <button
-              key={index}
-              className="w-3 h-3 mx-2 bg-black rounded-full"
-              onClick={() => setCarouselPosition(index)}
-              style={{
-                backgroundColor: carouselPosition === index ? "black" : "gray",
-              }}
-            />
+        <p className="text-center md:text-lg">
+          Sorry for the low quality screenshots, I unfortunately don&apos;t have
+          access to these projects anymore.
+        </p>
+        <div>
+          <div className="flex justify-center">
+            <button onClick={moveToPrevious} className="mr-5">
+              ◀
+            </button>
+            <div className="w-10/12 overflow-hidden">
+              <motion.div
+                className="flex"
+                ref={carouselContainer}
+                animate={controls}
+              >
+                {carouselSize &&
+                  carouselContent.map((item, index) => (
+                    <CarouselItem
+                      key={index}
+                      caption={item.caption}
+                      imageUrl={item.imageUrl}
+                      imageAlt={item.imageAlt}
+                      width={carouselSize.width}
+                    />
+                  ))}
+              </motion.div>
+            </div>
+            <button onClick={moveToNext} className="ml-5">
+              ▶
+            </button>
+          </div>
+          <div className="flex justify-center mx-auto mt-5 mb-10">
+            {carouselContent.map((item, index) => (
+              <button
+                key={index}
+                className="w-3 h-3 mx-2 bg-black rounded-full"
+                onClick={() => setCarouselPosition(index)}
+                style={{
+                  backgroundColor:
+                    carouselPosition === index ? "black" : "gray",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-wrap items-center justify-center py-5 mx-5 bg-white border-t-2 border-purple md:mx-auto">
+          {technoLogos.map((item, i) => (
+            <div
+              key={i}
+              className="mx-4 flex w-[50px] flex-col items-center justify-center md:mx-2 md:w-auto"
+            >
+              <img
+                src={item.url?.src}
+                alt={item.desc}
+                width={"55vw"}
+                className="p-2 border-2 rounded-full border-purple"
+              />
+              <p className="whitespace-nowrap lg:text-[1.3vh]">{item.desc}</p>
+            </div>
           ))}
         </div>
-      </div>
-      <div className="flex flex-wrap items-center justify-center py-5 mx-5 bg-white border-t-2 border-purple md:mx-auto">
-        {technoLogos.map((item, i) => (
-          <div
-            key={i}
-            className="mx-4 flex w-[50px] flex-col items-center justify-center md:mx-2 md:w-auto"
-          >
-            <img
-              src={item.url?.src}
-              alt={item.desc}
-              width={"55vw"}
-              className="p-2 border-2 rounded-full border-purple"
-            />
-            <p className="whitespace-nowrap lg:text-[1.3vh]">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-      <div
-        style={{
-          maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
-        }}
-        className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
-      >
-        {/* French
+        <div
+          style={{
+            maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
+          }}
+          className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
+        >
+          {/* French
         Pendant une année chez C-Koya Tech, j'ai eu l'opportunité
         de travailler sur le développement d'applications complexes pour aider
         les entreprises à accélérer leur transformation digitale. Dans ce
@@ -239,34 +241,35 @@ export default function RobertsAdventure() {
         que des outils de planification pour organiser l'utilisation de machines, des tableaux de gestion des congés...
         Ces fonctionnalités ont été développées pour aider les entreprises à mieux organiser leur travail, à
         gagner en efficacité et à maximiser leur productivité. */}
-        <p>
-          During a year at C-Koya Tech, I had the opportunity to work on the
-          development of complex applications to help companies through digital
-          transformation. In this context, we designed several applications for
-          internal use within companies, so these applications are not
-          accessible by the public.
-        </p>
-        <br />
-        <p>
-          Primarily, we developed ERP (Enterprise Resource Planning) in the form
-          of web applications. Depending on our clients&apos; needs, we also
-          developed mobile versions of these applications. The proposed features
-          were highly varied and personalized for each company. Web
-          applications, for example, allowed for stock management, invoicing,
-          time tracking... while mobile applications offered greater flexibility
-          for real-time access to information.
-        </p>
-        <br />
-        <p>
-          All of the applications were a lot based on multiple listings that
-          could be sorted and filtered on each column, as well as more specific
-          modules such as planning tools to organize the use of machines, leave
-          management tables... These features were developed to help companies
-          better organize their work, increase efficiency, and maximize
-          productivity.
-        </p>
+          <p>
+            During a year at C-Koya Tech, I had the opportunity to work on the
+            development of complex applications to help companies through
+            digital transformation. In this context, we designed several
+            applications for internal use within companies, so these
+            applications are not accessible by the public.
+          </p>
+          <br />
+          <p>
+            Primarily, we developed ERP (Enterprise Resource Planning) in the
+            form of web applications. Depending on our clients&apos; needs, we
+            also developed mobile versions of these applications. The proposed
+            features were highly varied and personalized for each company. Web
+            applications, for example, allowed for stock management, invoicing,
+            time tracking... while mobile applications offered greater
+            flexibility for real-time access to information.
+          </p>
+          <br />
+          <p>
+            All of the applications were a lot based on multiple listings that
+            could be sorted and filtered on each column, as well as more
+            specific modules such as planning tools to organize the use of
+            machines, leave management tables... These features were developed
+            to help companies better organize their work, increase efficiency,
+            and maximize productivity.
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
