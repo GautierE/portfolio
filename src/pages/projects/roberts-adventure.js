@@ -9,8 +9,18 @@ import game3 from "../../../public/projects/robert/game3.png";
 import menu from "../../../public/projects/robert/menu.png";
 import levelSelection from "../../../public/projects/robert/level_selection.png";
 import questions from "../../../public/projects/robert/questions.png";
+import csharpLogo from "../../../public/projects/robert/csharp_logo.svg";
+import unityLogo from "../../../public/projects/robert/unity_logo.svg";
+import gitLogo from "../../../public/skills/git_logo.svg";
+import agileIcon from "../../../public/skills/agile_icon.svg";
 
 export default function RobertsAdventure() {
+  const technoLogos = [
+    { url: csharpLogo, desc: "C#" },
+    { url: unityLogo, desc: "Unity" },
+    { url: gitLogo, desc: "Git" },
+    { url: agileIcon, desc: "Agile" },
+  ];
   const carouselContent = [
     {
       caption: "Game screenshot",
@@ -145,6 +155,22 @@ export default function RobertsAdventure() {
         Github
         <GithubIcon width={40} height={40} />
       </motion.a>
+      <div className="mx-5 flex flex-wrap items-center justify-center border-t-2 border-purple bg-white py-5 md:mx-auto md:w-[46vw]">
+        {technoLogos.map((item, i) => (
+          <div
+            key={i}
+            className="mx-4 flex w-[50px] flex-col items-center justify-center md:mx-2 md:w-auto"
+          >
+            <img
+              src={item.url?.src}
+              alt={item.desc}
+              width={"55vw"}
+              className="p-2 border-2 rounded-full border-purple"
+            />
+            <p className="whitespace-nowrap lg:text-[1.4vh]">{item.desc}</p>
+          </div>
+        ))}
+      </div>
       <div
         style={{
           maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",

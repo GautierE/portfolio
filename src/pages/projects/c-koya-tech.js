@@ -13,8 +13,36 @@ import listing from "../../../public/projects/c_koya_tech/listing.png";
 import mobileAll from "../../../public/projects/c_koya_tech/mobileAll.png";
 import poseEventEdit from "../../../public/projects/c_koya_tech/poseEventEdit.png";
 import totalClockingIn from "../../../public/projects/c_koya_tech/totalClockingIn.png";
+import htmlLogo from "../../../public/skills/html_logo.svg";
+import cssLogo from "../../../public/skills/css_logo.svg";
+import jsLogo from "../../../public/skills/js_logo.svg";
+import reactLogo from "../../../public/skills/react_logo.svg";
+import jqueryLogo from "../../../public/skills/jquery_logo.svg";
+import bootstrapLogo from "../../../public/skills/bootstrap_logo.svg";
+import phpLogo from "../../../public/skills/php_logo.svg";
+import symfonyLogo from "../../../public/skills/symfony_logo.svg";
+import doctrineLogo from "../../../public/skills/doctrine_logo.svg";
+import mysqlLogo from "../../../public/skills/mysql_logo.svg";
+import gitLogo from "../../../public/skills/git_logo.svg";
+import apiIcon from "../../../public/skills/api_icon.svg";
 
 export default function RobertsAdventure() {
+  const technoLogos = [
+    { url: htmlLogo, desc: "HTML" },
+    { url: cssLogo, desc: "CSS" },
+    { url: jsLogo, desc: "Javascript" },
+    { url: reactLogo, desc: "React" },
+    { url: jqueryLogo, desc: "jQuery" },
+    { url: bootstrapLogo, desc: "Bootstrap" },
+    { url: reactLogo, desc: "React Native" },
+    { url: phpLogo, desc: "PHP" },
+    { url: symfonyLogo, desc: "Symfony" },
+    { url: doctrineLogo, desc: "Doctrine" },
+    { url: mysqlLogo, desc: "MySQL" },
+    { url: gitLogo, desc: "Git" },
+    { url: apiIcon, desc: "RESTful API" },
+  ];
+
   const carouselContent = [
     {
       caption:
@@ -164,6 +192,22 @@ export default function RobertsAdventure() {
             />
           ))}
         </div>
+      </div>
+      <div className="flex flex-wrap items-center justify-center py-5 mx-5 bg-white border-t-2 border-purple md:mx-auto">
+        {technoLogos.map((item, i) => (
+          <div
+            key={i}
+            className="mx-4 flex w-[50px] flex-col items-center justify-center md:mx-2 md:w-auto"
+          >
+            <img
+              src={item.url?.src}
+              alt={item.desc}
+              width={"55vw"}
+              className="p-2 border-2 rounded-full border-purple"
+            />
+            <p className="whitespace-nowrap lg:text-[1.3vh]">{item.desc}</p>
+          </div>
+        ))}
       </div>
       <div
         style={{
