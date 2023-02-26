@@ -171,41 +171,53 @@ export default function RobertsAdventure() {
         }}
         className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
       >
+        {/* French
+        Pendant une année chez C-Koya Tech, j'ai eu l'opportunité
+        de travailler sur le développement d'applications complexes pour aider
+        les entreprises à accélérer leur transformation digitale. Dans ce
+        contexte, nous avons conçu plusieurs applications destinées à un usage
+        interne dans les entreprises. Ces applications ne sont donc pas
+        accessibles au public.
+        
+        En grande majorité, nous avons développé des ERP
+        (Enterprise Resource Planning) sous forme d'applications web. Selon les
+        besoins de nos clients, nous avons également développé des versions
+        mobiles de ces applications. Les fonctionnalités proposées étaient très
+        variées et personnalisées pour chaque entreprise. Les applications web
+        permettaient par exemple la gestion de stocks, de la facturation, du
+        temps de travail, tandis que les applications mobiles offraient une plus
+        grande flexibilité pour l'accès à l'information en temps réel.
+        
+        Toutes les applications contenaient toutes plusieurs listings (listes triables et filtrables sur
+        chacune de leurs colonnes), ainsi que des modules plus spécifiques tels
+        que des outils de planification pour organiser l'utilisation de machines, des tableaux de gestion des congés...
+        Ces fonctionnalités ont été développées pour aider les entreprises à mieux organiser leur travail, à
+        gagner en efficacité et à maximiser leur productivité. */}
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          laoreet tincidunt sodales. Phasellus non placerat justo. In accumsan
-          quis justo vitae molestie. Suspendisse hendrerit, massa in ultricies
-          euismod, justo dolor convallis lacus, quis vehicula velit metus quis
-          odio. Praesent sodales ex at tincidunt porttitor. Pellentesque nec
-          auctor enim. Aenean at urna ut metus dictum tempor. Curabitur quis ex
-          quis justo malesuada efficitur. Mauris malesuada semper ultricies.
-          Quisque ac nulla ut nibh laoreet pharetra.
+          During a year at C-Koya Tech, I had the opportunity to work on the
+          development of complex applications to help companies through digital
+          transformation. In this context, we designed several applications for
+          internal use within companies, so these applications are not
+          accessible by the public.
         </p>
         <br />
         <p>
-          Nunc mi odio, luctus quis sapien sed, consectetur sodales est. Proin
-          varius tempor diam eu lobortis. In hac habitasse platea dictumst.
-          Integer tincidunt interdum arcu, in dapibus magna posuere ut. Donec
-          tempus massa a urna ullamcorper, eget varius sapien pulvinar. Aliquam
-          pellentesque finibus urna, sed pellentesque arcu viverra a. Integer a
-          odio ut lectus imperdiet congue. Praesent pellentesque massa quis diam
-          ullamcorper, in semper arcu consequat. Nunc blandit pretium justo vel
-          tempor. Donec varius dui a cursus tristique. Nullam eget nunc gravida,
-          fringilla tellus sit amet, dignissim nisi. Etiam auctor odio est, sit
-          amet commodo enim aliquet ac. Fusce nec tempor tortor.
+          Primarily, we developed ERP (Enterprise Resource Planning) in the form
+          of web applications. Depending on our clients&apos; needs, we also
+          developed mobile versions of these applications. The proposed features
+          were highly varied and personalized for each company. Web
+          applications, for example, allowed for stock management, invoicing,
+          time tracking... while mobile applications offered greater flexibility
+          for real-time access to information.
         </p>
         <br />
         <p>
-          Donec vitae sollicitudin urna, quis elementum ante. Suspendisse in ex
-          sit amet ipsum semper suscipit et id lacus. Pellentesque non commodo
-          dui, nec rhoncus eros. Integer mollis magna purus, in lacinia mauris
-          iaculis in. Ut sed ante vel quam auctor auctor. Donec nec eleifend
-          lacus. Integer quis libero quam. Sed malesuada eros nibh, sed maximus
-          massa condimentum et. Aenean elementum tortor eget placerat egestas.
-          Donec nec sollicitudin odio, quis semper tortor. Curabitur sagittis
-          finibus dapibus. Sed ut venenatis urna. Aenean dignissim efficitur
-          dolor et egestas. Donec faucibus augue diam, et pharetra ante
-          porttitor in.
+          All of the applications were a lot based on multiple listings that
+          could be sorted and filtered on each column, as well as more specific
+          modules such as planning tools to organize the use of machines, leave
+          management tables... These features were developed to help companies
+          better organize their work, increase efficiency, and maximize
+          productivity.
         </p>
       </div>
     </div>
