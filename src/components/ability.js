@@ -65,8 +65,8 @@ export default function Ability() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            I have built all types of applications in the past and I have now
-            decided to focus on web and mobile apps.
+            In the past, I have built a variety of applications, but I have
+            since chosen to focus on creating web and mobile apps.
           </motion.p>
         </div>
         <div className="flex h-full w-[90%] flex-col justify-evenly lg:h-auto lg:w-full lg:flex-row">
@@ -86,9 +86,9 @@ export default function Ability() {
               </p>
             </div>
             <p className="mt-2 text-xs md:text-lg lg:mt-5">
-              From idea, to wireframes, to prototype, to final version, I
-              provide you with stunning and pixel perfect design for your
-              website or mobile app.
+              I will help you design a beautiful and flawless website or mobile
+              app from start to finish, including conceptualization,
+              wireframing, prototyping, and finalizing the design.
             </p>
           </div>
           <motion.div
@@ -141,8 +141,8 @@ export default function Ability() {
             </div>
             <p className="mt-2 text-xs md:text-lg lg:mt-5">
               If your ideas go well beyond the web, I can also develop fully
-              functional mobile apps for Android and iOS, complete with the
-              server-side implementations.
+              functional mobile applications for Android and iOS, complete with
+              the server-side implementations.
             </p>
           </motion.div>
         </div>

@@ -134,7 +134,7 @@ export default function Contact() {
           </div>
           <motion.div
             className="flex flex-col w-full"
-            custom={{ delay: 1 }}
+            custom={{ delay: 1.1 }}
             variants={animateText}
             initial="hidden"
             whileInView="visible"
@@ -167,7 +167,7 @@ export default function Contact() {
             color: "rgb(255, 255, 255)",
             stroke: "rgb(255, 255, 255)",
           }}
-          custom={{ delay: 1 }}
+          custom={{ delay: 1.2 }}
           variants={animateText}
           initial="hidden"
           whileInView="visible"

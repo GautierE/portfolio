@@ -128,7 +128,7 @@ export default function About() {
           >
             I have been passionate about skateboarding for 6 years, and for me,
             it&apos;s more than just a hobby it&apos;s an activity that allows
-            me to let loose, clear my mind, and focus on the present moment.
+            me to let loose, clear my mind, and focus on the current moment.
             <br />
             <br />
             Through this passion, I have learned to be persistent, creative, and

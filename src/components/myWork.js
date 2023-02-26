@@ -40,7 +40,8 @@ export default function MyWork() {
     },
     {
       title: "Robert's Adventure",
-      description: "A serious game created for a school project using Unity.",
+      description:
+        "A serious game aiming to be fun created for a school project using Unity.",
       imageUrl: robertLogo,
       imageAlt: "Robert's adventure logo",
       route: "roberts-adventure",
