@@ -17,7 +17,7 @@ export default function Home() {
         newestOnTop
         closeOnClick={false}
         rtl={false}
-        pauseOnFocusLoss={true}
+        pauseOnFocusLoss={false}
         draggable
         pauseOnHover
         transition={Zoom}

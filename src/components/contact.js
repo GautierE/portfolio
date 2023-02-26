@@ -36,7 +36,14 @@ export default function Contact() {
         body: JSON.stringify(formContent),
       })
         .then((res) => res.json())
-        .then((data) => toast.success(data.message))
+        .then((data) => {
+          toast.success(data.message);
+          setFormContent({
+            name: "",
+            email: "",
+            message: "",
+          });
+        })
         .catch((error) => toast.error(error));
     }
   };
@@ -91,6 +98,7 @@ export default function Contact() {
                 placeholder="Enter your name"
                 type="text"
                 required
+                value={formContent.name}
                 onChange={(e) =>
                   setFormContent((old) => {
                     return { ...old, name: e.target.value };
@@ -114,6 +122,7 @@ export default function Contact() {
                 id="email"
                 placeholder="Enter your email"
                 type="email"
+                value={formContent.email}
                 required
                 onChange={(e) =>
                   setFormContent((old) => {
@@ -146,6 +155,7 @@ export default function Contact() {
                   return { ...old, message: e.target.value };
                 })
               }
+              value={formContent.message}
             />
           </motion.div>
         </div>
