@@ -38,7 +38,7 @@ export default function Home() {
     "Greetings! 👋 If you're feeling curious, you might be wondering how awesome this website is."
   );
   console.log(
-    " If you find it intriguing and would like to explore the code that powers it, I've made it available on https://github.com/GautierE/portfolio. Don't hesitate to take a look!"
+    "If you find it intriguing and would like to explore the code that powers it, I've made it available on https://github.com/GautierE/portfolio. Don't hesitate to take a look!"
   );
   console.log(
     "Additionally, you can reach me at gautier.edel.info@gmail.com ✨."

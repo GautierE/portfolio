@@ -2,6 +2,8 @@ import { WebhookClient } from "discord.js";
 
 export default async function handler(req, res) {
   try {
+    console.log(req);
+    console.log(req.body);
     const { name, email, message } = JSON.parse(req.body);
     const webhookClient = new WebhookClient({
       id: "1079302547153625158",
