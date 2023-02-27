@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         { name: "Message", value: message ?? "" },
       ],
     };
-    webhookClient.send({
+    await webhookClient.send({
       username: "🧑‍💼 Employer 🧑‍💼",
       avatarURL:
         "https://scpeanutgallery.files.wordpress.com/2016/05/rich-man-saudi.jpg?w=640",
