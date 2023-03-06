@@ -47,13 +47,13 @@ export default function MyWork() {
       imageAlt: "Robert's adventure logo",
       route: "roberts-adventure",
     },
-    {
-      title: "Portfolio",
-      description: "My personal website.",
-      imageUrl: portfolioLogo,
-      imageAlt: "a",
-      route: "portfolio",
-    },
+    // {
+    //   title: "Portfolio",
+    //   description: "My personal website.",
+    //   imageUrl: portfolioLogo,
+    //   imageAlt: "a",
+    //   route: "portfolio",
+    // },
   ];
 
   return (

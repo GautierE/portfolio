@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     await webhookClient.send({
       username: "🧑‍💼 Employer 🧑‍💼",
       avatarURL:
-        "https://scpeanutgallery.files.wordpress.com/2016/05/rich-man-saudi.jpg?w=640",
+        "https://pbs.twimg.com/profile_images/1592320647522574337/XSisuLz-_400x400.jpg",
       embeds: [embed],
     });
 

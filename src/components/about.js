@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import sneakerPicture from "../../public/about/sneakers.png";
+import sneakerPicture from "../../public/about/sneakers2.png";
 import skatePicture from "../../public/about/skate.png";
 
 export default function About() {
