@@ -27,7 +27,7 @@ export default function Welcome() {
       <motion.button
         className="lg:z-2 z-10 mr-2 mt-2 flex w-[40%] items-center justify-evenly self-end rounded-lg bg-purple stroke-white px-2 py-1 text-xs text-white shadow-lg md:w-auto md:border-2 md:border-white md:bg-white md:stroke-black md:text-black lg:absolute lg:right-10 lg:top-10 lg:p-3 lg:text-xl"
         whileHover={{
-          scale: 1.02,
+          scale: 0.98,
           color: "#592d8c",
           stroke: "#592d8c",
           borderColor: "#592d8c",
@@ -106,7 +106,7 @@ export default function Welcome() {
         <motion.button
           className="hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:left-[-325px] md:top-64 md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px] lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl 2xl:left-[-495px] xxl:top-72 xxl:left-[-655px]"
           whileHover={{
-            scale: 1.02,
+            scale: 0.98,
             backgroundColor: "#f5f4fc",
             color: "#592d8c",
             fill: "#592d8c",
@@ -119,7 +119,7 @@ export default function Welcome() {
       <motion.button
         className="mt-5 flex w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:ml-2 md:mt-0 md:hidden md:w-2/5 md:self-auto md:rounded-lg md:border-2 md:border-purple md:text-lg lg:ml-28 lg:w-2/12 lg:p-3 lg:text-2xl"
         whileHover={{
-          scale: 1.02,
+          scale: 0.98,
           backgroundColor: "#f5f4fc",
           color: "#592d8c",
           fill: "#592d8c",
