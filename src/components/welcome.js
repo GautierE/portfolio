@@ -51,7 +51,7 @@ export default function Welcome() {
       <div className="mx-auto flex h-1/4 w-[90%] items-center md:hidden md:w-full lg:mt-32">
         <div className="relative z-10 select-none md:ml-2 lg:ml-28">
           <motion.h1
-            className="text-4xl font-title lg:text-8xl"
+            className="text-3xl font-title lg:text-8xl medium:text-4xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -94,7 +94,10 @@ export default function Welcome() {
           priority={true}
         />
         <motion.h1
-          className="welcome-title z-10 hidden font-title text-5xl md:absolute md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] xxl:left-[-655px] xxl:text-8xl"
+          className={
+            (router.locale === "fr" ? "welcome-title " : "") +
+            "z-10 hidden font-title text-5xl md:absolute md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] xxl:left-[-655px] xxl:text-8xl"
+          }
           variants={animateText}
           custom={{ delay: 0 }}
           initial="hidden"
@@ -153,14 +156,14 @@ export default function Welcome() {
         <span className="mr-5">{t("welcome.cv")}</span>
         <CvIcon width={30} height={30} />
       </motion.button>
-      <div className="absolute bottom-0 flex justify-center left-10 md:bottom-10 md:justify-start">
+      <div className="absolute bottom-0 flex justify-center left-2 md:left-10 md:bottom-10 md:justify-start">
         <div className="flex self-end justify-start">
           <motion.a
             href="https://github.com/GautierE"
             target="_blank"
             rel="noreferrer"
             whileHover={{ translateY: -8 }}
-            className="mr-5"
+            className="mr-2 medium:mr-5"
           >
             <Image src={githubLogo} alt="Github logo" width={50} height={50} />
           </motion.a>
@@ -169,7 +172,7 @@ export default function Welcome() {
             target="_blank"
             rel="noreferrer"
             whileHover={{ translateY: -8 }}
-            className="mx-5"
+            className="mx-2 medium:mx-5"
           >
             <Image
               src={linkedinLogo}
@@ -180,13 +183,13 @@ export default function Welcome() {
           </motion.a>
           <motion.a
             href="mailto:gautier.edel.info@gmail.com"
-            className="flex mx-5"
+            className="flex mx-2 medium:mx-5"
             whileHover={{ translateY: -8 }}
           >
             <Image src={emailIcon} alt="Email icon" width={40} height={40} />
           </motion.a>
           <motion.div
-            className="flex mx-5 cursor-pointer"
+            className="flex mx-2 cursor-pointer medium:mx-5"
             whileHover={{ translateY: -8 }}
           >
             <Image
@@ -207,7 +210,7 @@ export default function Welcome() {
             />
           </motion.div>
           <motion.div
-            className="flex ml-5 cursor-pointer"
+            className="flex ml-2 cursor-pointer medium:ml-5"
             whileHover={{ translateY: -8 }}
           >
             <Image
@@ -247,7 +250,7 @@ export default function Welcome() {
             },
           },
         ]}
-        className="absolute right-3 bottom-10 after:absolute after:left-1/2 after:top-10 after:h-48 after:w-0.5 after:bg-purple after:content-[''] md:right-auto md:left-1/3 md:text-xl xl:bottom-48 "
+        className="absolute right-3 bottom-10 after:absolute after:left-1/2 after:top-10 after:h-48 after:w-0.5 after:bg-purple after:content-[''] md:bottom-2 md:right-auto md:left-1/3 md:text-xl xl:bottom-48 "
       >
         Scroll
       </motion.span>

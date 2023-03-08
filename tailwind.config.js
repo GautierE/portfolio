@@ -16,6 +16,7 @@ module.exports = {
         purple: "#592d8c",
       },
       screens: {
+        medium: { raw: "(min-width: 420px)" },
         tall: { raw: "(min-height: 705px)" },
         xxl: { raw: "(min-width: 1750px)" },
         tiny: { raw: "(max-width: 376px)" },
