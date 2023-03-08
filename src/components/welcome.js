@@ -5,11 +5,14 @@ import profilePicture from "../../public/welcome/profile_picture.png";
 import githubLogo from "../../public/welcome/github_logo.svg";
 import linkedinLogo from "../../public/welcome/linkedin_logo.svg";
 import emailIcon from "../../public/welcome/email_icon.svg";
+import frenchFlag from "../../public/welcome/french_flag_icon.svg";
+import ukFlag from "../../public/welcome/uk_flag_icon.svg";
 import { useTranslation } from "next-i18next";
-
+import { useRouter } from "next/router";
 export default function Welcome() {
+  const router = useRouter();
   const { t } = useTranslation("common");
-
+  console.log(router);
   const animateText = {
     hidden: { y: 30, opacity: 0 },
     visible: ({ delay }) => {
@@ -48,15 +51,19 @@ export default function Welcome() {
       <div className="mx-auto flex h-1/4 w-[90%] items-center md:hidden md:w-full lg:mt-32">
         <div className="relative z-10 select-none md:ml-2 lg:ml-28">
           <motion.h1
-            className="text-5xl font-title lg:text-8xl"
+            className="text-4xl font-title lg:text-8xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            Hi, my name is{" "}
-            <span className="md:font-bold md:text-white">Gautier.</span>
+            {router.locale === "fr" && t("welcome.titleFirstPart")}
+
+            {t("welcome.titleSecondPart")}
+            <span className="md:font-bold md:text-white">
+              {t("welcome.titleThirdPart")}
+            </span>
           </motion.h1>
           <motion.p
             className="sticky mt-3 text-lg text-black md:mt-5 md:text-xl lg:text-3xl"
@@ -87,23 +94,33 @@ export default function Welcome() {
           priority={true}
         />
         <motion.h1
-          className="z-10 hidden font-title text-5xl md:absolute md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] xxl:left-[-655px] xxl:text-8xl"
+          className="welcome-title z-10 hidden font-title text-5xl md:absolute md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] xxl:left-[-655px] xxl:text-8xl"
           variants={animateText}
           custom={{ delay: 0 }}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          Hi, my name is{" "}
-          <span className="md:font-bold md:text-white">Gautier.</span>
+          {router.locale === "fr" && (
+            <>
+              {t("welcome.titleFirstPart")}
+              <br />
+            </>
+          )}
+
+          {t("welcome.titleSecondPart")}
+          <span className="md:font-bold md:text-white">
+            {t("welcome.titleThirdPart")}
+          </span>
         </motion.h1>
         <motion.p
-          className="z-10 hidden text-lg text-black md:absolute md:left-[-325px] md:top-40 md:block md:text-xl lg:left-[-400px] lg:text-2xl xl:left-[-485px] xl:text-3xl 2xl:left-[-495px] xxl:left-[-655px] xxl:top-48"
+          className="z-10 hidden text-lg text-black md:absolute md:left-[-325px] md:block md:text-xl lg:left-[-400px] lg:text-2xl xl:left-[-485px] xl:text-3xl 2xl:left-[-495px] xxl:left-[-655px]"
           custom={{ delay: 0.5 }}
           variants={animateText}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          style={{ top: router.locale === "fr" ? "18rem" : "12rem" }}
         >
           {t("welcome.subtitleFirstPart")}
           <span className="text-purple">{t("welcome.subtitlepurpletext")}</span>
@@ -111,13 +128,14 @@ export default function Welcome() {
           {t("welcome.subtitleLastPart")}
         </motion.p>
         <motion.button
-          className="hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:left-[-325px] md:top-64 md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px] lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl 2xl:left-[-495px] xxl:top-72 xxl:left-[-655px]"
+          className="hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:left-[-325px] md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px] lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl 2xl:left-[-495px] xxl:left-[-655px]"
           whileHover={{
             scale: 0.98,
             backgroundColor: "#f5f4fc",
             color: "#592d8c",
             fill: "#592d8c",
           }}
+          style={{ top: router.locale === "fr" ? "24rem" : "18rem" }}
         >
           <span className="mr-5">{t("welcome.cv")}</span>
           <CvIcon width={30} height={30} />
@@ -162,13 +180,53 @@ export default function Welcome() {
           </motion.a>
           <motion.a
             href="mailto:gautier.edel.info@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-            className="flex ml-5"
+            className="flex mx-5"
             whileHover={{ translateY: -8 }}
           >
             <Image src={emailIcon} alt="Email icon" width={40} height={40} />
           </motion.a>
+          <motion.div
+            className="flex mx-5 cursor-pointer"
+            whileHover={{ translateY: -8 }}
+          >
+            <Image
+              src={frenchFlag}
+              alt="French flag"
+              width={40}
+              height={40}
+              onClick={() => {
+                router.push(
+                  {
+                    route: router.pathname,
+                    query: router.query,
+                  },
+                  router.asPath,
+                  { locale: "fr" }
+                );
+              }}
+            />
+          </motion.div>
+          <motion.div
+            className="flex ml-5 cursor-pointer"
+            whileHover={{ translateY: -8 }}
+          >
+            <Image
+              src={ukFlag}
+              alt="Uk flag"
+              width={40}
+              height={40}
+              onClick={() => {
+                router.push(
+                  {
+                    route: router.pathname,
+                    query: router.query,
+                  },
+                  router.asPath,
+                  { locale: "en" }
+                );
+              }}
+            />
+          </motion.div>
         </div>
       </div>
       <motion.span

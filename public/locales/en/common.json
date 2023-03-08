@@ -1,5 +1,8 @@
 {
     "welcome": {
+        "titleFirstPart": "",
+        "titleSecondPart": "Hi, my name is ",
+        "titleThirdPart": "Gautier.",
         "subtitleFirstPart": "I'm an independent ",
         "subtitlepurpletext": "developer",
         "subtitleLastPart": "from Strasbourg, France.",

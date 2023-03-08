@@ -1,6 +1,9 @@
 module.exports = {
   i18n: {
-    defaultLocale: "en",
+    defaultLocale:
+      typeof navigator !== "undefined" && navigator.languages.includes("fr")
+        ? "fr"
+        : "en",
     locales: ["en", "fr"],
   },
 };

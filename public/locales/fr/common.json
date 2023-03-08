@@ -1,8 +1,11 @@
 {
     "welcome": {
-        "subtitleFirstPart": "Je suis un développeur",
+        "titleFirstPart": "Bonjour,",
+        "titleSecondPart": "je m'appelle ",
+        "titleThirdPart": "Gautier.",
+        "subtitleFirstPart": "Je suis un développeur ",
         "subtitlepurpletext": "freelance",
-        "subtitleLastPart": "de Strasbourg.",
+        "subtitleLastPart": "de \nStrasbourg.",
         "cv": "Télécharger mon CV",
         "workBtn": "Travaillons ensemble !"
     },
