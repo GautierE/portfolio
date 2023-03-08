@@ -128,9 +128,9 @@ export default function Skills() {
   };
 
   return (
-    <div className="sticky flex flex-col items-center justify-center h-screen xl:bg-purple-white bg-purple tall:top-0">
+    <div className="xl:bg-purple-white sticky flex h-screen flex-col items-center justify-center bg-purple tall:top-0">
       <motion.h2
-        className="self-start mb-5 ml-5 mr-0 text-4xl text-white select-none left-10 top-5 font-title xl:ml-0 xl:mr-10 xl:self-end xl:text-6xl xl:font-bold xl:text-black"
+        className="left-10 top-5 mb-5 ml-5 mr-0 select-none self-start font-title text-4xl text-white xl:ml-0 xl:mr-10 xl:self-end xl:text-[2.6rem] xl:font-bold xl:text-black xxl:text-6xl"
         variants={animateText}
         initial="hidden"
         animate={controls}
@@ -189,7 +189,7 @@ export default function Skills() {
                   src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
-                  className="p-2 border-2 rounded-full border-purple"
+                  className="rounded-full border-2 border-purple p-2"
                 />
                 <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </motion.div>
@@ -239,7 +239,7 @@ export default function Skills() {
                   src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
-                  className="p-2 border-2 rounded-full border-purple"
+                  className="rounded-full border-2 border-purple p-2"
                 />
                 <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </div>
@@ -264,7 +264,7 @@ export default function Skills() {
             initial="hidden"
             animate={controls}
           >
-            Miscs
+            {t("skills.miscstext")}
           </motion.p>
           <motion.div
             className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg border-2 border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto xl:rounded-full"
@@ -289,7 +289,7 @@ export default function Skills() {
                   src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
-                  className="p-2 border-2 rounded-full border-purple"
+                  className="rounded-full border-2 border-purple p-2"
                 />
                 <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </div>

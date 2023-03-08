@@ -131,9 +131,9 @@ export default function RobertsAdventure() {
             ? history.back()
             : (window.location.href = "/")
         }
-        className="top-10 left-10 z-10 mx-auto mt-10 flex w-auto items-center justify-evenly self-center rounded-lg border-2 border-black stroke-black p-2 text-xl shadow-lg lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
+        className="z-10 flex items-center self-center w-auto p-2 mx-auto mt-10 text-xl border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
         whileHover={{
-          scale: 1.02,
+          scale: 0.98,
           color: "#592d8c",
           stroke: "#592d8c",
           borderColor: "#592d8c",
@@ -144,7 +144,7 @@ export default function RobertsAdventure() {
       </motion.button>
       <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
         <div className="flex flex-col items-center justify-center md:flex-row">
-          <h2 className="mt-5 select-none text-center font-title text-3xl font-bold text-black md:mt-0 md:text-6xl">
+          <h2 className="mt-5 text-3xl font-bold text-center text-black select-none font-title md:mt-0 md:text-6xl">
             C-Koya Tech
           </h2>
           <Image src={cKoyaLogo} alt={"C-Koya logo"} priority />
@@ -177,11 +177,11 @@ export default function RobertsAdventure() {
               ▶
             </button>
           </div>
-          <div className="mx-auto mt-5 mb-10 flex justify-center">
+          <div className="flex justify-center mx-auto mt-5 mb-10">
             {carouselContent.map((item, index) => (
               <button
                 key={index}
-                className="mx-2 h-3 w-3 rounded-full bg-black"
+                className="w-3 h-3 mx-2 bg-black rounded-full"
                 onClick={() => setCarouselPosition(index)}
                 style={{
                   backgroundColor:
@@ -191,7 +191,7 @@ export default function RobertsAdventure() {
             ))}
           </div>
         </div>
-        <div className="mx-5 flex flex-wrap items-center justify-center border-t-2 border-purple bg-white py-5 md:mx-auto">
+        <div className="flex flex-wrap items-center justify-center py-5 mx-5 bg-white border-t-2 border-purple md:mx-auto">
           {technoLogos.map((item, i) => (
             <div
               key={i}
@@ -201,7 +201,7 @@ export default function RobertsAdventure() {
                 src={item.url?.src}
                 alt={item.desc}
                 width={"55vw"}
-                className="rounded-full border-2 border-purple p-2"
+                className="p-2 border-2 rounded-full border-purple"
               />
               <p className="whitespace-nowrap lg:text-[1.3vh]">{item.desc}</p>
             </div>
@@ -211,30 +211,8 @@ export default function RobertsAdventure() {
           style={{
             maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
           }}
-          className="mx-auto mb-5 border-y-2 border-purple py-5 text-justify md:text-lg "
+          className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
         >
-          {/* French
-        Pendant une année chez C-Koya Tech, j'ai eu l'opportunité
-        de travailler sur le développement d'applications complexes pour aider
-        les entreprises à accélérer leur transformation digitale. Dans ce
-        contexte, nous avons conçu plusieurs applications destinées à un usage
-        interne dans les entreprises. Ces applications ne sont donc pas
-        accessibles au public.
-        
-        En grande majorité, nous avons développé des ERP
-        (Enterprise Resource Planning) sous forme d'applications web. Selon les
-        besoins de nos clients, nous avons également développé des versions
-        mobiles de ces applications. Les fonctionnalités proposées étaient très
-        variées et personnalisées pour chaque entreprise. Les applications web
-        permettaient par exemple la gestion de stocks, de la facturation, du
-        temps de travail, tandis que les applications mobiles offraient une plus
-        grande flexibilité pour l'accès à l'information en temps réel.
-        
-        Toutes les applications contenaient toutes plusieurs listings (listes triables et filtrables sur
-        chacune de leurs colonnes), ainsi que des modules plus spécifiques tels
-        que des outils de planification pour organiser l'utilisation de machines, des tableaux de gestion des congés...
-        Ces fonctionnalités ont été développées pour aider les entreprises à mieux organiser leur travail, à
-        gagner en efficacité et à maximiser leur productivité. */}
           <p>{t("ckoya.text.firstPart")}</p>
           <br />
           <p>{t("ckoya.text.secondPart")}</p>

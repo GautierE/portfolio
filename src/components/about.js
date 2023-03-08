@@ -49,9 +49,9 @@ export default function About() {
             {t("about.introSecondPart")}
           </motion.p>
         </div>
-        <div className="flex flex-col items-center mt-10 md:mt-40 md:flex-row">
+        <div className="mt-10 flex flex-col items-center md:mt-40 md:flex-row">
           <motion.p
-            className="pt-5 text-lg text-justify md:mr-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
+            className="pt-5 text-justify text-lg md:mr-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
             initial={{ y: 100, opacity: 0 }}
             whileInView={{
               y: 0,
@@ -70,21 +70,6 @@ export default function About() {
             <br />
             <br />
             {t("about.sneakers.thirdPart")}
-            {/* French translation
-            Depuis 2 ans, la revente de sneakers me permet d&apos;allier passion
-            et source de revenu, ce qui en fait une activité extrêmement
-            enrichissante sur tous les plans.
-            <br />
-            <br />
-            En cherchant les chaussures les plus rares et les plus demandées,
-            j&apos;ai appris à connaître le marché et à trouver des opportunités
-            de profit là où d&apos;autres ne voient que de simples chaussures.
-            <br />
-            <br />
-            J&apos;ai créé ma propre entreprise début 2022 et ai pu réaliser mon
-            rêve de travailler pour moi-même. Je suis désormais en mesure de
-            gérer ma propre entreprise, de prendre mes propres décisions et de
-            vivre de ma passion ! */}
           </motion.p>
           <div className="relative mt-5 h-[48vh] w-[100%] md:mt-0 md:h-[601px] md:w-[450px]">
             <Image
@@ -97,7 +82,7 @@ export default function About() {
             />
           </div>
         </div>
-        <div className="flex flex-col-reverse items-center mt-10 md:mt-32 md:flex-row">
+        <div className="mt-10 flex flex-col-reverse items-center md:mt-32 md:flex-row">
           <div className="relative mt-5 h-[48vh] w-[100%] md:mt-0 md:h-[601px] md:w-[450px]">
             <Image
               src={skatePicture}
@@ -109,7 +94,7 @@ export default function About() {
             />
           </div>
           <motion.p
-            className="pt-5 text-lg text-justify md:ml-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
+            className="pt-5 text-justify text-lg md:ml-20 md:w-1/2 md:pt-0 md:text-2xl lg:pt-20"
             initial={{ y: 100, opacity: 0 }}
             whileInView={{
               y: 0,
@@ -125,17 +110,6 @@ export default function About() {
             <br />
             <br />
             {t("about.skate.secondPart")}
-            {/* French translation
-            Je suis passionné par le skateboard depuis 6 ans, c&apos;est pour
-            moi plus qu&apos;un simple loisir, c&apos;est une activité qui me
-            permet de me défouler, de libérer mon esprit et de me concentrer sur
-            le moment présent.
-            <br />
-            <br />
-            Grâce à cette passion, j&apos;ai appris à être persévérant, créatif
-            et à avoir confiance en moi-même. Le skateboard m&apos;a appris à me
-            dépasser et à relever des défis que je n&apos;aurais jamais cru
-            possible. */}
           </motion.p>
         </div>
       </div>

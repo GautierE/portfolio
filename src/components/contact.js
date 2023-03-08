@@ -28,11 +28,11 @@ export default function Contact() {
 
   const handleSubmit = () => {
     if (formContent.name === "") {
-      toast.warning("Name field must be filled");
+      toast.warning(t("contact.toast.name"));
     } else if (formContent.email === "" || !validateEmail(formContent.email)) {
-      toast.warning("Email field is either empty or is not an email format");
+      toast.warning(t("contact.toast.email"));
     } else if (formContent.message === "") {
-      toast.warning("Don't you want to send me a message ? 😢");
+      toast.warning(t("contact.toast.message"));
     } else {
       fetch("/api/contact", {
         method: "POST",
@@ -40,7 +40,11 @@ export default function Contact() {
       })
         .then((res) => res.json())
         .then((data) => {
-          toast.success(data.message);
+          toast.success(
+            data.message === "success"
+              ? t("contact.toast.success")
+              : data.message
+          );
           setFormContent({
             name: "",
             email: "",

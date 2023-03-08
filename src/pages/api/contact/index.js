@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       embeds: [embed],
     });
 
-    res.status(200).json({ message: "Message successfully sent !" });
+    res.status(200).json({ message: "success" });
   } catch (error) {
     res.status(500).json({
       message: `Error while sending contact message : ${error.message}`,

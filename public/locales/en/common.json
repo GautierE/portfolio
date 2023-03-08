@@ -14,11 +14,11 @@
         "subtitle": "In the past, I have built a variety of applications, but I have since chosen to focus on creating web and mobile apps.",
         "design": {
             "title": "Product design",
-            "text": "I will help you design a beautiful and flawless website or mobile app from start to finish, including conceptualization, wireframing, prototyping, and finalizing the design."
+            "text": "I am capable of designing a beautiful and flawless website or mobile app from start to finish, including conceptualization, wireframing, prototyping, and finalizing the design."
         },
         "web": {
             "title": "Web development",
-            "text": "Whether I design your website, or you come with your own design, I build fully responsive websites that adapt both on desktop and mobile devices."
+            "text": "Whether I design your website, or you already habe a design to meet, I build fully responsive websites that adapt both on desktop and mobile devices."
         },
         "mobile": {
             "title": "Mobile development",
@@ -26,7 +26,8 @@
         }
     },
     "skills": {
-        "title": "Skills"
+        "title": "Skills",
+        "skills.miscstext": "Miscs"
     },
     "myWork": {
         "titleFirstPart": "Take a look at my",
@@ -63,7 +64,7 @@
     },
     "contact": {
         "title": "Send me a message !",
-        "subtitleFirstPart": "Got a question or proposal, or just want",
+        "subtitleFirstPart": "Got a question, a proposal, or just want",
         "subtitleSecondPart": "to say hello ? Go ahead.",
         "form": {
             "name": {
@@ -79,6 +80,12 @@
                 "placeholder": "Enter your message"
             },
             "sendBtn": "SEND"
+        },
+        "toast": {
+            "name": "Name field must be filled",
+            "email": "Email field is either empty or is not an email format",
+            "message": "Don't you want to send me a message ? 😢",
+            "success": "Message successfully sent !"
         }
     },
     "ckoya": {

@@ -88,9 +88,9 @@ export default function RobertsAdventure() {
             ? history.back()
             : (window.location.href = "/")
         }
-        className="z-10 flex items-center self-center w-auto p-2 mx-auto mt-10 text-xl border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
+        className="top-10 left-10 z-10 mx-auto mt-10 flex w-auto items-center justify-evenly self-center rounded-lg border-2 border-black stroke-black p-2 text-xl shadow-lg lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
         whileHover={{
-          scale: 1.02,
+          scale: 0.98,
           color: "#592d8c",
           stroke: "#592d8c",
           borderColor: "#592d8c",
@@ -103,7 +103,7 @@ export default function RobertsAdventure() {
         <Image
           src={robertTitle}
           alt="Robert's adventure"
-          className="self-center w-4/5 mt-5 rounded-lg lg:w-1/2"
+          className="mt-5 w-4/5 self-center rounded-lg lg:w-1/2"
         />
         <div>
           <div className="flex justify-center">
@@ -132,11 +132,11 @@ export default function RobertsAdventure() {
               ▶
             </button>
           </div>
-          <div className="flex justify-center mx-auto mt-5 mb-10">
+          <div className="mx-auto mt-5 mb-10 flex justify-center">
             {carouselContent.map((item, index) => (
               <button
                 key={index}
-                className="w-3 h-3 mx-2 bg-black rounded-full"
+                className="mx-2 h-3 w-3 rounded-full bg-black"
                 onClick={() => setCarouselPosition(index)}
                 style={{
                   backgroundColor:
@@ -147,7 +147,7 @@ export default function RobertsAdventure() {
           </div>
         </div>
         <motion.a
-          className="flex items-center self-center px-4 py-2 mb-5 text-xl text-white bg-black border-2 border-black rounded-lg fill-white"
+          className="mb-5 flex items-center self-center rounded-lg border-2 border-black bg-black fill-white px-4 py-2 text-xl text-white"
           whileHover={{
             scale: 1.02,
             color: "#000000",
@@ -171,7 +171,7 @@ export default function RobertsAdventure() {
                 src={item.url?.src}
                 alt={item.desc}
                 width={"55vw"}
-                className="p-2 border-2 rounded-full border-purple"
+                className="rounded-full border-2 border-purple p-2"
               />
               <p className="whitespace-nowrap lg:text-[1.4vh]">{item.desc}</p>
             </div>
@@ -181,7 +181,7 @@ export default function RobertsAdventure() {
           style={{
             maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
           }}
-          className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
+          className="mx-auto mb-5 border-y-2 border-purple py-5 text-justify md:text-lg "
         >
           <b>{t("robert.text.firstPart.title")}</b>
           <br />
@@ -201,7 +201,7 @@ export default function RobertsAdventure() {
           {t("robert.text.thirdPart.text")}
           <br />
           <a
-            className="underline cursor-pointer underline-offset-4"
+            className="cursor-pointer underline underline-offset-4"
             href="https://drive.google.com/file/d/1gQTPh11cIBeEMjgDHGm7QHcjfTvRLhJQ/view?usp=share_link"
             target="_blank"
             rel="noreferrer"
