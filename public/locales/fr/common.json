@@ -1,7 +1,129 @@
 {
     "welcome": {
-        "subtitle": "",
-        "cv": "",
-        "workBtn": "Contactez-moi !"
+        "subtitleFirstPart": "Je suis un développeur",
+        "subtitlepurpletext": "freelance",
+        "subtitleLastPart": "de Strasbourg.",
+        "cv": "Télécharger mon CV",
+        "workBtn": "Travaillons ensemble !"
+    },
+    "ability": {
+        "title": "Spécialités",
+        "subtitle": "Dans le passé, j'ai développé une variété d'applications, mais j'ai depuis choisi de me concentrer sur la création d'applications web et mobiles.",
+        "design": {
+            "title": "Design produit",
+            "text": "Je vous aiderai à concevoir un site web ou une application mobile magnifique et impeccable du début à la fin, y compris la conceptualisation, le wireframing, le prototypage et la finalisation du design."
+        },
+        "web": {
+            "title": "Développement web",
+            "text": "Que je conçoive votre site web ou que vous veniez avec votre propre design, je construis des sites web entièrement réactifs qui s'adaptent à la fois aux ordinateurs de bureau et aux appareils mobiles."
+        },
+        "mobile": {
+            "title": "Développement mobile",
+            "text": "Si vos idées vont bien au-delà du web, je peux également développer des applications mobiles entièrement fonctionnelles pour Android et iOS, avec les implémentations côté serveur."
+        }
+    },
+    "skills": {
+        "title": "Compétences"
+    },
+    "myWork": {
+        "titleFirstPart": "Jetez un coup d'œil à",
+        "titleSecondPart": "mes travaux récents",
+        "subtitleFirstPart": "De l'école aux projets personnels,",
+        "subtitleSecondPart": "en passant par mon année de travail en entreprise.",
+        "details": "Détail",
+        "cloudmate": {
+            "title": "CloudMate",
+            "desc": "Un outil en ligne pour aider les revendeurs de chaussures de sport, principalement grâce à l'automatisation des paiements par PayPal."
+        },
+        "ckoya": {
+            "title": "C-Koya Tech",
+            "desc": "Mon travail pour C-Koya Tech en tant que développeur Web et mobile fullstack."
+        },
+        "robert": {
+            "title": "Robert's Adventure",
+            "desc": "Un jeu sérieux visant à être amusant créé pour un projet scolaire avec Unity."
+        }
+    },
+    "about": {
+        "title": "À propos de moi",
+        "introFirstPart": "Je suis un développeur diplômé en informatique qui construit des applications depuis 2019.",
+        "introSecondPart": "Grâce à mon expertise en matière d'accessibilité, de performance et de convivialité, je cherche à créer des solutions uniques sans compromettre la fonctionnalité.",
+        "sneakers": {
+            "firstPart": "Depuis 2 ans, la revente de sneakers me permet d'allier passion et source de revenu, ce qui en fait une activité extrêmement enrichissante sur tous les plans.",
+            "secondPart": "En cherchant les chaussures les plus rares et les plus demandées, j'ai appris à connaître le marché et à trouver des opportunités de profit là où d'autres ne voient que de simples chaussures.",
+            "thirdPart": "J'ai créé ma propre entreprise début 2022 et ai pu réaliser mon rêve de travailler pour moi-même. Je suis désormais en mesure de gérer ma propre entreprise, de prendre mes propres décisions et de vivre de ma passion ! "
+        },
+        "skate": {
+            "firstPart": "Je suis passionné par le skateboard depuis 6 ans, c'est pour moi plus qu'un simple loisir, c'est une activité qui me permet de me défouler, de libérer mon esprit et de me concentrer sur le moment présent.",
+            "secondPart": "Grâce à cette passion, j'ai appris à être persévérant, créatif et à avoir confiance en moi-même. Le skateboard m'a appris à me dépasser et à relever des défis que je n'aurais jamais cru possible."
+        }
+    },
+    "contact": {
+        "title": "Envoyez moi un message !",
+        "subtitleFirstPart": "Une question ou une proposition, ou simplement pour",
+        "subtitleSecondPart": "dire bonjour ? N'hésitez pas.",
+        "form": {
+            "name": {
+                "label": "Nom",
+                "placeholder": "Entrez votre nom"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Enter votre email"
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Entrez votre message"
+            },
+            "sendBtn": "ENVOYER"
+        }
+    },
+    "ckoya": {
+        "info": "Désolé pour les captures d'écran de mauvaise qualité, je n'ai malheureusement plus accès à ces projets.",
+        "gobackBtn": "Retour",
+        "screenshotsCaption": {
+            "calendarPlanning": "Calendrier pour gérer l'installation des cottages et les absences des employés",
+            "poseEventEdit": "Modalité de création d'un événement d'installation",
+            "eventEdit": "Modalité de création de l'événement d'absence",
+            "chantierDetails": "Page des détails du projet",
+            "listing": "Listing typique",
+            "editListing": "Formulaire (Symfony) typique d'édition d'un listing",
+            "holidayManagement": "Calendrier de gestion des vacances",
+            "clockingIn": "Page de gestion du pointage d'un employé de C-Koya Tech",
+            "totalClockingIn": "Pointage hebdomadaire total des employés de C-Koya Tech sur différents projets",
+            "mobileAll": "Écrans mobiles pour l'entrée, la sortie et le retrait de palettes dans un entrepôt"
+        },
+        "text": {
+            "firstPart": "Pendant une année chez C-Koya Tech, j'ai eu l'opportunité de travailler sur le développement d'applications complexes pour aider les entreprises à accélérer leur transformation digitale. Dans ce contexte, nous avons conçu plusieurs applications destinées à un usage interne dans les entreprises. Ces applications ne sont donc pas accessibles au public.",
+            "secondPart": "En grande majorité, nous avons développé des ERP (Enterprise Resource Planning) sous forme d'applications web. Selon les besoins de nos clients, nous avons également développé des versions mobiles de ces applications. Les fonctionnalités proposées étaient très variées et personnalisées pour chaque entreprise. Les applications web permettaient par exemple la gestion de stocks, de la facturation, du temps de travail, tandis que les applications mobiles offraient une plus grande flexibilité pour l'accès à l'information en temps réel.",
+            "thirdPart": "Toutes les applications contenaient toutes plusieurs listings (listes triables et filtrables sur chacune de leurs colonnes), ainsi que des modules plus spécifiques tels que des outils de planification pour organiser l'utilisation de machines, des tableaux de gestion des congés... Ces fonctionnalités ont été développées pour aider les entreprises à mieux organiser leur travail, à gagner en efficacité et à maximiser leur productivité."
+        }
+    },
+    "robert": {
+        "gobackBtn": "Retour",
+        "screenshotsCaption": {
+            "game1": "Capture d'écran du jeu",
+            "game2": "Capture d'écran du jeu",
+            "game3": "Capture d'écran du jeu",
+            "menu": "Menu d'accueil",
+            "levelSelection": "Menu de sélection des niveaux",
+            "questions": "Question pour obtenir une vie supplémentaire"
+        },
+        "text": {
+            "firstPart": {
+                "title": "Qu'est-ce que \"Robert's Adventure\" ?",
+                "text": "L'Aventure de Robert est un serious game gratuit que nous avons développé avec deux autres étudiants durant l'année 2020/2021 à l'Institut Universitaire de Technologie (IUT) Robert Schuman."
+            },
+            "secondPart": {
+                "title": "Aperçu du jeu :",
+                "text": "Le jeu est basé sur le rythme, vous contrôlez un petit personnage qui doit se frayer un chemin à travers des pièges mortels à l'aide d'un grappin. Le jeu est divisé en niveaux, qui peuvent être modifiés à la discrétion du joueur afin de tester ce qui caractérise le \"flow\" et le sentiment d'efficacité personnelle. Le jeu propose également un mode sans fin dans lequel l'objectif du joueur est d'aller le plus loin possible avec une difficulté croissante.",
+                "text2": "L'objectif principal est d'atteindre la fin du niveau en évitant les obstacles et les projectiles à l'aide du grappin, qui permet au joueur de s'accrocher aux surfaces et de gagner en vitesse. Le joueur perd lorsqu'il entre en collision avec un obstacle. Il est également possible d'obtenir des bonus tout au long du jeu qui permettent de rester en vie plus longtemps. Pour aider le joueur à comprendre les différents principes en jeu, il peut cocher ou décocher des cases avant de commencer le jeu afin d'activer ou de désactiver certaines fonctionnalités qui mettent en avant les principes de \"flow\" et d'auto-efficacité."
+            },
+            "thirdPart": {
+                "title": "N'hésitez pas à essayer le jeu, il est très amusant !",
+                "text": "Extrayez l'archive ZIP, exécutez le fichier .exe et profitez 😄",
+                "downloadLink": "Télécharger"
+            }
+        }
     }
 }
