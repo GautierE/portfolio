@@ -25,8 +25,10 @@ import chromeLogo from "../../public/skills/chrome_logo.svg";
 import webscrappingIcon from "../../public/skills/webscrapping_icon.svg";
 import oauthLogo from "../../public/skills/oauth_logo.svg";
 import apiIcon from "../../public/skills/api_icon.svg";
+import { useTranslation } from "next-i18next";
 
 export default function Skills() {
+  const { t } = useTranslation("common");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
@@ -126,15 +128,15 @@ export default function Skills() {
   };
 
   return (
-    <div className="xl:bg-purple-white sticky flex h-screen flex-col items-center justify-center bg-purple tall:top-0">
+    <div className="sticky flex flex-col items-center justify-center h-screen xl:bg-purple-white bg-purple tall:top-0">
       <motion.h2
-        className="left-10 top-5 mb-5 ml-5 mr-0 select-none self-start font-title text-4xl text-white xl:ml-0 xl:mr-10 xl:self-end xl:text-6xl xl:font-bold xl:text-black"
+        className="self-start mb-5 ml-5 mr-0 text-4xl text-white select-none left-10 top-5 font-title xl:ml-0 xl:mr-10 xl:self-end xl:text-6xl xl:font-bold xl:text-black"
         variants={animateText}
         initial="hidden"
         animate={controls}
         ref={ref}
       >
-        Skills
+        {t("skills.title")}
       </motion.h2>
       <div className="flex h-[90%] w-[90%] flex-col justify-evenly overflow-x-hidden rounded-md bg-white px-2 shadow md:h-4/5 xl:top-[17%] xl:w-3/4 xl:justify-evenly xl:p-5">
         <div>
@@ -187,7 +189,7 @@ export default function Skills() {
                   src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
-                  className="rounded-full border-2 border-purple p-2"
+                  className="p-2 border-2 rounded-full border-purple"
                 />
                 <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </motion.div>
@@ -237,7 +239,7 @@ export default function Skills() {
                   src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
-                  className="rounded-full border-2 border-purple p-2"
+                  className="p-2 border-2 rounded-full border-purple"
                 />
                 <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </div>
@@ -287,7 +289,7 @@ export default function Skills() {
                   src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
-                  className="rounded-full border-2 border-purple p-2"
+                  className="p-2 border-2 rounded-full border-purple"
                 />
                 <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </div>

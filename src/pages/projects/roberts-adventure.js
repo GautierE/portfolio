@@ -13,8 +13,12 @@ import csharpLogo from "../../../public/projects/robert/csharp_logo.svg";
 import unityLogo from "../../../public/projects/robert/unity_logo.svg";
 import gitLogo from "../../../public/skills/git_logo.svg";
 import agileIcon from "../../../public/skills/agile_icon.svg";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function RobertsAdventure() {
+  const { t } = useTranslation("common");
+
   const technoLogos = [
     { url: csharpLogo, desc: "C#" },
     { url: unityLogo, desc: "Unity" },
@@ -23,34 +27,34 @@ export default function RobertsAdventure() {
   ];
   const carouselContent = [
     {
-      caption: "Game screenshot",
+      caption: t("robert.screenshotsCaption.game1"),
       imageUrl: game1,
-      imageAlt: "Game screenshot",
+      imageAlt: t("robert.screenshotsCaption.game1"),
     },
     {
-      caption: "Game screenshot",
+      caption: t("robert.screenshotsCaption.game2"),
       imageUrl: game2,
-      imageAlt: "Game screenshot",
+      imageAlt: t("robert.screenshotsCaption.game2"),
     },
     {
-      caption: "Game screenshot",
+      caption: t("robert.screenshotsCaption.game3"),
       imageUrl: game3,
-      imageAlt: "Game screenshot",
+      imageAlt: t("robert.screenshotsCaption.game3"),
     },
     {
-      caption: "Home menu",
+      caption: t("robert.screenshotsCaption.menu"),
       imageUrl: menu,
-      imageAlt: "Home menu",
+      imageAlt: t("robert.screenshotsCaption.menu"),
     },
     {
-      caption: "Level selection menu",
+      caption: t("robert.screenshotsCaption.levelSelection"),
       imageUrl: levelSelection,
-      imageAlt: "Level selection menu",
+      imageAlt: t("robert.screenshotsCaption.levelSelection"),
     },
     {
-      caption: "Question to get an extra life",
+      caption: t("robert.screenshotsCaption.questions"),
       imageUrl: questions,
-      imageAlt: "Question to get an extra life",
+      imageAlt: t("robert.screenshotsCaption.questions"),
     },
   ];
 
@@ -93,7 +97,7 @@ export default function RobertsAdventure() {
         }}
       >
         <BackArrow width={35} height={35} />
-        <span className="md:mr-2 md:font-bold">Go back !</span>
+        <span className="md:mr-2 md:font-bold">{t("robert.gobackBtn")}</span>
       </motion.button>
       <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
         <Image
@@ -179,38 +183,22 @@ export default function RobertsAdventure() {
           }}
           className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
         >
-          <b>What is &quot;Robert&apos;s Adventure&quot; ?</b>
+          <b>{t("robert.text.firstPart.title")}</b>
           <br />
-          Robert&apos;s Adventure is a free serious game that we with two other
-          students developed during the year 2020/2021 at the Robert Schuman
-          Institute of Technology (IUT).
+          {t("robert.text.firstPart.text")}
           <br />
           <br />
-          <b>Game overview:</b>
+          <b>{t("robert.text.secondPart.title")}</b>
           <br />
-          The game is based on rhythm, you control a small character who must
-          navigate through deadly traps using a grappling hook. The game is
-          divided into levels, which can be modified at the player&apos;s
-          discretion in order to test what characterizes &quot;flow&quot; and
-          the feeling of self-efficacy. The game also offers an endless mode in
-          which the player&apos;s objective is to go as far as possible with
-          increasing difficulty.
+          {t("robert.text.secondPart.text")}
           <br />
           <br />
-          The main goal is to reach the end of the level by dodging obstacles
-          and projectiles using the grappling hook, which allows the player to
-          cling to surfaces and gain speed. The player loses when they collide
-          with an obstacle. It is also possible to obtain bonuses throughout the
-          game that allow the player to stay alive longer. To help the player
-          understand the different principles involved, they can check or
-          uncheck checkboxes before starting the game to enable or disable
-          certain features that highlight the principles of &quot;flow&quot; and
-          self-efficacy.
+          {t("robert.text.secondPart.text2")}
           <br />
           <br />
-          <b>Do not hesitate to try the game it is quite fun to play ! </b>
+          <b>{t("robert.text.thirdPart.title")}</b>
           <br />
-          Extract the ZIP archive, run the .exe file, enjoy😄
+          {t("robert.text.thirdPart.text")}
           <br />
           <a
             className="underline cursor-pointer underline-offset-4"
@@ -218,7 +206,7 @@ export default function RobertsAdventure() {
             target="_blank"
             rel="noreferrer"
           >
-            Download
+            {t("robert.text.thirdPart.downloadLink")}
           </a>
         </div>
       </div>
@@ -282,3 +270,12 @@ const BackArrow = ({ height, width }) => (
     />
   </svg>
 );
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+      // Will be passed to the page component as props
+    },
+  };
+}

@@ -26,8 +26,11 @@ import doctrineLogo from "../../../public/skills/doctrine_logo.svg";
 import mysqlLogo from "../../../public/skills/mysql_logo.svg";
 import gitLogo from "../../../public/skills/git_logo.svg";
 import apiIcon from "../../../public/skills/api_icon.svg";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export default function RobertsAdventure() {
+  const { t } = useTranslation("common");
   const technoLogos = [
     { url: htmlLogo, desc: "HTML" },
     { url: cssLogo, desc: "CSS" },
@@ -47,60 +50,54 @@ export default function RobertsAdventure() {
 
   const carouselContent = [
     {
-      caption:
-        "Calendar to manage cottages installation and employees absences",
+      caption: t("ckoya.screenshotsCaption.calendarPlanning"),
       imageUrl: calendarPlanning,
-      imageAlt:
-        "Calendar to manage cottages installation and employees absences",
+      imageAlt: t("ckoya.screenshotsCaption.calendarPlanning"),
     },
     {
-      caption: "Installation event creation modal",
+      caption: t("ckoya.screenshotsCaption.poseEventEdit"),
       imageUrl: poseEventEdit,
-      imageAlt: "Installation event creation modal",
+      imageAlt: t("ckoya.screenshotsCaption.poseEventEdit"),
     },
     {
-      caption: "Absence event creation modal",
+      caption: t("ckoya.screenshotsCaption.eventEdit"),
       imageUrl: eventEdit,
-      imageAlt: "Absence event creation modal",
+      imageAlt: t("ckoya.screenshotsCaption.eventEdit"),
     },
     {
-      caption: "Project details page",
+      caption: t("ckoya.screenshotsCaption.chantierDetails"),
       imageUrl: chantierDetails,
-      imageAlt: "Project details page",
+      imageAlt: t("ckoya.screenshotsCaption.chantierDetails"),
     },
     {
-      caption: "Typical listing",
+      caption: t("ckoya.screenshotsCaption.listing"),
       imageUrl: listing,
-      imageAlt: "Typical listing",
+      imageAlt: t("ckoya.screenshotsCaption.listing"),
     },
     {
-      caption: "Typical edit listing (Symfony) form",
+      caption: t("ckoya.screenshotsCaption.editListing"),
       imageUrl: editListing,
-      imageAlt: "Typical edit listing (Symfony) form",
+      imageAlt: t("ckoya.screenshotsCaption.editListing"),
     },
     {
-      caption: "Holiday management calendar",
+      caption: t("ckoya.screenshotsCaption.holidayManagement"),
       imageUrl: holidayManagement,
-      imageAlt: "Holiday management calendar",
+      imageAlt: t("ckoya.screenshotsCaption.holidayManagement"),
     },
     {
-      caption: "C-Koya Tech employee clocking in management page",
+      caption: t("ckoya.screenshotsCaption.clockingIn"),
       imageUrl: clockingIn,
-      imageAlt: "C-Koya Tech employee clocking in management page",
+      imageAlt: t("ckoya.screenshotsCaption.clockingIn"),
     },
     {
-      caption:
-        "Weekly total clocking of C-Koya Tech employees on different projects",
+      caption: t("ckoya.screenshotsCaption.totalClockingIn"),
       imageUrl: totalClockingIn,
-      imageAlt:
-        "Weekly total clocking of C-Koya Tech employees on different projects",
+      imageAlt: t("ckoya.screenshotsCaption.totalClockingIn"),
     },
     {
-      caption:
-        "Mobile screens for entering/moving/removing pallets in a warehouse",
+      caption: t("ckoya.screenshotsCaption.mobileAll"),
       imageUrl: mobileAll,
-      imageAlt:
-        "Mobile screens for entering/moving/removing pallets in a warehouse",
+      imageAlt: t("ckoya.screenshotsCaption.mobileAll"),
     },
   ];
 
@@ -134,7 +131,7 @@ export default function RobertsAdventure() {
             ? history.back()
             : (window.location.href = "/")
         }
-        className="z-10 flex items-center self-center w-auto p-2 mx-auto mt-10 text-xl border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
+        className="top-10 left-10 z-10 mx-auto mt-10 flex w-auto items-center justify-evenly self-center rounded-lg border-2 border-black stroke-black p-2 text-xl shadow-lg lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
         whileHover={{
           scale: 1.02,
           color: "#592d8c",
@@ -143,19 +140,16 @@ export default function RobertsAdventure() {
         }}
       >
         <BackArrow width={35} height={35} />
-        <span className="md:mr-2 md:font-bold">Go back !</span>
+        <span className="md:mr-2 md:font-bold">{t("ckoya.gobackBtn")}</span>
       </motion.button>
       <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
         <div className="flex flex-col items-center justify-center md:flex-row">
-          <h2 className="mt-5 text-3xl font-bold text-center text-black select-none font-title md:mt-0 md:text-6xl">
+          <h2 className="mt-5 select-none text-center font-title text-3xl font-bold text-black md:mt-0 md:text-6xl">
             C-Koya Tech
           </h2>
           <Image src={cKoyaLogo} alt={"C-Koya logo"} priority />
         </div>
-        <p className="text-center md:text-lg">
-          Sorry for the low quality screenshots, I unfortunately don&apos;t have
-          access to these projects anymore.
-        </p>
+        <p className="text-center md:text-lg">{t("ckoya.info")}</p>
         <div>
           <div className="flex justify-center">
             <button onClick={moveToPrevious} className="mr-5">
@@ -183,11 +177,11 @@ export default function RobertsAdventure() {
               ▶
             </button>
           </div>
-          <div className="flex justify-center mx-auto mt-5 mb-10">
+          <div className="mx-auto mt-5 mb-10 flex justify-center">
             {carouselContent.map((item, index) => (
               <button
                 key={index}
-                className="w-3 h-3 mx-2 bg-black rounded-full"
+                className="mx-2 h-3 w-3 rounded-full bg-black"
                 onClick={() => setCarouselPosition(index)}
                 style={{
                   backgroundColor:
@@ -197,7 +191,7 @@ export default function RobertsAdventure() {
             ))}
           </div>
         </div>
-        <div className="flex flex-wrap items-center justify-center py-5 mx-5 bg-white border-t-2 border-purple md:mx-auto">
+        <div className="mx-5 flex flex-wrap items-center justify-center border-t-2 border-purple bg-white py-5 md:mx-auto">
           {technoLogos.map((item, i) => (
             <div
               key={i}
@@ -207,7 +201,7 @@ export default function RobertsAdventure() {
                 src={item.url?.src}
                 alt={item.desc}
                 width={"55vw"}
-                className="p-2 border-2 rounded-full border-purple"
+                className="rounded-full border-2 border-purple p-2"
               />
               <p className="whitespace-nowrap lg:text-[1.3vh]">{item.desc}</p>
             </div>
@@ -217,7 +211,7 @@ export default function RobertsAdventure() {
           style={{
             maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
           }}
-          className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
+          className="mx-auto mb-5 border-y-2 border-purple py-5 text-justify md:text-lg "
         >
           {/* French
         Pendant une année chez C-Koya Tech, j'ai eu l'opportunité
@@ -241,32 +235,11 @@ export default function RobertsAdventure() {
         que des outils de planification pour organiser l'utilisation de machines, des tableaux de gestion des congés...
         Ces fonctionnalités ont été développées pour aider les entreprises à mieux organiser leur travail, à
         gagner en efficacité et à maximiser leur productivité. */}
-          <p>
-            During a year at C-Koya Tech, I had the opportunity to work on the
-            development of complex applications to help companies through
-            digital transformation. In this context, we designed several
-            applications for internal use within companies, so these
-            applications are not accessible by the public.
-          </p>
+          <p>{t("ckoya.text.firstPart")}</p>
           <br />
-          <p>
-            Primarily, we developed ERP (Enterprise Resource Planning) in the
-            form of web applications. Depending on our clients&apos; needs, we
-            also developed mobile versions of these applications. The proposed
-            features were highly varied and personalized for each company. Web
-            applications, for example, allowed for stock management, invoicing,
-            time tracking... while mobile applications offered greater
-            flexibility for real-time access to information.
-          </p>
+          <p>{t("ckoya.text.secondPart")}</p>
           <br />
-          <p>
-            All of the applications were a lot based on multiple listings that
-            could be sorted and filtered on each column, as well as more
-            specific modules such as planning tools to organize the use of
-            machines, leave management tables... These features were developed
-            to help companies better organize their work, increase efficiency,
-            and maximize productivity.
-          </p>
+          <p>{t("ckoya.text.thirdPart")}</p>
         </div>
       </div>
     </>
@@ -316,3 +289,12 @@ const BackArrow = ({ height, width }) => (
     />
   </svg>
 );
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+      // Will be passed to the page component as props
+    },
+  };
+}

@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import figmaLogo from "../../public/ability/figma_logo.svg";
 import codeLogo from "../../public/ability/code_logo.svg";
 import reactLogo from "../../public/ability/react_native_logo.svg";
+import { useTranslation } from "next-i18next";
 
 export default function Ability() {
+  const { t } = useTranslation("common");
+
   const animateText = {
     hidden: { y: 30, opacity: 0 },
     visible: ({ delay }) => {
@@ -55,7 +58,7 @@ export default function Ability() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            Specialities
+            {t("ability.title")}
           </motion.h2>
           <motion.p
             className="md:text-xl"
@@ -65,8 +68,7 @@ export default function Ability() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            In the past, I have built a variety of applications, but I have
-            since chosen to focus on creating web and mobile apps.
+            {t("ability.subtitle")}
           </motion.p>
         </div>
         <div className="flex h-full w-[90%] flex-col justify-evenly lg:h-auto lg:w-full lg:flex-row">
@@ -82,13 +84,11 @@ export default function Ability() {
               </div>
 
               <p className="ml-2 text-xl lg:ml-0 lg:mt-2 lg:text-2xl">
-                Product design
+              {t("ability.design.title")}
               </p>
             </div>
             <p className="mt-2 text-xs md:text-lg lg:mt-5">
-              I will help you design a beautiful and flawless website or mobile
-              app from start to finish, including conceptualization,
-              wireframing, prototyping, and finalizing the design.
+            {t("ability.design.text")}
             </p>
           </div>
           <motion.div
@@ -109,13 +109,12 @@ export default function Ability() {
                 />
               </div>
               <p className="ml-2 text-xl lg:ml-0 lg:mt-2 lg:text-2xl">
-                Web development
+              {t("ability.web.title")}
               </p>
             </div>
             <p className="mt-2 text-xs md:text-lg lg:mt-5">
-              Whether I design your website, or you come with your own design, I
-              build fully responsive websites that adapt both on desktop and
-              mobile devices.
+            {t("ability.web.text")}
+
             </p>
           </motion.div>
           <motion.div
@@ -136,13 +135,11 @@ export default function Ability() {
                 />
               </div>
               <p className="ml-2 text-xl lg:ml-0 lg:mt-2 lg:text-2xl">
-                Mobile development
+              {t("ability.mobile.title")}
               </p>
             </div>
             <p className="mt-2 text-xs md:text-lg lg:mt-5">
-              If your ideas go well beyond the web, I can also develop fully
-              functional mobile applications for Android and iOS, complete with
-              the server-side implementations.
+            {t("ability.mobile.text")}
             </p>
           </motion.div>
         </div>

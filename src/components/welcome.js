@@ -5,8 +5,11 @@ import profilePicture from "../../public/welcome/profile_picture.png";
 import githubLogo from "../../public/welcome/github_logo.svg";
 import linkedinLogo from "../../public/welcome/linkedin_logo.svg";
 import emailIcon from "../../public/welcome/email_icon.svg";
+import { useTranslation } from "next-i18next";
 
 export default function Welcome() {
+  const { t } = useTranslation("common");
+
   const animateText = {
     hidden: { y: 30, opacity: 0 },
     visible: ({ delay }) => {
@@ -39,7 +42,7 @@ export default function Welcome() {
           })
         }
       >
-        <span className="md:mr-2 md:font-bold">Let&apos;s work together !</span>
+        <span className="md:mr-2 md:font-bold">{t("welcome.workBtn")}</span>
         <ChatIcon width={35} height={35} />
       </motion.button>
       <div className="mx-auto flex h-1/4 w-[90%] items-center md:hidden md:w-full lg:mt-32">
@@ -63,9 +66,12 @@ export default function Welcome() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            I&apos;m an independent{" "}
-            <span className="text-purple">developer</span> from <br />
-            Strasbourg, France.
+            {t("welcome.subtitleFirstPart")}
+            <span className="text-purple">
+              {t("welcome.subtitlepurpletext")}
+            </span>
+            <br />
+            {t("welcome.subtitleLastPart")}
           </motion.p>
         </div>
       </div>
@@ -99,9 +105,10 @@ export default function Welcome() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          I&apos;m an independent <span className="text-purple">developer</span>{" "}
-          from <br />
-          Strasbourg, France.
+          {t("welcome.subtitleFirstPart")}
+          <span className="text-purple">{t("welcome.subtitlepurpletext")}</span>
+          <br />
+          {t("welcome.subtitleLastPart")}
         </motion.p>
         <motion.button
           className="hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:left-[-325px] md:top-64 md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px] lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl 2xl:left-[-495px] xxl:top-72 xxl:left-[-655px]"
@@ -112,7 +119,7 @@ export default function Welcome() {
             fill: "#592d8c",
           }}
         >
-          <span className="mr-5">Download CV</span>
+          <span className="mr-5">{t("welcome.cv")}</span>
           <CvIcon width={30} height={30} />
         </motion.button>
       </div>
@@ -125,7 +132,7 @@ export default function Welcome() {
           fill: "#592d8c",
         }}
       >
-        <span className="mr-5">Download CV</span>
+        <span className="mr-5">{t("welcome.cv")}</span>
         <CvIcon width={30} height={30} />
       </motion.button>
       <div className="absolute bottom-0 flex justify-center left-10 md:bottom-10 md:justify-start">

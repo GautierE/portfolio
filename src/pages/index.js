@@ -6,6 +6,7 @@ import About from "@/components/about";
 import Ability from "@/components/ability";
 import { ToastContainer, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
   console.log("    ▓▓▓▓   ▓▓▓▓▓▓▓▓▓▓▓   ▓​▓▓▓");
@@ -67,4 +68,13 @@ export default function Home() {
       <Contact />
     </div>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
+      // Will be passed to the page component as props
+    },
+  };
 }

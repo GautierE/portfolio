@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
+import { useTranslation } from "next-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation("common");
+
   const [formContent, setFormContent] = useState({
     name: "",
     email: "",
@@ -65,7 +68,7 @@ export default function Contact() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            Send me a message !
+            {t("contact.title")}
           </motion.h2>
           <motion.p
             className="text-xl md:text-2xl"
@@ -75,8 +78,9 @@ export default function Contact() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            Got a question or proposal, or just want <br /> to say hello ? Go
-            ahead.
+            {t("contact.subtitleFirstPart")}
+            <br />
+            {t("contact.subtitleSecondPart")}
           </motion.p>
         </div>
         <div className="mb-10 flex w-11/12 max-w-[845px] flex-col items-center justify-center md:mb-20 md:w-8/12">
@@ -90,12 +94,12 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <label htmlFor="name" className="ml-2">
-                Name
+                {t("contact.form.name.label")}
               </label>
               <input
                 className="p-4 text-lg bg-transparent border-b border-purple"
                 id="name"
-                placeholder="Enter your name"
+                placeholder={t("contact.form.name.placeholder")}
                 type="text"
                 required
                 value={formContent.name}
@@ -115,12 +119,12 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <label htmlFor="email" className="ml-2">
-                Email
+                {t("contact.form.email.label")}
               </label>
               <input
                 className="p-4 text-lg bg-transparent border-b border-purple "
                 id="email"
-                placeholder="Enter your email"
+                placeholder={t("contact.form.email.placeholder")}
                 type="email"
                 value={formContent.email}
                 required
@@ -141,12 +145,12 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <label htmlFor="message" className="ml-2">
-              Message
+              {t("contact.form.message.label")}
             </label>
             <textarea
               className="p-4 text-lg bg-transparent border-b resize-none h-28 border-purple "
               id="message"
-              placeholder="Enter your message"
+              placeholder={t("contact.form.message.placeholder")}
               type="text"
               required
               minLength={30}
@@ -174,7 +178,7 @@ export default function Contact() {
           viewport={{ once: true }}
           onClick={handleSubmit}
         >
-          <span className="mr-5 font-bold">SEND</span>
+          <span className="mr-5 font-bold">{t("contact.form.sendBtn")}</span>
           <svg
             width="52"
             height="22"

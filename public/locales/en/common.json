@@ -1,0 +1,129 @@
+{
+    "welcome": {
+        "subtitleFirstPart": "I'm an independent ",
+        "subtitlepurpletext": "developer",
+        "subtitleLastPart": "from Strasbourg, France.",
+        "cv": "Download CV",
+        "workBtn": "Let's work together !"
+    },
+    "ability": {
+        "title": "Specialities",
+        "subtitle": "In the past, I have built a variety of applications, but I have since chosen to focus on creating web and mobile apps.",
+        "design": {
+            "title": "Product design",
+            "text": "I will help you design a beautiful and flawless website or mobile app from start to finish, including conceptualization, wireframing, prototyping, and finalizing the design."
+        },
+        "web": {
+            "title": "Web development",
+            "text": "Whether I design your website, or you come with your own design, I build fully responsive websites that adapt both on desktop and mobile devices."
+        },
+        "mobile": {
+            "title": "Mobile development",
+            "text": "If your ideas go well beyond the web, I can also develop fully functional mobile applications for Android and iOS, complete with the server-side implementations."
+        }
+    },
+    "skills": {
+        "title": "Skills"
+    },
+    "myWork": {
+        "titleFirstPart": "Take a look at my",
+        "titleSecondPart": "recent work",
+        "subtitleFirstPart": "From school to personal projects,",
+        "subtitleSecondPart": "through my one year work in a company.",
+        "details": "Details",
+        "cloudmate": {
+            "title": "CloudMate",
+            "desc": "A web-based tool to help sneaker resellers mainly through Paypal payment automation."
+        },
+        "ckoya": {
+            "title": "C-Koya Tech",
+            "desc": "My work for C-Koya Tech as a fullstack Web & mobile developer."
+        },
+        "robert": {
+            "title": "Robert's Adventure",
+            "desc": "A serious game aiming to be fun created for a school project using Unity."
+        }
+    },
+    "about": {
+        "title": "About me",
+        "introFirstPart": "I am a computer science graduate developer who has been building applications since 2019.",
+        "introSecondPart": "With my expertise in accessibility, performance, and usability, I aim to create unique solutions without compromising functionality.",
+        "sneakers": {
+            "firstPart": "For 2 years, reselling sneakers has allowed me to combine passion and income, making it an extremely rewarding activity in every aspect.",
+            "secondPart": "By seeking out the rarest and most in-demand shoes, I have learned to understand the market and find profitable opportunities where others only see shoes.",
+            "thirdPart": "I started my own business in early 2022 and was able to fulfill my dream of working for myself. I am now able to manage my own company, make my own decisions, and live off my passion!"
+        },
+        "skate": {
+            "firstPart": "I have been passionate about skateboarding for 6 years, and for me, it's more than just a hobby it's an activity that allows me to let loose, clear my mind, and focus on the current moment.",
+            "secondPart": "Through this passion, I have learned to be persistent, creative, and confident in myself. Skateboarding has taught me to push myself beyond my limits and to conquer challenges that I never thought were possible."
+        }
+    },
+    "contact": {
+        "title": "Send me a message !",
+        "subtitleFirstPart": "Got a question or proposal, or just want",
+        "subtitleSecondPart": "to say hello ? Go ahead.",
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Enter your name"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Enter your email"
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Enter your message"
+            },
+            "sendBtn": "SEND"
+        }
+    },
+    "ckoya": {
+        "info": "Sorry for the low quality screenshots, I unfortunately don't have access to these projects anymore.",
+        "gobackBtn": "Go back !",
+        "screenshotsCaption": {
+            "calendarPlanning": "Calendar to manage cottages installation and employees absences",
+            "poseEventEdit": "Installation event creation modal",
+            "eventEdit": "Absence event creation modal",
+            "chantierDetails": "Project details page",
+            "listing": "Typical listing",
+            "editListing": "Typical edit listing (Symfony) form",
+            "holidayManagement": "Holiday management calendar",
+            "clockingIn": "C-Koya Tech employee clocking in management page",
+            "totalClockingIn": "Weekly total clocking of C-Koya Tech employees on different projects",
+            "mobileAll": "Mobile screens for entering/moving/removing pallets in a warehouse"
+        },
+        "text": {
+            "firstPart": "During a year at C-Koya Tech, I had the opportunity to work on the development of complex applications to help companies through digital transformation. In this context, we designed several applications for internal use within companies, so these applications are not accessible by the public.",
+            "secondPart": "Primarily, we developed ERP (Enterprise Resource Planning) in the form of web applications. Depending on our clients' needs, we also developed mobile versions of these applications. The proposed features were highly varied and personalized for each company. Web applications, for example, allowed for stock management, invoicing, time tracking... while mobile applications offered greater flexibility for real-time access to information.",
+            "thirdPart": "All of the applications were a lot based on multiple listings that could be sorted and filtered on each column, as well as more specific modules such as planning tools to organize the use of machines, leave management tables... These features were developed to help companies better organize their work, increase efficiency, and maximize productivity."
+        }
+    },
+    "robert": {
+        "gobackBtn": "Go back !",
+        "screenshotsCaption": {
+            "game1": "Game screenshot",
+            "game2": "Game screenshot",
+            "game3": "Game screenshot",
+            "menu": "Home menu",
+            "levelSelection": "Level selection menu",
+            "questions": "Question to get an extra life"
+        },
+        "text": {
+            "firstPart": {
+                "title": "What is \"Robert's Adventure\" ?",
+                "text": "Robert's Adventure is a free serious game that we with two other students developed during the year 2020/2021 at the Robert Schuman Institute of Technology (IUT)."
+            },
+            "secondPart": {
+                "title": "Game overview :",
+                "text": "The game is based on rhythm, you control a small character who must navigate through deadly traps using a grappling hook. The game is divided into levels, which can be modified at the player's discretion in order to test what characterizes \"flow\" and the feeling of self-efficacy. The game also offers an endless mode in which the player's objective is to go as far as possible with increasing difficulty.",
+                "text2": "The main goal is to reach the end of the level by dodging obstacles and projectiles using the grappling hook, which allows the player to cling to surfaces and gain speed. The player loses when they collide with an obstacle. It is also possible to obtain bonuses throughout the game that allow the player to stay alive longer. To help the player understand the different principles involved, they can check or uncheck checkboxes before starting the game to enable or disable certain features that highlight the principles of \"flow\" and self-efficacy."
+            },
+            "thirdPart": {
+                "title": "Do not hesitate to try the game it is quite fun to play !",
+                "text": "Extract the ZIP archive, run the .exe file, enjoy😄",
+                "downloadLink": "Download"
+            }
+        }
+    }
+}

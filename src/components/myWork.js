@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import cloudMateLogo from "../../public/projects/cloudmate/cloudmate_logo.png";
 import cKoyaLogo from "../../public/projects/c_koya_tech/ckoya_logo.png";
 import robertLogo from "../../public/projects/robert/robert_logo.png";
-import portfolioLogo from "../../public/projects/portfolio_logo.png";
+import { useTranslation } from "next-i18next";
 
 export default function MyWork() {
+  const { t } = useTranslation("common");
   const animateText = {
     hidden: { y: 30, opacity: 0 },
     visible: ({ delay }) => {
@@ -24,25 +25,22 @@ export default function MyWork() {
 
   const projectsContent = [
     {
-      title: "Cloudmate",
-      description:
-        "A web-based tool to help sneaker resellers mainly through Paypal payment automation.",
+      title: t("myWork.cloudmate.title"),
+      description: t("myWork.cloudmate.desc"),
       imageUrl: cloudMateLogo,
       imageAlt: "Cloudmate logo",
       route: "cloudmate",
     },
     {
-      title: "C-Koya Tech",
-      description:
-        "My work for C-Koya Tech as a fullstack Web & mobile developer.",
+      title: t("myWork.ckoya.title"),
+      description: t("myWork.ckoya.desc"),
       imageUrl: cKoyaLogo,
       imageAlt: "C-Koya Tech logo",
       route: "c-koya-tech",
     },
     {
-      title: "Robert's Adventure",
-      description:
-        "A serious game aiming to be fun created for a school project using Unity.",
+      title: t("myWork.robert.title"),
+      description: t("myWork.robert.desc"),
       imageUrl: robertLogo,
       imageAlt: "Robert's adventure logo",
       route: "roberts-adventure",
@@ -68,7 +66,7 @@ export default function MyWork() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            Take a look at my <br /> recent work
+            {t("myWork.titleFirstPart")} <br /> {t("myWork.titleSecondPart")}
           </motion.h2>
           <motion.p
             className="mt-2 text-lg md:mt-5 md:text-xl"
@@ -78,8 +76,8 @@ export default function MyWork() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            From school to personal projects, <br />
-            through my one year work in a company.
+            {t("myWork.subtitleFirstPart")} <br />
+            {t("myWork.subtitleSecondPart")}
           </motion.p>
         </div>
         <div className="mx-auto mt-2 flex h-full max-w-[1800px] flex-col md:mt-5 md:flex-row md:flex-wrap md:justify-center">
@@ -100,6 +98,7 @@ export default function MyWork() {
 }
 
 const Project = ({ title, imageUrl, imageAlt, description, route }) => {
+  const { t } = useTranslation("common");
   const animateProjects = {
     hidden: { scale: 0 },
     visible: {
@@ -139,7 +138,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
                 href={`/projects/${route}`}
                 className="underline underline-offset-4 md:text-lg tiny:text-xs"
               >
-                Details
+                {t("myWork.details")}
               </a>
             )}
           </div>

@@ -3,8 +3,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import sneakerPicture from "../../public/about/sneakers2.png";
 import skatePicture from "../../public/about/skate.png";
+import { useTranslation } from "next-i18next";
 
 export default function About() {
+  const { t } = useTranslation("common");
   const animateText = {
     hidden: { y: 30, opacity: 0 },
     visible: ({ delay }) => {
@@ -32,7 +34,7 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            About me
+            {t("about.title")}
           </motion.h2>
           <motion.p
             className="max-w-[900px] pt-5 text-xl md:text-3xl"
@@ -42,11 +44,9 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            I am a computer science graduate developer who has been building
-            applications since 2019.
+            {t("about.introFirstPart")}
             <br />
-            With my expertise in accessibility, performance, and usability, I
-            aim to create unique solutions without compromising functionality.
+            {t("about.introSecondPart")}
           </motion.p>
         </div>
         <div className="flex flex-col items-center mt-10 md:mt-40 md:flex-row">
@@ -63,18 +63,13 @@ export default function About() {
             }}
             viewport={{ once: true }}
           >
-            For 2 years, reselling sneakers has allowed me to combine passion
-            and income, making it an extremely rewarding activity in every
-            aspect.
+            {t("about.sneakers.firstPart")}
             <br />
             <br />
-            By seeking out the rarest and most in-demand shoes, I have learned
-            to understand the market and find profitable opportunities where
-            others only see shoes.
+            {t("about.sneakers.secondPart")}
             <br />
-            <br />I started my own business in early 2022 and was able to
-            fulfill my dream of working for myself. I am now able to manage my
-            own company, make my own decisions, and live off my passion!
+            <br />
+            {t("about.sneakers.thirdPart")}
             {/* French translation
             Depuis 2 ans, la revente de sneakers me permet d&apos;allier passion
             et source de revenu, ce qui en fait une activité extrêmement
@@ -126,15 +121,10 @@ export default function About() {
             }}
             viewport={{ once: true }}
           >
-            I have been passionate about skateboarding for 6 years, and for me,
-            it&apos;s more than just a hobby it&apos;s an activity that allows
-            me to let loose, clear my mind, and focus on the current moment.
+            {t("about.skate.firstPart")}
             <br />
             <br />
-            Through this passion, I have learned to be persistent, creative, and
-            confident in myself. Skateboarding has taught me to push myself
-            beyond my limits and to conquer challenges that I never thought were
-            possible.
+            {t("about.skate.secondPart")}
             {/* French translation
             Je suis passionné par le skateboard depuis 6 ans, c&apos;est pour
             moi plus qu&apos;un simple loisir, c&apos;est une activité qui me
