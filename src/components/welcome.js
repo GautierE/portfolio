@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 export default function Welcome() {
   const router = useRouter();
   const { t } = useTranslation("common");
-  console.log(router);
+
   const animateText = {
     hidden: { y: 30, opacity: 0 },
     visible: ({ delay }) => {

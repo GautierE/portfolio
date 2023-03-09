@@ -12,10 +12,10 @@ export default function Contact() {
     message: "",
   });
   const animateText = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { x: 30, opacity: 0 },
     visible: ({ delay }) => {
       return {
-        y: 0,
+        x: 0,
         opacity: 1,
         transition: {
           delay,
@@ -88,15 +88,15 @@ export default function Contact() {
           </motion.p>
         </div>
         <div className="mb-10 flex w-11/12 max-w-[845px] flex-col items-center justify-center md:mb-20 md:w-8/12">
-          <div className="flex flex-col justify-around w-full mb-5 md:mb-20 md:flex-row">
-            <motion.div
-              className="flex flex-col md:mr-10 md:w-1/2"
-              custom={{ delay: 1 }}
-              variants={animateText}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
+          <motion.div
+            className="flex flex-col justify-around w-full mb-5 md:mb-20 md:flex-row"
+            custom={{ delay: 1 }}
+            variants={animateText}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="flex flex-col md:mr-10 md:w-1/2">
               <label htmlFor="name" className="ml-2">
                 {t("contact.form.name.label")}
               </label>
@@ -113,15 +113,8 @@ export default function Contact() {
                   })
                 }
               />
-            </motion.div>
-            <motion.div
-              className="flex flex-col mt-10 md:ml-10 md:mt-0 md:w-1/2"
-              custom={{ delay: 1 }}
-              variants={animateText}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
+            </div>
+            <div className="flex flex-col md:ml-10 md:w-1/2">
               <label htmlFor="email" className="ml-2">
                 {t("contact.form.email.label")}
               </label>
@@ -138,11 +131,11 @@ export default function Contact() {
                   })
                 }
               />
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
           <motion.div
             className="flex flex-col w-full"
-            custom={{ delay: 1.1 }}
+            custom={{ delay: 1.5 }}
             variants={animateText}
             initial="hidden"
             whileInView="visible"
@@ -175,7 +168,7 @@ export default function Contact() {
             color: "rgb(255, 255, 255)",
             stroke: "rgb(255, 255, 255)",
           }}
-          custom={{ delay: 1.2 }}
+          custom={{ delay: 1.7 }}
           variants={animateText}
           initial="hidden"
           whileInView="visible"
