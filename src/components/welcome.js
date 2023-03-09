@@ -66,7 +66,7 @@ export default function Welcome() {
             </span>
           </motion.h1>
           <motion.p
-            className="sticky mt-3 text-lg text-black md:mt-5 md:text-xl lg:text-3xl"
+            className="sticky mt-3 text-lg text-black md:mt-5 md:text-xl lg:text-3xl smallHeight:mt-0"
             custom={{ delay: 0.5 }}
             variants={animateText}
             initial="hidden"
@@ -96,7 +96,7 @@ export default function Welcome() {
         <motion.h1
           className={
             (router.locale === "fr" ? "welcome-title " : "") +
-            "z-10 hidden font-title text-5xl md:absolute md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] xxl:left-[-655px] xxl:text-8xl"
+            "z-10 hidden font-title text-5xl md:absolute md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] smallHeight:top-10 xxl:left-[-655px] xxl:text-8xl"
           }
           variants={animateText}
           custom={{ delay: 0 }}
@@ -117,13 +117,16 @@ export default function Welcome() {
           </span>
         </motion.h1>
         <motion.p
-          className="z-10 hidden text-lg text-black md:absolute md:left-[-325px] md:block md:text-xl lg:left-[-400px] lg:text-2xl xl:left-[-485px] xl:text-3xl 2xl:left-[-495px] xxl:left-[-655px]"
+          className={
+            (router.locale === "fr" ? "md:mt-24 smallHeight:mt-0 " : "") +
+            "z-10 hidden text-lg text-black md:absolute md:top-40 md:left-[-325px] md:block md:text-xl lg:left-[-400px] lg:text-2xl xl:left-[-485px] xl:text-3xl 2xl:left-[-495px] xxl:top-48 xxl:left-[-655px]"
+          }
           custom={{ delay: 0.5 }}
           variants={animateText}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          style={{ top: router.locale === "fr" ? "18rem" : "12rem" }}
+          // style={{ marginTop: router.locale === "fr" ? "6rem" : "0" }}
         >
           {t("welcome.subtitleFirstPart")}
           <span className="text-purple">{t("welcome.subtitlepurpletext")}</span>
@@ -131,14 +134,17 @@ export default function Welcome() {
           {t("welcome.subtitleLastPart")}
         </motion.p>
         <motion.button
-          className="hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:left-[-325px] md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px] lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl 2xl:left-[-495px] xxl:left-[-655px]"
+          className={
+            (router.locale === "fr" ? "md:mt-32 smallHeight:mt-0 " : "") +
+            "hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:top-[15rem] md:left-[-325px] md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px] lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl 2xl:left-[-495px] xxl:top-72 xxl:left-[-655px]"
+          }
           whileHover={{
             scale: 0.98,
             backgroundColor: "#f5f4fc",
             color: "#592d8c",
             fill: "#592d8c",
           }}
-          style={{ top: router.locale === "fr" ? "24rem" : "18rem" }}
+          // style={{ marginTop: router.locale === "fr" ? "8rem" : "0" }}
         >
           <span className="mr-5">{t("welcome.cv")}</span>
           <CvIcon width={30} height={30} />

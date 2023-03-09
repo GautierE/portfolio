@@ -11,14 +11,14 @@
     },
     "ability": {
         "title": "Spécialités",
-        "subtitle": "Dans le passé, j'ai développé tout type d'applications, mais j'ai depuis choisi de me concentrer sur la création d'applications web et mobiles.",
+        "subtitle": "Dans le passé, j'ai développé tout type d'applications, mais j'ai choisi de me concentrer sur la création d'applications web et mobiles.",
         "design": {
             "title": "Design produit",
             "text": "Je suis capable de concevoir un site web ou une application mobile du début à la fin, y compris la conceptualisation, le maquettage et la finalisation du design."
         },
         "web": {
             "title": "Développement web",
-            "text": "Que je conçoive le site web ou que vous ayez un design à respecter, je développe des sites web entièrement responsive qui s'adaptent à la fois aux ordinateurs et aux appareils mobiles."
+            "text": "Que je conçoive le site ou que vous ayez un design à respecter, je développe des sites web entièrement responsive qui s'adaptent à la fois aux ordinateurs et aux appareils mobiles."
         },
         "mobile": {
             "title": "Développement mobile",
@@ -27,7 +27,7 @@
     },
     "skills": {
         "title": "Compétences",
-        "skills.miscstext": "Divers"
+        "miscstext": "Divers"
     },
     "myWork": {
         "titleFirstPart": "",

@@ -17,6 +17,7 @@ module.exports = {
       },
       screens: {
         medium: { raw: "(min-width: 420px)" },
+        smallHeight: { raw: "(max-height: 570px)" },
         tall: { raw: "(min-height: 705px)" },
         xxl: { raw: "(min-width: 1750px)" },
         tiny: { raw: "(max-width: 376px)" },
