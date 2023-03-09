@@ -88,7 +88,7 @@ export default function RobertsAdventure() {
             ? history.back()
             : (window.location.href = "/")
         }
-        className="z-10 flex items-center self-center w-auto p-2 mx-auto mt-10 text-xl bg-white border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
+        className="top-10 left-10 z-10 mx-auto mt-10 flex w-auto items-center justify-evenly self-center rounded-lg border-2 border-black bg-white stroke-black p-2 text-xl shadow-lg lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
         whileHover={{
           scale: 0.98,
           color: "#592d8c",
@@ -103,7 +103,7 @@ export default function RobertsAdventure() {
         <Image
           src={cloudMateBanner}
           alt="CloudMate title"
-          className="self-center w-4/5 mt-5 rounded-lg lg:w-1/2"
+          className="mt-5 w-4/5 self-center rounded-lg lg:w-1/2"
         />
         <div>
           <div className="flex justify-center">
@@ -132,11 +132,11 @@ export default function RobertsAdventure() {
               ▶
             </button>
           </div>
-          <div className="flex justify-center mx-auto mt-5 mb-10">
+          <div className="mx-auto mt-5 mb-10 flex justify-center">
             {carouselContent.map((item, index) => (
               <button
                 key={index}
-                className="w-3 h-3 mx-2 bg-black rounded-full"
+                className="mx-2 h-3 w-3 rounded-full bg-black"
                 onClick={() => setCarouselPosition(index)}
                 style={{
                   backgroundColor:
@@ -164,7 +164,7 @@ export default function RobertsAdventure() {
             </motion.a>
           </div>
         </div>
-        <div className="flex flex-wrap items-center justify-center py-5 mx-5 bg-white border-t-2 border-purple md:mx-auto">
+        <div className="mx-5 flex flex-wrap items-center justify-center border-t-2 border-purple bg-white py-5 md:mx-auto">
           {technoLogos.map((item, i) => (
             <div
               key={i}
@@ -174,7 +174,7 @@ export default function RobertsAdventure() {
                 src={item.url?.src}
                 alt={item.desc}
                 width={"55vw"}
-                className="p-2 border-2 rounded-full border-purple"
+                className="rounded-full border-2 border-purple p-2"
               />
               <p className="whitespace-nowrap lg:text-[1.3vh]">{item.desc}</p>
             </div>
@@ -184,7 +184,7 @@ export default function RobertsAdventure() {
           style={{
             maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
           }}
-          className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
+          className="project-details-text mx-auto mb-5 border-y-2 border-purple py-5 text-justify md:text-lg "
         >
           <p>{t("cloudMate.text.firstPart")}</p>
           <br />

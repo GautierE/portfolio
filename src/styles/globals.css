@@ -19,6 +19,11 @@
             letter-spacing: 5px;
         }
     }
+    @media (max-width: 768px) {
+        .project-details-text {
+            max-width: 90% !important;
+        }
+    }
 }
 
 :root {
