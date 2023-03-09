@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import cloudMateLogo from "../../public/projects/cloudmate/cloudmate_logo.png";
 import cKoyaLogo from "../../public/projects/c_koya_tech/ckoya_logo.png";
@@ -98,6 +99,7 @@ export default function MyWork() {
 }
 
 const Project = ({ title, imageUrl, imageAlt, description, route }) => {
+  const router = useRouter();
   const { t } = useTranslation("common");
   const animateProjects = {
     hidden: { scale: 0 },
@@ -135,7 +137,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             </p>
             {route !== "portfolio" && (
               <a
-                href={`/projects/${route}`}
+                href={`${router.locale}/projects/${route}`}
                 className="underline underline-offset-4 md:text-lg tiny:text-xs"
               >
                 {t("myWork.details")}
