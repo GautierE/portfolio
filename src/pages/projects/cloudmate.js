@@ -2,30 +2,19 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimationControls } from "framer-motion";
 import useResizeObserver from "@react-hook/resize-observer";
-import cKoyaLogo from "../../../public/projects/c_koya_tech/ckoya_logo.png";
-import calendarPlanning from "../../../public/projects/c_koya_tech/calendarPlanning.png";
-import chantierDetails from "../../../public/projects/c_koya_tech/chantierDetails.png";
-import clockingIn from "../../../public/projects/c_koya_tech/clockingIn.png";
-import editListing from "../../../public/projects/c_koya_tech/edit_listing.png";
-import eventEdit from "../../../public/projects/c_koya_tech/eventEdit.png";
-import holidayManagement from "../../../public/projects/c_koya_tech/holidayManagement.png";
-import listing from "../../../public/projects/c_koya_tech/listing.png";
-import mobileAll from "../../../public/projects/c_koya_tech/mobileAll.png";
-import poseEventEdit from "../../../public/projects/c_koya_tech/poseEventEdit.png";
-import totalClockingIn from "../../../public/projects/c_koya_tech/totalClockingIn.png";
+import cloudMateBanner from "../../../public/projects/cloudmate/cloudmate_banner.png";
+import linkOpenerScreen from "../../../public/projects/cloudmate/app.png";
+import jigScreen from "../../../public/projects/cloudmate/jig_features.png";
+import extensionScreen from "../../../public/projects/cloudmate/extension_showcase.png";
+import landingPage1 from "../../../public/projects/cloudmate/landing_page.png";
+import landingPage2 from "../../../public/projects/cloudmate/landing_page2.png";
 import htmlLogo from "../../../public/skills/html_logo.svg";
 import cssLogo from "../../../public/skills/css_logo.svg";
 import jsLogo from "../../../public/skills/js_logo.svg";
+import nextLogo from "../../../public/skills/nextjs_logo.svg";
 import reactLogo from "../../../public/skills/react_logo.svg";
-import reactQueryLogo from "../../../public/skills/react_query_logo.svg";
-import jqueryLogo from "../../../public/skills/jquery_logo.svg";
-import bootstrapLogo from "../../../public/skills/bootstrap_logo.svg";
-import phpLogo from "../../../public/skills/php_logo.svg";
-import symfonyLogo from "../../../public/skills/symfony_logo.svg";
-import doctrineLogo from "../../../public/skills/doctrine_logo.svg";
-import mysqlLogo from "../../../public/skills/mysql_logo.svg";
+import tailwindLogo from "../../../public/skills/tailwind_logo.svg";
 import gitLogo from "../../../public/skills/git_logo.svg";
-import apiIcon from "../../../public/skills/api_icon.svg";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
@@ -35,69 +24,37 @@ export default function RobertsAdventure() {
     { url: htmlLogo, desc: "HTML" },
     { url: cssLogo, desc: "CSS" },
     { url: jsLogo, desc: "Javascript" },
+    { url: nextLogo, desc: "Next.js" },
     { url: reactLogo, desc: "React" },
-    { url: jqueryLogo, desc: "jQuery" },
-    { url: reactQueryLogo, desc: "React Query" },
-    { url: bootstrapLogo, desc: "Bootstrap" },
-    { url: reactLogo, desc: "React Native" },
-    { url: phpLogo, desc: "PHP" },
-    { url: symfonyLogo, desc: "Symfony" },
-    { url: doctrineLogo, desc: "Doctrine" },
-    { url: mysqlLogo, desc: "MySQL" },
+    { url: tailwindLogo, desc: "Tailwind CSS" },
     { url: gitLogo, desc: "Git" },
-    { url: apiIcon, desc: "RESTful API" },
   ];
 
   const carouselContent = [
     {
-      caption: t("ckoya.screenshotsCaption.calendarPlanning"),
-      imageUrl: calendarPlanning,
-      imageAlt: t("ckoya.screenshotsCaption.calendarPlanning"),
+      caption: t("cloudMate.screenshotsCaption.landingPage1"),
+      imageUrl: landingPage1,
+      imageAlt: t("cloudMate.screenshotsCaption.landingPage1"),
     },
     {
-      caption: t("ckoya.screenshotsCaption.poseEventEdit"),
-      imageUrl: poseEventEdit,
-      imageAlt: t("ckoya.screenshotsCaption.poseEventEdit"),
+      caption: t("cloudMate.screenshotsCaption.landingPage2"),
+      imageUrl: landingPage2,
+      imageAlt: t("cloudMate.screenshotsCaption.landingPage2"),
     },
     {
-      caption: t("ckoya.screenshotsCaption.eventEdit"),
-      imageUrl: eventEdit,
-      imageAlt: t("ckoya.screenshotsCaption.eventEdit"),
+      caption: t("cloudMate.screenshotsCaption.linkOpenerScreen"),
+      imageUrl: linkOpenerScreen,
+      imageAlt: t("cloudMate.screenshotsCaption.linkOpenerScreen"),
     },
     {
-      caption: t("ckoya.screenshotsCaption.chantierDetails"),
-      imageUrl: chantierDetails,
-      imageAlt: t("ckoya.screenshotsCaption.chantierDetails"),
+      caption: t("cloudMate.screenshotsCaption.jigScreen"),
+      imageUrl: jigScreen,
+      imageAlt: t("cloudMate.screenshotsCaption.jigScreen"),
     },
     {
-      caption: t("ckoya.screenshotsCaption.listing"),
-      imageUrl: listing,
-      imageAlt: t("ckoya.screenshotsCaption.listing"),
-    },
-    {
-      caption: t("ckoya.screenshotsCaption.editListing"),
-      imageUrl: editListing,
-      imageAlt: t("ckoya.screenshotsCaption.editListing"),
-    },
-    {
-      caption: t("ckoya.screenshotsCaption.holidayManagement"),
-      imageUrl: holidayManagement,
-      imageAlt: t("ckoya.screenshotsCaption.holidayManagement"),
-    },
-    {
-      caption: t("ckoya.screenshotsCaption.clockingIn"),
-      imageUrl: clockingIn,
-      imageAlt: t("ckoya.screenshotsCaption.clockingIn"),
-    },
-    {
-      caption: t("ckoya.screenshotsCaption.totalClockingIn"),
-      imageUrl: totalClockingIn,
-      imageAlt: t("ckoya.screenshotsCaption.totalClockingIn"),
-    },
-    {
-      caption: t("ckoya.screenshotsCaption.mobileAll"),
-      imageUrl: mobileAll,
-      imageAlt: t("ckoya.screenshotsCaption.mobileAll"),
+      caption: t("cloudMate.screenshotsCaption.extensionScreen"),
+      imageUrl: extensionScreen,
+      imageAlt: t("cloudMate.screenshotsCaption.extensionScreen"),
     },
   ];
 
@@ -140,16 +97,14 @@ export default function RobertsAdventure() {
         }}
       >
         <BackArrow width={35} height={35} />
-        <span className="md:mr-2 md:font-bold">{t("ckoya.gobackBtn")}</span>
+        <span className="md:mr-2 md:font-bold">{t("cloudMate.gobackBtn")}</span>
       </motion.button>
       <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
-        <div className="flex flex-col items-center justify-center md:flex-row">
-          <h2 className="mt-5 text-3xl font-bold text-center text-black select-none font-title md:mt-0 md:text-6xl">
-            C-Koya Tech
-          </h2>
-          <Image src={cKoyaLogo} alt={"C-Koya logo"} priority />
-        </div>
-        <p className="text-center md:text-lg">{t("ckoya.info")}</p>
+        <Image
+          src={cloudMateBanner}
+          alt="CloudMate title"
+          className="self-center w-4/5 mt-5 rounded-lg lg:w-1/2"
+        />
         <div>
           <div className="flex justify-center">
             <button onClick={moveToPrevious} className="mr-5">
@@ -190,6 +145,24 @@ export default function RobertsAdventure() {
               />
             ))}
           </div>
+          <div className="flex items-center justify-center">
+            <motion.a
+              className="mb-2 block rounded-lg bg-[#1D1C22] px-4 py-2 text-center text-xl text-white"
+              href="https://cloudmate.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{
+                scale: 0.98,
+                backgroundColor: "#161616",
+              }}
+            >
+              {t("cloudMate.openAppBtnFirstPart")}
+              <span className="text-[#E8D5B5]">
+                {t("cloudMate.openAppBtnSecondPart")}
+              </span>
+              {t("cloudMate.openAppBtnThirdPart")}
+            </motion.a>
+          </div>
         </div>
         <div className="flex flex-wrap items-center justify-center py-5 mx-5 bg-white border-t-2 border-purple md:mx-auto">
           {technoLogos.map((item, i) => (
@@ -213,11 +186,9 @@ export default function RobertsAdventure() {
           }}
           className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
         >
-          <p>{t("ckoya.text.firstPart")}</p>
+          <p>{t("cloudMate.text.firstPart")}</p>
           <br />
-          <p>{t("ckoya.text.secondPart")}</p>
-          <br />
-          <p>{t("ckoya.text.thirdPart")}</p>
+          <p>{t("cloudMate.text.secondPart")}</p>
         </div>
       </div>
     </>

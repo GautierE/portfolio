@@ -88,7 +88,7 @@ export default function RobertsAdventure() {
             ? history.back()
             : (window.location.href = "/")
         }
-        className="z-10 flex items-center self-center w-auto p-2 mx-auto mt-10 text-xl border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
+        className="z-10 flex items-center self-center w-auto p-2 mx-auto mt-10 text-xl bg-white border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
         whileHover={{
           scale: 0.98,
           color: "#592d8c",

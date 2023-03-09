@@ -88,6 +88,23 @@
             "success": "Message successfully sent !"
         }
     },
+    "cloudMate": {
+        "gobackBtn": "Go back !",
+        "openAppBtnFirstPart": "Take a ",
+        "openAppBtnSecondPart": "look",
+        "openAppBtnThirdPart": " !",
+        "screenshotsCaption": {
+            "landingPage1": "Top of the landing page",
+            "landingPage2": "Landing page features showcase",
+            "linkOpenerScreen": "Link opener module",
+            "jigScreen": "Jigging module",
+            "extensionScreen": "Extension notification on PayPal website"
+        },
+        "text": {
+            "firstPart": "CloudMate is a software for sneaker resellers that automates their PayPal tasks. With its web-based platform, users can enjoy a plug & play experience and access it anytime, anywhere on any device. Its clean and intuitive user interface makes it user-friendly and effortless to use.",
+            "secondPart": "With the PayPal extension, CloudMate takes care of everything from login to payments through subscription cancellation... Additionally, a link opener feature takes care of opening every incoming PayPal checkout link in the browser allowing users to head to work or school with confidence, knowing that every checkout will be completed automatically. The app also offers a range of additional features, such as multiple modes address \"jigging\", random name generation, and list management, making it the perfect tool for any sneaker botter."
+        }
+    },
     "ckoya": {
         "info": "Sorry for the low quality screenshots, I unfortunately don't have access to these projects anymore.",
         "gobackBtn": "Go back !",

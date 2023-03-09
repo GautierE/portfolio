@@ -88,6 +88,23 @@
             "success": "Message envoyé !"
         }
     },
+    "cloudMate": {
+        "gobackBtn": "Retour",
+        "openAppBtnFirstPart": "Voir l'",
+        "openAppBtnSecondPart": "app",
+        "openAppBtnThirdPart": "",
+        "screenshotsCaption": {
+            "landingPage1": "Page de présentation",
+            "landingPage2": "Présentation des fonctionnalités",
+            "linkOpenerScreen": "Module \"link opener\"",
+            "jigScreen": "Module \"jigging\"",
+            "extensionScreen": "Notification de l'extension sur PayPal"
+        },
+        "text": {
+            "firstPart": "CloudMate est un logiciel destiné aux revendeurs de sneakers qui automatise leurs tâches liées à PayPal. L'application étant \"web-based\", les utilisateurs peuvent profiter d'une expérience plug & play et y accéder à tout moment, n'importe où et sur n'importe quel appareil. Son interface utilisateur propre et intuitive le rend facile à utiliser.",
+            "secondPart": "Avec l'extension PayPal, CloudMate s'occupe de tout, de la connexion aux paiements en passant par l'annulation des abonnements... De plus, un module \"link opener\" se charge d'ouvrir chaque nouveau lien de paiement PayPal dans le navigateur, ce qui permet aux utilisateurs de se rendre au travail ou à l'école en toute confiance, en sachant que chaque paiement sera effectué automatiquement. L'application offre également une série de fonctionnalités supplémentaires, telles que plusieurs modes de \"jig\" d'adresse, la génération de noms aléatoires et la gestion de listes, ce qui en fait l'outil idéal pour tout botteur (utilisateur de bot) de sneakers."
+        }
+    },
     "ckoya": {
         "info": "Désolé pour les captures d'écran de mauvaise qualité, je n'ai malheureusement plus accès à ces projets.",
         "gobackBtn": "Retour",
