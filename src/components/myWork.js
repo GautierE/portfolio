@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import cloudMateLogo from "../../public/projects/cloudmate/cloudmate_logo.png";
 import cKoyaLogo from "../../public/projects/c_koya_tech/ckoya_logo.png";
 import robertLogo from "../../public/projects/robert/robert_logo.png";
+import arrow from "../../public/arrow.png";
 import { useTranslation } from "next-i18next";
 
 export default function MyWork() {
@@ -58,7 +59,7 @@ export default function MyWork() {
   return (
     <div className="sticky h-full bg-white tall:top-0 tall:h-screen">
       <div className="mx-auto flex h-full w-[90%] flex-col md:w-full">
-        <div className="pt-5 md:ml-20 md:pt-10 xl:pt-10">
+        <div className="relative pt-5 md:ml-20 md:pt-10 xl:pt-10">
           <motion.h2
             className="text-3xl font-bold text-black select-none font-title md:text-6xl"
             variants={animateText}
@@ -80,8 +81,15 @@ export default function MyWork() {
             {t("myWork.subtitleFirstPart")} <br />
             {t("myWork.subtitleSecondPart")}
           </motion.p>
+          <Image
+            src={arrow}
+            alt="Arrow design"
+            width={250}
+            height={250}
+            className="absolute hidden sm:left-[50%] sm:top-28 sm:block lg:left-[33%] xl:top-24 xl:left-[30%] 2xl:left-[22%]"
+          />
         </div>
-        <div className="mx-auto mt-2 flex h-full max-w-[1800px] flex-col md:mt-5 md:flex-row md:flex-wrap md:justify-center">
+        <div className="z-10 mx-auto mt-2 flex h-full max-w-[1800px] flex-col bg-white md:mt-5 md:flex-row md:flex-wrap md:justify-center">
           {projectsContent.map((project, index) => (
             <Project
               key={index}
