@@ -7,6 +7,7 @@ import linkedinLogo from "../../public/welcome/linkedin_logo.svg";
 import emailIcon from "../../public/welcome/email_icon.svg";
 import frenchFlag from "../../public/welcome/french_flag_icon.svg";
 import ukFlag from "../../public/welcome/uk_flag_icon.svg";
+import arrow from "../../public/arrow.png";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 export default function Welcome() {
@@ -80,6 +81,16 @@ export default function Welcome() {
             <br />
             {t("welcome.subtitleLastPart")}
           </motion.p>
+          <Image
+            src={arrow}
+            alt="Arrow design"
+            width={160}
+            height={160}
+            className={
+              (router.locale === "fr" ? "right-0 " : "right-[-16%] ") +
+              "absolute top-10 overflow-hidden object-contain medium:right-0 medium:top-20 tiny:right-0"
+            }
+          />
         </div>
       </div>
       <div className="relative mx-auto h-[45vh] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5">
@@ -149,7 +160,18 @@ export default function Welcome() {
           <span className="mr-5">{t("welcome.cv")}</span>
           <CvIcon width={30} height={30} />
         </motion.button>
+        <Image
+          src={arrow}
+          alt="Arrow design"
+          className={
+            (router.locale === "fr"
+              ? "md:left-[-180px] lg:left-[-110px] lg:top-[13rem] xl:left-[-100px] xxl:top-[16rem] "
+              : "md:left-[-200px] lg:left-[-160px] lg:top-[12rem] xl:left-[-140px] ") +
+            "absolute top-[13rem] hidden aspect-[2] object-contain md:left-[-200px] md:block lg:aspect-auto 2xl:left-[-120px]"
+          }
+        />
       </div>
+
       <motion.button
         className="mt-5 flex w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:ml-2 md:mt-0 md:hidden md:w-2/5 md:self-auto md:rounded-lg md:border-2 md:border-purple md:text-lg lg:ml-28 lg:w-2/12 lg:p-3 lg:text-2xl"
         whileHover={{
