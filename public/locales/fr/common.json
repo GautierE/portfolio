@@ -115,6 +115,7 @@
             "chantierDetails": "Page des détails d'un projet",
             "listing": "Listing typique",
             "editListing": "Formulaire (Symfony) typique d'édition d'un listing",
+            "planningAtelier": "Planning d'utilisation des machines dans un atelier",
             "holidayManagement": "Calendrier de gestion des congés",
             "clockingIn": "Page de gestion du pointage d'un employé de C-Koya Tech",
             "totalClockingIn": "Total des pointages hebdomadaire des employés de C-Koya Tech sur les différents projets",

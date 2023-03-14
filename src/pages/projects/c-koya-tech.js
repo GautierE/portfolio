@@ -9,6 +9,7 @@ import chantierDetails from "../../../public/projects/c_koya_tech/chantierDetail
 import clockingIn from "../../../public/projects/c_koya_tech/clockingIn.png";
 import editListing from "../../../public/projects/c_koya_tech/edit_listing.png";
 import eventEdit from "../../../public/projects/c_koya_tech/eventEdit.png";
+import planningAtelier from "../../../public/projects/c_koya_tech/planning_atelier.png";
 import holidayManagement from "../../../public/projects/c_koya_tech/holidayManagement.png";
 import listing from "../../../public/projects/c_koya_tech/listing.png";
 import mobileAll from "../../../public/projects/c_koya_tech/mobileAll.png";
@@ -80,6 +81,11 @@ export default function RobertsAdventure() {
       caption: t("ckoya.screenshotsCaption.editListing"),
       imageUrl: editListing,
       imageAlt: t("ckoya.screenshotsCaption.editListing"),
+    },
+    {
+      caption: t("ckoya.screenshotsCaption.planningAtelier"),
+      imageUrl: planningAtelier,
+      imageAlt: t("ckoya.screenshotsCaption.planningAtelier"),
     },
     {
       caption: t("ckoya.screenshotsCaption.holidayManagement"),
