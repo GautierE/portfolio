@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { motion, useAnimationControls } from "framer-motion";
 import useResizeObserver from "@react-hook/resize-observer";
 import robertTitle from "../../../public/projects/robert/robert_title.png";
@@ -17,6 +18,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
 export default function RobertsAdventure() {
+  const router = useRouter();
   const { t } = useTranslation("common");
 
   const technoLogos = [
@@ -80,14 +82,22 @@ export default function RobertsAdventure() {
     );
   };
 
+  const handleGoBack = () => {
+    if (document.referrer.includes("localhost:3000/")) {
+      history.back();
+    } else {
+      if (router.locale === "fr") {
+        window.location.href = "/fr";
+      } else {
+        window.location.href = "/";
+      }
+    }
+  };
+
   return (
     <>
       <motion.button
-        onClick={() =>
-          document.referrer.includes("localhost:3000/")
-            ? history.back()
-            : (window.location.href = "/")
-        }
+        onClick={handleGoBack}
         className="z-10 flex items-center self-center w-auto p-2 mx-auto mt-10 text-xl bg-white border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
         whileHover={{
           scale: 0.98,
