@@ -11,6 +11,7 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [isSending, setIsSending] = useState(false);
   const animateText = {
     hidden: { x: 30, opacity: 0 },
     visible: ({ delay }) => {
@@ -34,22 +35,24 @@ export default function Contact() {
     } else if (formContent.message === "") {
       toast.warning(t("contact.toast.message"));
     } else {
+      setFormContent({
+        name: "",
+        email: "",
+        message: "",
+      });
+      setIsSending(true);
       fetch("/api/contact", {
         method: "POST",
         body: JSON.stringify(formContent),
       })
         .then((res) => res.json())
         .then((data) => {
+          setIsSending(false);
           toast.success(
             data.message === "success"
               ? t("contact.toast.success")
               : data.message
           );
-          setFormContent({
-            name: "",
-            email: "",
-            message: "",
-          });
         })
         .catch((error) => toast.error(error));
     }
@@ -176,19 +179,54 @@ export default function Contact() {
           onClick={handleSubmit}
         >
           <span className="mr-5 font-bold">{t("contact.form.sendBtn")}</span>
-          <svg
-            width="52"
-            height="22"
-            viewBox="0 0 72 22"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="none"
-              strokeWidth="2"
-              strokeMiterlimit="0"
-              d="M.043 11.119h70.714M60.917 1.319l9.8 9.8-9.8 9.8"
-            ></path>
-          </svg>
+          {isSending ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xlink="http://www.w3.org/1999/xlink"
+              style={{
+                background: "transparent",
+                display: "block",
+                shapeRendering: "auto",
+              }}
+              width="30px"
+              height="30px"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="xMidYMid"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="10"
+                r="35"
+                strokeDasharray="164.93361431346415 56.97787143782138"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  repeatCount="indefinite"
+                  dur="1s"
+                  values="0 50 50;360 50 50"
+                  keyTimes="0;1"
+                ></animateTransform>
+              </circle>
+            </svg>
+          ) : (
+            <svg
+              width="52"
+              height="22"
+              viewBox="0 0 72 22"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="none"
+                strokeWidth="2"
+                strokeMiterlimit="0"
+                d="M.043 11.119h70.714M60.917 1.319l9.8 9.8-9.8 9.8"
+              ></path>
+            </svg>
+          )}
         </motion.button>
       </div>
     </div>

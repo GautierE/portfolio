@@ -89,7 +89,7 @@ export default function MyWork() {
             className="absolute hidden sm:left-[50%] sm:top-28 sm:block lg:left-[33%] xl:top-24 xl:left-[30%] 2xl:left-[22%]"
           />
         </div>
-        <div className="z-10 mx-auto mt-2 flex h-full max-w-[1800px] flex-col bg-white md:mt-5 md:flex-row md:flex-wrap md:justify-center">
+        <div className="z-10 mx-auto mt-2 flex h-full max-w-[1800px] flex-col md:mt-5 md:flex-row md:flex-wrap md:justify-center">
           {projectsContent.map((project, index) => (
             <Project
               key={index}
@@ -124,7 +124,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
 
   return (
     <motion.div
-      className="mx-auto mb-5 w-full bg-white md:mb-7 md:w-[48%]"
+      className="mx-auto mb-5 w-full md:mb-7 md:w-[48%]"
       whileHover={{ translateY: -8 }}
       variants={animateProjects}
       custom={{ delay: 0 }}
@@ -135,7 +135,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
       <div className="relative flex w-full h-full justify-evenly">
         <div
           className={
-            "relative flex w-full flex-col rounded-3xl border-2 border-purple pt-2 pl-5 md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl md:rounded-bl-3xl md:border-r-0 md:pt-10 md:pl-10"
+            "relative flex w-full flex-col rounded-3xl border-2 border-purple bg-white pt-2 pl-5 md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl md:rounded-bl-3xl md:border-r-0 md:pt-10 md:pl-10"
           }
         >
           <h5 className="text-xl md:text-4xl tiny:text-lg">{title}</h5>
@@ -153,7 +153,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             )}
           </div>
         </div>
-        <div className="absolute right-2 h-[60px] w-[60px] md:relative md:right-0 md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple">
+        <div className="absolute right-2 h-[60px] w-[60px] md:relative md:right-0 md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple md:bg-white">
           <Image
             src={imageUrl}
             alt={imageAlt}
