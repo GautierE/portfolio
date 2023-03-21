@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import profilePicture from "../../public/welcome/profile_picture.png";
+import profilePicture from "../../public/welcome/profile_picture.jpg";
 import githubLogo from "../../public/welcome/github_logo.svg";
 import linkedinLogo from "../../public/welcome/linkedin_logo.svg";
 import emailIcon from "../../public/welcome/email_icon.svg";
@@ -93,15 +93,16 @@ export default function Welcome() {
           />
         </div>
       </div>
-      <div className="relative mx-auto h-[45vh] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5">
+      <div className="relative mx-auto h-[45vh] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5 mediumPlus:w-[60%]">
         <Image
           src={profilePicture}
           alt="Profile picture"
           fill
           sizes="(max-width: 767px) 85vw,
           (max-width: 1199px) 56vw,
-          60%"
+          100%"
           style={{ objectFit: "cover" }}
+          quality={100}
           priority={true}
         />
         <motion.h1
@@ -155,7 +156,6 @@ export default function Welcome() {
             color: "#592d8c",
             fill: "#592d8c",
           }}
-          // style={{ marginTop: router.locale === "fr" ? "8rem" : "0" }}
         >
           <span className="mr-5">{t("welcome.cv")}</span>
           <CvIcon width={30} height={30} />
