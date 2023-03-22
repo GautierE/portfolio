@@ -68,7 +68,7 @@ export default function Contact() {
       <div className="mx-auto flex h-full w-[90%] flex-col items-center justify-center md:w-auto">
         <div className="mb-5 text-center md:mb-28 ">
           <motion.h2
-            className="mb-3 text-3xl font-bold font-title text-purple md:text-6xl"
+            className="mb-3 text-2xl font-bold font-title text-purple md:text-5xl lg:text-6xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
