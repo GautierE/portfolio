@@ -145,7 +145,10 @@ export default function Welcome() {
           <br />
           {t("welcome.subtitleLastPart")}
         </motion.p>
-        <motion.button
+        <motion.a
+          href="/welcome/cv.pdf"
+          target="_blank"
+          rel="noreferrer"
           className={
             (router.locale === "fr" ? "md:mt-32 smallHeight:mt-0 " : "") +
             "hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:top-[15rem] md:left-[-325px] md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px] lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl 2xl:left-[-495px] xxl:top-72 xxl:left-[-655px]"
@@ -159,7 +162,7 @@ export default function Welcome() {
         >
           <span className="mr-5">{t("welcome.cv")}</span>
           <CvIcon width={30} height={30} />
-        </motion.button>
+        </motion.a>
         <Image
           src={arrow}
           alt="Arrow design"
@@ -172,7 +175,10 @@ export default function Welcome() {
         />
       </div>
 
-      <motion.button
+      <motion.a
+        href="/welcome/cv.pdf"
+        target="_blank"
+        rel="noreferrer"
         className="mt-5 flex w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:ml-2 md:mt-0 md:hidden md:w-2/5 md:self-auto md:rounded-lg md:border-2 md:border-purple md:text-lg lg:ml-28 lg:w-2/12 lg:p-3 lg:text-2xl"
         whileHover={{
           scale: 0.98,
@@ -183,7 +189,7 @@ export default function Welcome() {
       >
         <span className="mr-5">{t("welcome.cv")}</span>
         <CvIcon width={30} height={30} />
-      </motion.button>
+      </motion.a>
       <div className="absolute bottom-0 flex justify-center left-2 md:left-10 md:bottom-10 md:justify-start">
         <div className="flex self-end justify-start">
           <motion.a
