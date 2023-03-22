@@ -83,7 +83,10 @@ export default function RobertsAdventure() {
   };
 
   const handleGoBack = () => {
-    if (document.referrer.includes(window?.location?.host)) {
+    if (
+      history.length > 1 &&
+      document.referrer.includes(window?.location?.host)
+    ) {
       history.back();
     } else {
       if (router.locale === "fr") {
