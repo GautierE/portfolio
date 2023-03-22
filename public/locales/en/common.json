@@ -18,11 +18,11 @@
         },
         "web": {
             "title": "Web development",
-            "text": "Whether I design your website, or you already habe a design to meet, I build fully responsive websites that adapt both on desktop and mobile devices."
+            "text": "Whether I design your website, or you already have a design to meet, I build fully responsive websites that adapt both on desktop and mobile devices."
         },
         "mobile": {
             "title": "Mobile development",
-            "text": "If your ideas go well beyond the web, I can also develop fully functional mobile applications for Android and iOS, complete with the server-side implementations."
+            "text": "If your ideas go well beyond the web, I can also develop fully functional mobile applications for Android and iOS, along with the server-side implementations."
         }
     },
     "skills": {
@@ -37,7 +37,7 @@
         "details": "Details",
         "cloudmate": {
             "title": "CloudMate",
-            "desc": "A web-based tool to help sneaker resellers mainly through Paypal payment automation."
+            "desc": "A web-based tool to help sneakers resellers mainly through Paypal payment automation."
         },
         "ckoya": {
             "title": "C-Koya Tech",
@@ -102,7 +102,7 @@
         },
         "text": {
             "firstPart": "CloudMate is a software for sneaker resellers that automates their PayPal tasks. With its web-based platform, users can enjoy a plug & play experience and access it anytime, anywhere on any device. Its clean and intuitive user interface makes it user-friendly and effortless to use.",
-            "secondPart": "With the PayPal extension, CloudMate takes care of everything from login to payments through subscription cancellation... Additionally, a link opener feature takes care of opening every incoming PayPal checkout link in the browser allowing users to head to work or school with confidence, knowing that every checkout will be completed automatically. The app also offers a range of additional features, such as multiple modes address \"jigging\", random name generation, and list management, making it the perfect tool for any sneaker botter."
+            "secondPart": "With the PayPal extension, CloudMate takes care of everything from login to payments through subscription cancellation... Additionally, a link opener feature ensure the opening of every incoming PayPal checkout link in the browser allowing users to head to work or school with confidence, knowing that every checkout will be completed automatically. The app also offers a range of additional features, such as multiple modes address \"jigging\", random name generation, and list management, making it the perfect tool for any sneaker botter."
         }
     },
     "ckoya": {

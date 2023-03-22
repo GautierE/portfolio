@@ -4,7 +4,7 @@
         "titleSecondPart": "je m'appelle ",
         "titleThirdPart": "Gautier.",
         "subtitleFirstPart": "Je suis un développeur ",
-        "subtitlepurpletext": "freelance",
+        "subtitlepurpletext": "indépendant",
         "subtitleLastPart": "de \nStrasbourg.",
         "cv": "Télécharger mon CV",
         "workBtn": "Travaillons ensemble !"
@@ -14,7 +14,7 @@
         "subtitle": "Dans le passé, j'ai développé tout type d'applications, mais j'ai choisi de me concentrer sur la création d'applications web et mobiles.",
         "design": {
             "title": "Design produit",
-            "text": "Je suis capable de concevoir un site web ou une application mobile du début à la fin, y compris la conceptualisation, le maquettage et la finalisation du design."
+            "text": "Je suis capable de concevoir un site web ou une application mobile, de la conceptualisation en passant par le maquettage et la finalisation du design."
         },
         "web": {
             "title": "Développement web",
@@ -64,7 +64,7 @@
     },
     "contact": {
         "title": "Envoyez moi un message !",
-        "subtitleFirstPart": "Une question,une proposition, ou simplement pour",
+        "subtitleFirstPart": "Une question, une proposition, ou simplement pour",
         "subtitleSecondPart": "dire bonjour ? N'hésitez pas.",
         "form": {
             "name": {
@@ -144,7 +144,7 @@
             },
             "secondPart": {
                 "title": "Aperçu du jeu :",
-                "text": "Le jeu est basé sur le rythme, vous contrôlez un petit personnage qui doit se frayer un chemin à travers des pièges mortels à l'aide d'un grappin. Le jeu est divisé en niveaux, qui peuvent être modifiés à la discrétion du joueur afin de tester ce qui caractérise le \"flow\" et le sentiment d'efficacité personnelle dans un jeu. Ce dernier propose également un mode sans fin dans lequel l'objectif du joueur est d'aller le plus loin possible avec une difficulté croissante.",
+                "text": "Le jeu est basé sur le rythme, vous contrôlez un petit personnage qui doit se frayer un chemin à travers des pièges mortels à l'aide d'un grappin. Le jeu est divisé en niveaux, qui peuvent être modifiés à la discrétion du joueur afin de tester ce qui caractérise le \"flow\" et le sentiment d'auto-efficacité dans un jeu. Ce dernier propose également un mode sans fin dans lequel l'objectif du joueur est d'aller le plus loin possible avec une difficulté croissante.",
                 "text2": "L'objectif principal est d'atteindre la fin du niveau en évitant les obstacles et les projectiles à l'aide du grappin, qui permet au joueur de s'accrocher aux surfaces et de gagner en vitesse. Le joueur perd lorsqu'il entre en collision avec un obstacle. Il est également possible d'obtenir des bonus tout au long du jeu qui permettent de rester en vie plus longtemps. Pour aider le joueur à comprendre les différents principes en jeu, il peut cocher ou décocher des cases avant de commencer le jeu afin d'activer ou de désactiver certaines fonctionnalités qui mettent en avant les principes de \"flow\" et d'auto-efficacité."
             },
             "thirdPart": {
