@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Router from "next/router";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import cloudMateLogo from "../../public/projects/cloudmate/cloudmate_logo.png";
@@ -9,6 +10,8 @@ import arrow from "../../public/arrow.png";
 import { useTranslation } from "next-i18next";
 
 export default function MyWork() {
+  const router = useRouter();
+
   const { t } = useTranslation("common");
   const animateText = {
     hidden: { y: 30, opacity: 0 },
@@ -86,7 +89,12 @@ export default function MyWork() {
             alt="Arrow design"
             width={250}
             height={250}
-            className="absolute hidden sm:left-[50%] sm:top-28 sm:block lg:left-[33%] xl:top-24 xl:left-[30%] 2xl:left-[22%]"
+            className={
+              (router.locale === "fr"
+                ? "sm:top-24 sm:left-[60%] md:top-40 lg:left-[57%] xl:top-32 xl:left-[45%] 2xl:left-[37%]"
+                : "sm:top-28 sm:left-[50%] lg:left-[33%] xl:top-24 xl:left-[30%] 2xl:left-[22%]") +
+              " absolute hidden sm:block"
+            }
           />
         </div>
         <div className="z-10 mx-auto mt-2 flex h-full max-w-[1800px] flex-col md:mt-5 md:flex-row md:flex-wrap md:justify-center">
