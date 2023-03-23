@@ -87,8 +87,10 @@ export default function Welcome() {
             width={160}
             height={160}
             className={
-              (router.locale === "fr" ? "right-0 " : "right-[-16%] ") +
-              "absolute top-10 overflow-hidden object-contain medium:right-0 medium:top-20 tiny:right-0"
+              (router.locale === "fr"
+                ? "right-0 top-32 mediumPlus:top-24"
+                : "top-36 md:right-[-16%] medium:top-20") +
+              " absolute right-0 overflow-hidden object-contain medium:right-0 tiny:right-0"
             }
           />
         </div>
@@ -108,7 +110,7 @@ export default function Welcome() {
         <motion.h1
           className={
             (router.locale === "fr" ? "welcome-title " : "") +
-            "z-10 hidden font-title text-5xl md:absolute md:left-[-325px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] smallHeight:top-10 xxl:left-[-655px] xxl:text-8xl"
+            "z-10 hidden font-title text-5xl md:absolute md:left-[-310px] md:top-20 md:block lg:left-[-400px] lg:text-6xl xl:left-[-485px] xl:text-7xl 2xl:left-[-495px] smallHeight:top-10 xxl:left-[-655px] xxl:text-8xl"
           }
           variants={animateText}
           custom={{ delay: 0 }}
@@ -130,7 +132,9 @@ export default function Welcome() {
         </motion.h1>
         <motion.p
           className={
-            (router.locale === "fr" ? "md:mt-24 smallHeight:mt-0 " : "") +
+            (router.locale === "fr"
+              ? "md:mt-40 lg:mt-24 smallHeight:mt-0 "
+              : "") +
             "z-10 hidden text-lg text-black md:absolute md:top-40 md:left-[-325px] md:block md:text-xl lg:left-[-400px] lg:text-2xl xl:left-[-485px] xl:text-3xl 2xl:left-[-495px] xxl:top-48 xxl:left-[-655px]"
           }
           custom={{ delay: 0.5 }}
@@ -150,8 +154,10 @@ export default function Welcome() {
           target="_blank"
           rel="noreferrer"
           className={
-            (router.locale === "fr" ? "md:mt-32 smallHeight:mt-0 " : "") +
-            "hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:top-[15rem] md:left-[-325px] md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple md:text-lg lg:left-[-400px] lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl 2xl:left-[-495px] xxl:top-72 xxl:left-[-655px]"
+            (router.locale === "fr"
+              ? "md:mt-40 lg:mt-32 smallHeight:mt-0 "
+              : "") +
+            "hidden w-[60%] items-center justify-center self-center rounded bg-purple fill-white py-2 text-sm text-white shadow-lg md:absolute md:top-[15rem] md:left-[-290px] md:flex md:w-2/5 md:rounded-lg md:border-2 md:border-purple lg:left-[-400px] lg:p-3 lg:text-xl xl:left-[-485px] xl:text-2xl 2xl:left-[-495px] xxl:top-72 xxl:left-[-655px]"
           }
           whileHover={{
             scale: 0.98,
@@ -168,9 +174,9 @@ export default function Welcome() {
           alt="Arrow design"
           className={
             (router.locale === "fr"
-              ? "md:left-[-180px] lg:left-[-110px] lg:top-[13rem] xl:left-[-100px] xxl:top-[16rem] "
-              : "md:left-[-200px] lg:left-[-160px] lg:top-[12rem] xl:left-[-140px] ") +
-            "absolute top-[13rem] hidden aspect-[2] object-contain md:left-[-200px] md:block lg:aspect-auto 2xl:left-[-120px]"
+              ? "md:left-[-180px] lg:left-[-70px] lg:top-[13rem] 2xl:left-[-60px] xxl:top-[16rem] "
+              : "md:left-[-200px] lg:left-[-160px] lg:top-[12rem] xl:left-[-140px] 2xl:left-[-120px] ") +
+            "absolute top-[13rem] hidden aspect-[2] object-contain md:left-[-200px] md:block lg:aspect-auto "
           }
         />
       </div>
@@ -197,7 +203,7 @@ export default function Welcome() {
             target="_blank"
             rel="noreferrer"
             whileHover={{ translateY: -8 }}
-            className="mr-2 medium:mr-5"
+            className="z-10 mr-2 medium:mr-5"
           >
             <Image src={githubLogo} alt="Github logo" width={50} height={50} />
           </motion.a>
@@ -206,7 +212,7 @@ export default function Welcome() {
             target="_blank"
             rel="noreferrer"
             whileHover={{ translateY: -8 }}
-            className="mx-2 medium:mx-5"
+            className="z-10 mx-2 medium:mx-5"
           >
             <Image
               src={linkedinLogo}
@@ -217,13 +223,13 @@ export default function Welcome() {
           </motion.a>
           <motion.a
             href="mailto:gautier.edel.info@gmail.com"
-            className="flex mx-2 medium:mx-5"
+            className="z-10 flex mx-2 medium:mx-5"
             whileHover={{ translateY: -8 }}
           >
             <Image src={emailIcon} alt="Email icon" width={40} height={40} />
           </motion.a>
           <motion.div
-            className="flex mx-2 cursor-pointer medium:mx-5"
+            className="z-10 flex mx-2 cursor-pointer medium:mx-5"
             whileHover={{ translateY: -8 }}
           >
             <Image
@@ -244,7 +250,7 @@ export default function Welcome() {
             />
           </motion.div>
           <motion.div
-            className="flex ml-2 cursor-pointer medium:ml-5"
+            className="z-10 flex ml-2 cursor-pointer medium:ml-5"
             whileHover={{ translateY: -8 }}
           >
             <Image
@@ -284,7 +290,7 @@ export default function Welcome() {
             },
           },
         ]}
-        className="absolute right-3 bottom-10 after:absolute after:left-1/2 after:top-10 after:h-48 after:w-0.5 after:bg-purple after:content-[''] md:bottom-2 md:right-auto md:left-1/3 md:text-xl xl:bottom-48 "
+        className="absolute right-3 bottom-10 after:absolute after:left-1/2 after:top-10 after:h-48 after:w-0.5 after:bg-purple after:content-[''] md:bottom-2 md:right-auto md:left-1/3 md:bottom-48 md:text-xl "
       >
         Scroll
       </motion.span>
