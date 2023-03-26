@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Router from "next/router";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import cloudMateLogo from "../../public/projects/cloudmate/cloudmate_logo.png";
@@ -64,7 +63,7 @@ export default function MyWork() {
       <div className="mx-auto flex h-full w-[90%] flex-col md:w-full">
         <div className="relative pt-5 md:ml-20 md:pt-10 xl:pt-10">
           <motion.h2
-            className="text-3xl font-bold text-black select-none font-title md:text-6xl"
+            className="select-none font-title text-3xl font-bold text-black md:text-6xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -140,14 +139,14 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="relative flex w-full h-full justify-evenly">
+      <div className="relative flex h-full w-full justify-evenly">
         <div
           className={
             "relative flex w-full flex-col rounded-3xl border-2 border-purple bg-white pt-2 pl-5 md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl md:rounded-bl-3xl md:border-r-0 md:pt-10 md:pl-10"
           }
         >
           <h5 className="text-xl md:text-4xl tiny:text-lg">{title}</h5>
-          <div className="flex flex-col justify-around h-full">
+          <div className="flex h-full flex-col justify-around">
             <p className="mt-5 md:w-5/6 md:text-lg tiny:text-xs">
               {description}
             </p>

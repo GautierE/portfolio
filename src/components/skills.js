@@ -128,7 +128,7 @@ export default function Skills() {
   };
 
   return (
-    <div className="xl:bg-purple-white sticky flex h-screen flex-col items-center justify-center bg-purple tall:top-0">
+    <div className="sticky flex flex-col items-center justify-center h-screen xl:bg-purple-white bg-purple tall:top-0">
       <motion.h2
         className="left-10 top-5 mb-5 ml-5 mr-0 select-none self-start font-title text-4xl text-white xl:ml-0 xl:mr-10 xl:self-end xl:text-[2.6rem] xl:font-bold xl:text-black xxl:text-6xl"
         variants={animateText}
@@ -189,7 +189,7 @@ export default function Skills() {
                   src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
-                  className="rounded-full border-2 border-purple p-2"
+                  className="p-2 border-2 rounded-full border-purple"
                 />
                 <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </motion.div>
@@ -221,7 +221,7 @@ export default function Skills() {
             variants={expandSkills}
             initial="hidden"
             animate={controls}
-            custom={{ leftToRight: false, delay: 1 }}
+            custom={{ leftToRight: false, delay: 0.5 }}
           >
             {backEndLogos.map((item, i) => (
               <div
@@ -239,7 +239,7 @@ export default function Skills() {
                   src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
-                  className="rounded-full border-2 border-purple p-2"
+                  className="p-2 border-2 rounded-full border-purple"
                 />
                 <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </div>
@@ -255,7 +255,7 @@ export default function Skills() {
                 y: 0,
                 opacity: 1,
                 transition: {
-                  delay: 3,
+                  delay: 2.5,
                   duration: 1,
                   ease: "easeInOut",
                 },
@@ -271,7 +271,7 @@ export default function Skills() {
             variants={expandSkills}
             initial="hidden"
             animate={controls}
-            custom={{ leftToRight: true, delay: 2.5 }}
+            custom={{ leftToRight: true, delay: 1 }}
           >
             {miscsLogos.map((item, i) => (
               <div
@@ -282,14 +282,14 @@ export default function Skills() {
                   variants={drawImages}
                   custom={{
                     i: i,
-                    waitTime: 2.5,
+                    waitTime: 0,
                     itemCount: miscsLogos.length - 1,
                     leftToRight: true,
                   }}
                   src={item.url?.src}
                   alt={item.desc}
                   width={"55vw"}
-                  className="rounded-full border-2 border-purple p-2"
+                  className="p-2 border-2 rounded-full border-purple"
                 />
                 <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
               </div>
