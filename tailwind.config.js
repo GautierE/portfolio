@@ -19,7 +19,7 @@ module.exports = {
         medium: { raw: "(min-width: 420px)" },
         mediumPlus: { raw: "(min-width: 470px)" },
         smallHeight: { raw: "(max-height: 570px)" },
-        tall: { raw: "(min-height: 705px)" },
+        tall: { raw: "(min-height: 666px)" },
         xxl: { raw: "(min-width: 1750px)" },
         tiny: { raw: "(max-width: 376px)" },
       },

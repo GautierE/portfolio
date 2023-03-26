@@ -78,7 +78,7 @@ export default function Contact() {
             {t("contact.title")}
           </motion.h2>
           <motion.p
-            className="text-xl md:text-2xl"
+            className="sm:text-xl md:text-2xl"
             custom={{ delay: 0.5 }}
             variants={animateText}
             initial="hidden"
