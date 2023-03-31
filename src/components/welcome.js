@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import profilePicture from "../../public/welcome/profile_picture.jpg";
+import profilePicture from "../../public/welcome/profile_picture.jpeg";
 import githubLogo from "../../public/welcome/github_logo.svg";
 import linkedinLogo from "../../public/welcome/linkedin_logo.svg";
 import emailIcon from "../../public/welcome/email_icon.svg";
@@ -10,6 +10,7 @@ import ukFlag from "../../public/welcome/uk_flag_icon.svg";
 import arrow from "../../public/arrow.png";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+
 export default function Welcome() {
   const router = useRouter();
   const { t } = useTranslation("common");
