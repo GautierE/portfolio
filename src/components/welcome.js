@@ -97,17 +97,19 @@ export default function Welcome() {
         </div>
       </div>
       <div className="relative mx-auto h-[45vh] w-[85%] md:absolute md:right-0 md:z-0 md:mt-0 md:h-full md:w-[56vw] lg:w-3/5 mediumPlus:w-[60%]">
-        <Image
-          src={profilePicture}
-          alt="Profile picture"
-          fill
-          sizes="(max-width: 767px) 85vw,
+        <div>
+          <Image
+            src={profilePicture}
+            alt="Profile picture"
+            fill
+            sizes="(max-width: 767px) 85vw,
           (max-width: 1199px) 56vw,
           100%"
-          style={{ objectFit: "cover" }}
-          quality={100}
-          priority={true}
-        />
+            style={{ objectFit: "cover" }}
+            quality={100}
+            priority={true}
+          />
+        </div>
         <motion.h1
           className={
             (router.locale === "fr" ? "welcome-title " : "") +
