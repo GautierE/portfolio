@@ -153,7 +153,9 @@ export default function Welcome() {
           {t("welcome.subtitleLastPart")}
         </motion.p>
         <motion.a
-          href="/welcome/cv.pdf"
+          href={
+            router.locale === "fr" ? "/welcome/cv.pdf" : "/welcome/resume.pdf"
+          }
           target="_blank"
           rel="noreferrer"
           className={
