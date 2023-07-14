@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import htmlLogo from "../../public/skills/html_logo.svg";
 import cssLogo from "../../public/skills/css_logo.svg";
@@ -47,6 +47,26 @@ export default function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
+
+  const [screenWidth, setScreenWidth] = useState(0);
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (divRef.current) {
+        console.log(divRef.current.clientWidth);
+        setScreenWidth(divRef.current.clientWidth);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (isInView) {
@@ -106,17 +126,6 @@ export default function Skills() {
     { url: trelloLogo, desc: "Trello" },
   ];
 
-  const miscsLogos = [
-    { url: agileIcon, desc: "Agile" },
-    { url: chromeLogo, desc: "Chrome extension" },
-    {
-      url: webscrappingIcon,
-      desc: "Web scrapping/automation",
-    },
-    { url: oauthLogo, desc: "Oauth" },
-    { url: apiIcon, desc: "RESTful API" },
-  ];
-
   const animateText = {
     hidden: { y: 30, opacity: 0 },
     visible: {
@@ -128,64 +137,13 @@ export default function Skills() {
       },
     },
   };
-
-  const expandSkills = {
-    hidden: ({ leftToRight }) => {
-      return { x: leftToRight ? -2000 : 2000, opacity: 0 };
-    },
-    visible: ({ delay }) => {
-      return {
-        x: 0,
-        opacity: 1,
-        transition: {
-          delay,
-          duration: 2,
-          ease: "linear",
-        },
-      };
-    },
-  };
-
-  const drawImages = {
-    hidden: { opacity: 0 },
-    visible: ({ i, waitTime, itemCount, leftToRight }) => {
-      let delay;
-
-      if (leftToRight) {
-        delay =
-          i !== itemCount ? (itemCount - i) * 0.4 + waitTime : 0.9 + waitTime;
-      } else {
-        delay = i !== 0 ? i * 0.4 + waitTime : 0.3 + waitTime;
-      }
-
-      return {
-        opacity: 1,
-        transition: {
-          opacity: { delay, duration: 2.5 },
-        },
-      };
-    },
-  };
-
-  // Animation properties
-  const transition = {
-    loop: Infinity,
-    ease: "linear",
-    duration: 2, // Adjust the duration as needed
-  };
-
-  // Animate the container on the X-axis
-  const containerVariants = {
-    animate: {
-      x: "-99999999999999999999999999999999999999999999999999999%", // Adjust the distance based on your container width
-      transition,
-    },
-  };
-
   return (
-    <div className="sticky flex flex-col items-center justify-center h-screen overflow-x-hidden xl:bg-purple-white bg-purple tall:top-0">
+    <div
+      ref={divRef}
+      className="sticky flex flex-col items-center justify-center h-screen overflow-x-hidden xl:bg-purple-white bg-purple tall:top-0"
+    >
       <motion.h2
-        className="left-10 top-5 mb-5 ml-5 mr-0 select-none self-start font-title text-4xl text-white xl:ml-0 xl:mr-10 xl:self-end xl:text-[2.6rem] xl:font-bold xl:text-black xxl:text-6xl"
+        className="left-10 top-5 ml-5 mr-0 select-none self-start font-title text-4xl text-white xl:ml-0 xl:mr-10 xl:self-end xl:text-[2.6rem] xl:font-bold xl:text-black xxl:text-6xl"
         variants={animateText}
         initial="hidden"
         animate={controls}
@@ -193,50 +151,71 @@ export default function Skills() {
       >
         {t("skills.title")}
       </motion.h2>
-      <div class="mt-5 w-full overflow-x-hidden">
+      <div className="w-full overflow-x-hidden md:mt-5">
         <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
-          Front-end basic &amp; Styling
+          {t("skills.frontEndBasic")}
         </motion.p>
-        <SkillRow rowSkills={frontEndBasicLogos} />
+        <SkillRow rowSkills={frontEndBasicLogos} screenWidth={screenWidth} />
       </div>
-      <div class="mt-5 w-full overflow-x-hidden">
+      <div className="w-full mt-5 overflow-x-hidden">
         <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
-          Front-end Librairies &amp; Frameworks
+          {t("skills.frontEndLib")}
         </motion.p>
-        <SkillRow rowSkills={frontEndLibLogos} animate={true} />
+        <SkillRow
+          rowSkills={frontEndLibLogos}
+          screenWidth={screenWidth}
+          animate={true}
+        />
       </div>
-      <div className="flex flex-wrap justify-between w-full mt-5 xl:flex-wrap">
-        <div>
+      {screenWidth >= 1024 ? (
+        <div className="flex flex-col flex-wrap justify-between w-full mt-5 md:flex-row xl:flex-wrap">
+          <div>
+            <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
+              Back-end
+            </motion.p>
+            <HalfSkillRow rowSkills={backEndLogos} leftToRight={true} />
+          </div>
+          <div>
+            <motion.p className="pt-2 pr-2 text-lg text-white text-start md:text-end md:text-black xl:pb-2 xl:pt-0 xl:text-2xl">
+              Databases
+            </motion.p>
+            <HalfSkillRow rowSkills={databasesLogos} leftToRight={false} />
+          </div>
+        </div>
+      ) : (
+        <div className="flex flex-col flex-wrap justify-between w-full mt-5 md:flex-row xl:flex-wrap">
           <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
-            Back-end
+            Back-end &amp; Databases
           </motion.p>
-          <HalfSkillRow rowSkills={backEndLogos} leftToRight={true} />
+          <SkillRow
+            rowSkills={backEndLogos.concat(databasesLogos)}
+            animate={true}
+            screenWidth={screenWidth}
+          />
         </div>
-        <div>
-          <motion.p className="pt-2 pr-2 text-lg text-end xl:pb-2 xl:pt-0 xl:text-2xl">
-            Databases
-          </motion.p>
-          <HalfSkillRow rowSkills={databasesLogos} leftToRight={false} />
-        </div>
-      </div>
-      <div class="mt-5 w-full overflow-x-hidden">
+      )}
+      <div className="w-full mt-5 overflow-x-hidden">
         <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
-          Dev ops
+          DevOps
         </motion.p>
-        <SkillRow rowSkills={devopsLogos} animate={true} />
+        <SkillRow
+          rowSkills={devopsLogos}
+          animate={true}
+          screenWidth={screenWidth}
+        />
       </div>
     </div>
   );
 }
 
-const SkillRow = ({ rowSkills, animate }) => {
+const SkillRow = ({ rowSkills, animate, screenWidth }) => {
   // Generate a random initial position between -500 and -1000
   const initialPosition = Math.floor(Math.random() * (500 - 1000 + 1)) - 1000;
 
   // Generate a random duration between 30 and 40
   const duration = Math.floor(Math.random() * 11) + 30;
 
-  return animate ? (
+  return animate && screenWidth >= 1024 ? (
     <motion.div
       animate={{ x: [initialPosition, -200] }}
       transition={{
@@ -245,7 +224,7 @@ const SkillRow = ({ rowSkills, animate }) => {
         ease: "linear",
         repeatType: "mirror",
       }}
-      className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-x-hidden overflow-y-hidden rounded-lg border-2 border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto"
+      className="flex h-[14vh] items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg border-2 border-purple bg-white md:h-[18vh] lg:h-[80px] xl:h-[100px] xl:flex-row xl:overflow-x-hidden"
       style={{ width: `${rowSkills.length * 40}vw` }}
     >
       {Array.from({ length: 4 }, () => rowSkills).map((frontEndBasicLogos) =>
@@ -266,12 +245,12 @@ const SkillRow = ({ rowSkills, animate }) => {
       )}
     </motion.div>
   ) : (
-    <motion.div className="flex h-[16vh] w-full flex-col flex-wrap items-center justify-evenly overflow-x-hidden overflow-y-hidden border-2 border-y-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto">
+    <motion.div className="flex h-[14vh] items-center justify-evenly overflow-y-hidden overflow-x-scroll border-2 border-y-purple bg-white md:h-[18vh]  lg:h-[80px] xl:h-[100px] xl:overflow-x-auto">
       {Array.from({ length: 1 }, () => rowSkills).map((frontEndBasicLogos) =>
         frontEndBasicLogos.map((item, i) => (
           <div
             key={i}
-            className="flex w-[135px] flex-col items-center justify-center xl:h-full xl:w-full xl:justify-evenly"
+            className="mx-10 flex w-[135px] flex-col items-center justify-center lg:mx-0 xl:h-full xl:w-full xl:justify-evenly"
           >
             <img
               src={item.url?.src}
@@ -294,7 +273,7 @@ const HalfSkillRow = ({ rowSkills, leftToRight }) => {
         (leftToRight
           ? "rounded-br-lg rounded-tr-lg border-r-purple "
           : "rounded-tl-lg rounded-bl-lg border-l-purple ") +
-        "h-[16vh] min-w-[47vw] max-w-[47vw] overflow-x-hidden overflow-y-hidden border-2 border-y-purple bg-white md:h-[22vh] xl:h-[100px]"
+        "h-[14vh] min-w-[47vw] max-w-[47vw] overflow-x-hidden overflow-y-hidden border-2 border-y-purple bg-white md:h-[18vh]  lg:h-[80px] xl:h-[100px]"
       }
     >
       <motion.div
@@ -305,7 +284,7 @@ const HalfSkillRow = ({ rowSkills, leftToRight }) => {
           ease: "linear",
           repeatType: "mirror",
         }}
-        className="flex flex-col items-center h-full justify-evenly xl:flex-row"
+        className="flex flex-row items-center h-full justify-evenly"
         style={{ width: `${rowSkills.length * 40}vw` }}
       >
         {Array.from({ length: 4 }, () => rowSkills).map((frontEndBasicLogos) =>
