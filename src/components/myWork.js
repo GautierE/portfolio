@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import cloudMateLogo from "../../public/projects/cloudmate/cloudmate_logo.png";
 import cKoyaLogo from "../../public/projects/c_koya_tech/ckoya_logo.png";
 import robertLogo from "../../public/projects/robert/robert_logo.png";
+import yancloneLogo from "../../public/projects/yanclone/yanclone_logo.svg";
 import arrow from "../../public/arrow.png";
 import { useTranslation } from "next-i18next";
 
@@ -49,13 +50,13 @@ export default function MyWork() {
       imageAlt: "Robert's adventure logo",
       route: "roberts-adventure",
     },
-    // {
-    //   title: "Portfolio",
-    //   description: "My personal website.",
-    //   imageUrl: portfolioLogo,
-    //   imageAlt: "a",
-    //   route: "portfolio",
-    // },
+    {
+      title: t("myWork.yanclone.title"),
+      description: t("myWork.yanclone.desc"),
+      imageUrl: yancloneLogo,
+      imageAlt: "a",
+      route: "portfolio",
+    },
   ];
 
   return (
@@ -63,7 +64,7 @@ export default function MyWork() {
       <div className="mx-auto flex h-full w-[90%] flex-col md:w-full">
         <div className="relative pt-5 md:ml-20 md:pt-10 xl:pt-10">
           <motion.h2
-            className="select-none font-title text-3xl font-bold text-black md:text-6xl"
+            className="text-3xl font-bold text-black select-none font-title md:text-6xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -139,14 +140,14 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="relative flex h-full w-full justify-evenly">
+      <div className="relative flex w-full h-full justify-evenly">
         <div
           className={
             "relative flex w-full flex-col rounded-3xl border-2 border-purple bg-white pt-2 pl-5 md:rounded-br-none md:rounded-tr-none md:rounded-tl-3xl md:rounded-bl-3xl md:border-r-0 md:pt-10 md:pl-10"
           }
         >
           <h5 className="text-xl md:text-4xl tiny:text-lg">{title}</h5>
-          <div className="flex h-full flex-col justify-around">
+          <div className="flex flex-col justify-around h-full">
             <p className="mt-5 md:w-5/6 md:text-lg tiny:text-xs">
               {description}
             </p>
