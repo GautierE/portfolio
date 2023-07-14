@@ -183,7 +183,7 @@ export default function Skills() {
   };
 
   return (
-    <div className="sticky flex flex-col items-center justify-center h-screen xl:bg-purple-white bg-purple tall:top-0">
+    <div className="sticky flex flex-col items-center justify-center h-screen overflow-x-hidden xl:bg-purple-white bg-purple tall:top-0">
       <motion.h2
         className="left-10 top-5 mb-5 ml-5 mr-0 select-none self-start font-title text-4xl text-white xl:ml-0 xl:mr-10 xl:self-end xl:text-[2.6rem] xl:font-bold xl:text-black xxl:text-6xl"
         variants={animateText}
@@ -193,58 +193,50 @@ export default function Skills() {
       >
         {t("skills.title")}
       </motion.h2>
-      <div className="flex h-[90%] w-[90%] flex-col justify-evenly overflow-x-hidden rounded-md bg-white px-2 shadow md:h-[90%] xl:top-[10%] xl:w-3/4 xl:justify-evenly xl:p-5">
+      <div class="mt-5 w-full overflow-x-hidden">
+        <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
+          Front-end basic &amp; Styling
+        </motion.p>
+        <SkillRow rowSkills={frontEndBasicLogos} />
+      </div>
+      <div class="mt-5 w-full overflow-x-hidden">
+        <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
+          Front-end Librairies &amp; Frameworks
+        </motion.p>
+        <SkillRow rowSkills={frontEndLibLogos} animate={true} />
+      </div>
+      <div className="flex flex-wrap justify-between w-full mt-5 xl:flex-wrap">
         <div>
-          <motion.p className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl">
-            Front-end basic &amp; Styling
+          <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
+            Back-end
           </motion.p>
-          <SkillRow rowSkills={frontEndBasicLogos} />
-        </div>
-        <div>
-          <motion.p className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl">
-            Front-end Librairies &amp; Frameworks
-          </motion.p>
-          <SkillRow rowSkills={frontEndLibLogos} />
-        </div>
-        <div className="flex flex-wrap justify-between w-full">
-          <div className="mr-2">
-            <motion.p className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl">
-              Back-end
-            </motion.p>
-            <HalfSkillRow rowSkills={backEndLogos} />
-          </div>
-          <div className="ml-2">
-            <motion.p className="pt-2 pr-2 text-lg text-end xl:pb-2 xl:pt-0 xl:text-2xl">
-              Databases
-            </motion.p>
-            <HalfSkillRow rowSkills={databasesLogos} />
-          </div>
+          <HalfSkillRow rowSkills={backEndLogos} leftToRight={true} />
         </div>
         <div>
-          <motion.p className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl">
-            Dev ops
+          <motion.p className="pt-2 pr-2 text-lg text-end xl:pb-2 xl:pt-0 xl:text-2xl">
+            Databases
           </motion.p>
-          <SkillRow rowSkills={devopsLogos} />
+          <HalfSkillRow rowSkills={databasesLogos} leftToRight={false} />
         </div>
-        <div>
-          <motion.p className="pt-2 pl-2 text-lg xl:pb-2 xl:pt-0 xl:text-2xl">
-            {t("skills.miscstext")}
-          </motion.p>
-          <SkillRow rowSkills={miscsLogos} />
-        </div>
+      </div>
+      <div class="mt-5 w-full overflow-x-hidden">
+        <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
+          Dev ops
+        </motion.p>
+        <SkillRow rowSkills={devopsLogos} animate={true} />
       </div>
     </div>
   );
 }
 
-const SkillRow = ({ rowSkills }) => {
+const SkillRow = ({ rowSkills, animate }) => {
   // Generate a random initial position between -500 and -1000
   const initialPosition = Math.floor(Math.random() * (500 - 1000 + 1)) - 1000;
 
-  // Generate a random duration between 20 and 30
-  const duration = Math.floor(Math.random() * 11) + 20;
+  // Generate a random duration between 30 and 40
+  const duration = Math.floor(Math.random() * 11) + 30;
 
-  return (
+  return animate ? (
     <motion.div
       animate={{ x: [initialPosition, -200] }}
       transition={{
@@ -253,7 +245,7 @@ const SkillRow = ({ rowSkills }) => {
         ease: "linear",
         repeatType: "mirror",
       }}
-      className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-y-hidden rounded-lg border-2 border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto"
+      className="flex h-[16vh] flex-col flex-wrap items-center justify-evenly overflow-x-hidden overflow-y-hidden rounded-lg border-2 border-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto"
       style={{ width: `${rowSkills.length * 40}vw` }}
     >
       {Array.from({ length: 4 }, () => rowSkills).map((frontEndBasicLogos) =>
@@ -273,14 +265,40 @@ const SkillRow = ({ rowSkills }) => {
         ))
       )}
     </motion.div>
+  ) : (
+    <motion.div className="flex h-[16vh] w-full flex-col flex-wrap items-center justify-evenly overflow-x-hidden overflow-y-hidden border-2 border-y-purple bg-white md:h-[22vh] xl:h-[100px] xl:flex-row xl:flex-nowrap xl:overflow-x-auto">
+      {Array.from({ length: 1 }, () => rowSkills).map((frontEndBasicLogos) =>
+        frontEndBasicLogos.map((item, i) => (
+          <div
+            key={i}
+            className="flex w-[135px] flex-col items-center justify-center xl:h-full xl:w-full xl:justify-evenly"
+          >
+            <img
+              src={item.url?.src}
+              alt={item.desc}
+              width={"55vw"}
+              className="p-2 border-2 rounded-full border-purple"
+            />
+            <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
+          </div>
+        ))
+      )}
+    </motion.div>
   );
 };
 
-const HalfSkillRow = ({ rowSkills }) => {
+const HalfSkillRow = ({ rowSkills, leftToRight }) => {
   return (
-    <div className="h-[16vh] min-w-[35vw] max-w-[35vw] overflow-x-hidden overflow-y-hidden rounded-lg border-2 border-purple bg-white md:h-[22vh] xl:h-[100px]">
+    <div
+      className={
+        (leftToRight
+          ? "rounded-br-lg rounded-tr-lg border-r-purple "
+          : "rounded-tl-lg rounded-bl-lg border-l-purple ") +
+        "h-[16vh] min-w-[47vw] max-w-[47vw] overflow-x-hidden overflow-y-hidden border-2 border-y-purple bg-white md:h-[22vh] xl:h-[100px]"
+      }
+    >
       <motion.div
-        animate={{ x: [-2500, -100] }}
+        animate={{ x: [-1000, -200] }}
         transition={{
           duration: 20,
           repeat: Infinity,
