@@ -155,5 +155,25 @@
                 "downloadLink": "Download"
             }
         }
+    },
+    "yanclone": {
+        "gobackBtn": "Go back !",
+        "openAppBtnFirstPart": "Take a ",
+        "openAppBtnSecondPart": "look",
+        "openAppBtnThirdPart": " !",
+        "screenshotsCaption": {
+            "landing1": "Landing page",
+            "defaultMap": "Default app view",
+            "propertyDetail": "Side menu containing all properties and their details",
+            "editPropertyDetail": "Ability to edit a property details",
+            "createProperty": "Side menu to create a property",
+            "loginPage": "Login page",
+            "signupPage": "Signup page",
+            "contactPage": "Contact page"
+        },
+        "text": {
+            "firstPart": "The initial goal of this app was to reproduce the frontend landing page of Yanport, a SaaS focused on real estate data, using Angular as a means to learn this framework. Eventually, I expanded the app to include a basic version of Yanport's overall application concept. This involved implementing a full authentication system and incorporating a map feature that displays real estate properties for user interaction.",
+            "secondPart": "The app now consists of a backend API and a frontend interface. The backend retrieves mock real estate data from a database, while the frontend allows users to interact with and view the real estate data provided by the API. By offering a user-friendly interface, the app facilitates exploration and engagement with simulated real estate data."
+        }
     }
 }

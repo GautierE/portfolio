@@ -32,7 +32,7 @@ import gitLogo from "../../../public/skills/git_logo.svg";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
-export default function RobertsAdventure() {
+export default function Yanclone() {
   const router = useRouter();
   const { t } = useTranslation("common");
   const technoLogos = [
@@ -60,12 +60,12 @@ export default function RobertsAdventure() {
       imageAlt: t("yanclone.screenshotsCaption.landing1"),
     },
     {
-      caption: t("yanclone.screenshotsCaption.landing2"),
+      caption: "",
       imageUrl: landing2Page,
       imageAlt: t("yanclone.screenshotsCaption.landing2"),
     },
     {
-      caption: t("yanclone.screenshotsCaption.landing3"),
+      caption: "",
       imageUrl: landing3Page,
       imageAlt: t("yanclone.screenshotsCaption.landing3"),
     },
@@ -171,7 +171,6 @@ export default function RobertsAdventure() {
             priority
           />
         </div>
-        <p className="text-center md:text-lg">{t("yanclone.info")}</p>
         <div>
           <div className="flex justify-center">
             <button onClick={moveToPrevious} className="mr-5">
@@ -212,7 +211,54 @@ export default function RobertsAdventure() {
               />
             ))}
           </div>
+          <div className="flex items-center justify-center">
+            <motion.a
+              className="mb-2 block rounded-lg border-2 border-[#0048ad] bg-[#0048ad] px-4 py-2 text-center text-xl text-white"
+              href="https://yanclone.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{
+                scale: 0.98,
+                color: "#0048ad",
+                backgroundColor: "#ffffff",
+              }}
+            >
+              {t("yanclone.openAppBtnFirstPart")}
+              {t("yanclone.openAppBtnSecondPart")}
+              {t("yanclone.openAppBtnThirdPart")}
+            </motion.a>
+          </div>
         </div>
+        <motion.a
+          className="flex items-center self-center px-4 py-2 mb-2 text-xl text-white bg-black border-2 border-black rounded-lg fill-white"
+          whileHover={{
+            scale: 1.02,
+            color: "#000000",
+            fill: "#000000",
+            backgroundColor: "#ffffff",
+          }}
+          href="https://github.com/GautierE/saas-real-estate-clone"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github - Front-end
+          <GithubIcon width={40} height={40} />
+        </motion.a>
+        <motion.a
+          className="flex items-center self-center px-4 py-2 mb-5 text-xl text-white bg-black border-2 border-black rounded-lg fill-white"
+          whileHover={{
+            scale: 1.02,
+            color: "#000000",
+            fill: "#000000",
+            backgroundColor: "#ffffff",
+          }}
+          href="https://github.com/GautierE/real-estate-data-api"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github - Back-end
+          <GithubIcon width={40} height={40} />
+        </motion.a>
         <div className="flex flex-wrap items-center justify-center py-5 mx-5 bg-white border-t-2 border-purple md:mx-auto">
           {technoLogos.map((item, i) => (
             <div
@@ -238,8 +284,6 @@ export default function RobertsAdventure() {
           <p>{t("yanclone.text.firstPart")}</p>
           <br />
           <p>{t("yanclone.text.secondPart")}</p>
-          <br />
-          <p>{t("yanclone.text.thirdPart")}</p>
         </div>
       </div>
     </>
@@ -250,7 +294,7 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
   return (
     <div
       style={{ flexBasis: width }}
-      className={`flex h-[80vh] w-full flex-[50%] shrink-0 grow-0  flex-col items-center justify-evenly bg-white shadow`}
+      className={`flex h-[85vh] w-full flex-[50%] shrink-0 grow-0  flex-col items-center justify-evenly bg-white shadow`}
     >
       <div className="relative mt-5 mb-5">
         <Image src={imageUrl} alt={imageAlt} priority />
@@ -298,3 +342,16 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
+
+const GithubIcon = ({ height, width }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>{"github"}</title>
+    <path fill="none" d="M0 0h24v24H0z" />
+    <path d="M12 2a10 10 0 0 0-3.16 19.5c.5.08.66-.23.66-.5v-1.69C6.73 19.91 6.14 18 6.14 18A2.69 2.69 0 0 0 5 16.5c-.91-.62.07-.6.07-.6a2.1 2.1 0 0 1 1.53 1 2.15 2.15 0 0 0 2.91.83 2.16 2.16 0 0 1 .63-1.34C8 16.17 5.62 15.31 5.62 11.5a3.87 3.87 0 0 1 1-2.71 3.58 3.58 0 0 1 .1-2.64s.84-.27 2.75 1a9.63 9.63 0 0 1 5 0c1.91-1.29 2.75-1 2.75-1a3.58 3.58 0 0 1 .1 2.64 3.87 3.87 0 0 1 1 2.71c0 3.82-2.34 4.66-4.57 4.91a2.39 2.39 0 0 1 .69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2Z" />
+  </svg>
+);
