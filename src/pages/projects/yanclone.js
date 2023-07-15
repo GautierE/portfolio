@@ -245,12 +245,12 @@ export default function Yanclone() {
           <GithubIcon width={40} height={40} />
         </motion.a>
         <motion.a
-          className="flex items-center self-center px-4 py-2 mb-5 text-xl text-white bg-black border-2 border-black rounded-lg fill-white"
+          className="flex items-center self-center px-4 py-2 mb-5 text-xl text-black bg-white border-2 border-black rounded-lg fill-black"
           whileHover={{
             scale: 1.02,
-            color: "#000000",
-            fill: "#000000",
-            backgroundColor: "#ffffff",
+            color: "#ffffff",
+            fill: "#ffffff",
+            backgroundColor: "#000000",
           }}
           href="https://github.com/GautierE/real-estate-data-api"
           target="_blank"

@@ -155,5 +155,25 @@
                 "downloadLink": "Télécharger"
             }
         }
+    },
+    "yanclone": {
+        "gobackBtn": "Retour",
+        "openAppBtnFirstPart": "Voir l'",
+        "openAppBtnSecondPart": "app",
+        "openAppBtnThirdPart": "",
+        "screenshotsCaption": {
+            "landing1": "Site vitrine",
+            "defaultMap": "Vue de l'application par défaut",
+            "propertyDetail": "Menu latéral contenant la liste de toutes les propriétés et leurs détail",
+            "editPropertyDetail": "Possibilité d'éditer les détails d'une propriété",
+            "createProperty": "Menu latéral pour créer une propriété",
+            "loginPage": "Page de connexion",
+            "signupPage": "Page d'inscription",
+            "contactPage": "Page de contact"
+        },
+        "text": {
+            "firstPart": "L'objectif initial de cette application était de reproduire la page d'accueil de Yanport, un SaaS axé sur les données immobilières, en utilisant Angular afin d'apprendre ce framework. Finalement, j'ai élargi l'application pour inclure une version basique du concept global de l'application Yanport. Cela impliquait la mise en place d'un système d'authentification complet et l'intégration d'une carte affichant des biens immobiliers avec lesquels les utilisateurs peuvent interagir.",
+            "secondPart": "L'application se compose maintenant d'une API backend et d'une interface frontend. Le backend récupère des données immobilières à partir d'une base de données, tandis que le frontend permet aux utilisateurs d'interagir avec et de visualiser les données immobilières fournies par l'API. En offrant une interface intuitive, l'application facilite l'exploration et l'interaction avec des données immobilières."
+        }
     }
 }
