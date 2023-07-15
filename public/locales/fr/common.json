@@ -48,6 +48,10 @@
         "robert": {
             "title": "Robert's Adventure",
             "desc": "Un jeu sérieux ayant pour but d'être fun créé dans le cadre d'un projet scolaire avec Unity."
+        },
+        "yanclone": {
+            "title": "Yanclone",
+            "desc": "Clone d'un SaaS exploitant les données immobilières"
         }
     },
     "about": {

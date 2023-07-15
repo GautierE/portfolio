@@ -37,6 +37,13 @@ export default function MyWork() {
       route: "cloudmate",
     },
     {
+      title: t("myWork.yanclone.title"),
+      description: t("myWork.yanclone.desc"),
+      imageUrl: yancloneLogo,
+      imageAlt: "Yanclone logo",
+      route: "yanclone",
+    },
+    {
       title: t("myWork.ckoya.title"),
       description: t("myWork.ckoya.desc"),
       imageUrl: cKoyaLogo,
@@ -49,13 +56,6 @@ export default function MyWork() {
       imageUrl: robertLogo,
       imageAlt: "Robert's adventure logo",
       route: "roberts-adventure",
-    },
-    {
-      title: t("myWork.yanclone.title"),
-      description: t("myWork.yanclone.desc"),
-      imageUrl: yancloneLogo,
-      imageAlt: "a",
-      route: "portfolio",
     },
   ];
 
@@ -162,14 +162,17 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
           </div>
         </div>
         <div className="absolute right-2 h-[60px] w-[60px] md:relative md:right-0 md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple md:bg-white">
+          {console.log(title)}
           <Image
             src={imageUrl}
             alt={imageAlt}
             fill
-            sizes="(max-width: 767px) 60px,
-            60%"
+            sizes="(max-width: 767px) 60px, 60%"
             style={{ objectFit: "contain" }}
-            className="md:rounded-tr-3xl md:rounded-br-3xl"
+            className={
+              (title === "Yanclone" ? "p-10" : "") +
+              " md:rounded-tr-3xl md:rounded-br-3xl"
+            }
           />
         </div>
       </div>
