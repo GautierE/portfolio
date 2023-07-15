@@ -18,6 +18,7 @@ import totalClockingIn from "../../../public/projects/c_koya_tech/totalClockingI
 import htmlLogo from "../../../public/skills/html_logo.svg";
 import cssLogo from "../../../public/skills/css_logo.svg";
 import jsLogo from "../../../public/skills/js_logo.svg";
+import tsLogo from "../../../public/skills/typescript_logo.svg";
 import reactLogo from "../../../public/skills/react_logo.svg";
 import reactQueryLogo from "../../../public/skills/react_query_logo.svg";
 import jqueryLogo from "../../../public/skills/jquery_logo.svg";
@@ -38,6 +39,7 @@ export default function RobertsAdventure() {
     { url: htmlLogo, desc: "HTML" },
     { url: cssLogo, desc: "CSS" },
     { url: jsLogo, desc: "Javascript" },
+    { url: tsLogo, desc: "Typescript" },
     { url: reactLogo, desc: "React" },
     { url: jqueryLogo, desc: "jQuery" },
     { url: reactQueryLogo, desc: "React Query" },

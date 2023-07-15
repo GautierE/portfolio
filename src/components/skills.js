@@ -140,7 +140,7 @@ export default function Skills() {
   return (
     <div
       ref={divRef}
-      className="sticky flex flex-col items-center justify-center h-screen overflow-x-hidden xl:bg-purple-white bg-purple tall:top-0"
+      className="xl:bg-purple-white sticky flex h-screen flex-col items-center justify-center overflow-x-hidden bg-purple tall:top-0"
     >
       <motion.h2
         className="left-10 top-5 ml-5 mr-0 select-none self-start font-title text-4xl text-white xl:ml-0 xl:mr-10 xl:self-end xl:text-[2.6rem] xl:font-bold xl:text-black xxl:text-6xl"
@@ -157,7 +157,7 @@ export default function Skills() {
         </motion.p>
         <SkillRow rowSkills={frontEndBasicLogos} screenWidth={screenWidth} />
       </div>
-      <div className="w-full mt-5 overflow-x-hidden">
+      <div className="mt-5 w-full overflow-x-hidden">
         <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
           {t("skills.frontEndLib")}
         </motion.p>
@@ -168,24 +168,24 @@ export default function Skills() {
         />
       </div>
       {screenWidth >= 1024 ? (
-        <div className="flex flex-col flex-wrap justify-between w-full mt-5 md:flex-row xl:flex-wrap">
+        <div className="mt-5 flex w-full flex-col flex-wrap justify-between md:flex-row xl:flex-wrap">
           <div>
             <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
-              Back-end
+              Backend
             </motion.p>
             <HalfSkillRow rowSkills={backEndLogos} leftToRight={true} />
           </div>
           <div>
-            <motion.p className="pt-2 pr-2 text-lg text-white text-start md:text-end md:text-black xl:pb-2 xl:pt-0 xl:text-2xl">
+            <motion.p className="pt-2 pr-2 text-start text-lg text-white md:text-end md:text-black xl:pb-2 xl:pt-0 xl:text-2xl">
               Databases
             </motion.p>
             <HalfSkillRow rowSkills={databasesLogos} leftToRight={false} />
           </div>
         </div>
       ) : (
-        <div className="flex flex-col flex-wrap justify-between w-full mt-5 md:flex-row xl:flex-wrap">
+        <div className="mt-5 flex w-full flex-col flex-wrap justify-between md:flex-row xl:flex-wrap">
           <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
-            Back-end &amp; Databases
+            Backend &amp; Databases
           </motion.p>
           <SkillRow
             rowSkills={backEndLogos.concat(databasesLogos)}
@@ -194,7 +194,7 @@ export default function Skills() {
           />
         </div>
       )}
-      <div className="w-full mt-5 overflow-x-hidden">
+      <div className="mt-5 w-full overflow-x-hidden">
         <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
           DevOps
         </motion.p>
@@ -237,7 +237,7 @@ const SkillRow = ({ rowSkills, animate, screenWidth }) => {
               src={item.url?.src}
               alt={item.desc}
               width={"55vw"}
-              className="p-2 border-2 rounded-full border-purple"
+              className="rounded-full border-2 border-purple p-2"
             />
             <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
           </div>
@@ -256,7 +256,7 @@ const SkillRow = ({ rowSkills, animate, screenWidth }) => {
               src={item.url?.src}
               alt={item.desc}
               width={"55vw"}
-              className="p-2 border-2 rounded-full border-purple"
+              className="rounded-full border-2 border-purple p-2"
             />
             <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
           </div>
@@ -284,7 +284,7 @@ const HalfSkillRow = ({ rowSkills, leftToRight }) => {
           ease: "linear",
           repeatType: "mirror",
         }}
-        className="flex flex-row items-center h-full justify-evenly"
+        className="flex h-full flex-row items-center justify-evenly"
         style={{ width: `${rowSkills.length * 40}vw` }}
       >
         {Array.from({ length: 4 }, () => rowSkills).map((frontEndBasicLogos) =>
@@ -297,7 +297,7 @@ const HalfSkillRow = ({ rowSkills, leftToRight }) => {
                 src={item.url?.src}
                 alt={item.desc}
                 width={"55vw"}
-                className="p-2 border-2 rounded-full border-purple"
+                className="rounded-full border-2 border-purple p-2"
               />
               <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
             </div>

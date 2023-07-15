@@ -16,6 +16,7 @@ import nextLogo from "../../../public/skills/nextjs_logo.svg";
 import reactLogo from "../../../public/skills/react_logo.svg";
 import tailwindLogo from "../../../public/skills/tailwind_logo.svg";
 import gitLogo from "../../../public/skills/git_logo.svg";
+import vercelLogo from "../../../public/skills/vercel_logo.svg";
 import chromeLogo from "../../../public/skills/chrome_logo.svg";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -31,6 +32,7 @@ export default function RobertsAdventure() {
     { url: reactLogo, desc: "React" },
     { url: tailwindLogo, desc: "Tailwind CSS" },
     { url: gitLogo, desc: "Git" },
+    { url: vercelLogo, desc: "Vercel" },
     { url: chromeLogo, desc: "Chrome extension" },
   ];
 

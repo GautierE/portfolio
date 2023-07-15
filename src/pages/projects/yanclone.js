@@ -147,7 +147,7 @@ export default function Yanclone() {
     <>
       <motion.button
         onClick={handleGoBack}
-        className="z-10 flex items-center self-center w-auto p-2 mx-auto mt-10 text-xl bg-white border-2 border-black rounded-lg shadow-lg top-10 left-10 justify-evenly stroke-black lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
+        className="top-10 left-10 z-10 mx-auto mt-10 flex w-auto items-center justify-evenly self-center rounded-lg border-2 border-black bg-white stroke-black p-2 text-xl shadow-lg lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
         whileHover={{
           scale: 0.98,
           color: "#592d8c",
@@ -160,7 +160,7 @@ export default function Yanclone() {
       </motion.button>
       <div className="mx-auto my-0 flex max-w-[1500px] flex-col">
         <div className="flex flex-col items-center justify-center md:flex-row">
-          <h2 className="mt-5 text-3xl font-bold text-center text-black select-none font-title md:mt-0 md:text-6xl">
+          <h2 className="mt-5 select-none text-center font-title text-3xl font-bold text-black md:mt-0 md:text-6xl">
             Yanclone
           </h2>
           <Image
@@ -198,11 +198,11 @@ export default function Yanclone() {
               ▶
             </button>
           </div>
-          <div className="flex justify-center mx-auto mt-5 mb-10">
+          <div className="mx-auto mt-5 mb-10 flex justify-center">
             {carouselContent.map((item, index) => (
               <button
                 key={index}
-                className="w-3 h-3 mx-2 bg-black rounded-full"
+                className="mx-2 h-3 w-3 rounded-full bg-black"
                 onClick={() => setCarouselPosition(index)}
                 style={{
                   backgroundColor:
@@ -230,7 +230,7 @@ export default function Yanclone() {
           </div>
         </div>
         <motion.a
-          className="flex items-center self-center px-4 py-2 mb-2 text-xl text-white bg-black border-2 border-black rounded-lg fill-white"
+          className="mb-2 flex items-center self-center rounded-lg border-2 border-black bg-black fill-white px-4 py-2 text-xl text-white"
           whileHover={{
             scale: 1.02,
             color: "#000000",
@@ -241,11 +241,11 @@ export default function Yanclone() {
           target="_blank"
           rel="noreferrer"
         >
-          Github - Front-end
+          Github - Frontend
           <GithubIcon width={40} height={40} />
         </motion.a>
         <motion.a
-          className="flex items-center self-center px-4 py-2 mb-5 text-xl text-black bg-white border-2 border-black rounded-lg fill-black"
+          className="mb-5 flex items-center self-center rounded-lg border-2 border-black bg-white fill-black px-4 py-2 text-xl text-black"
           whileHover={{
             scale: 1.02,
             color: "#ffffff",
@@ -256,10 +256,10 @@ export default function Yanclone() {
           target="_blank"
           rel="noreferrer"
         >
-          Github - Back-end
+          Github - Backend
           <GithubIcon width={40} height={40} />
         </motion.a>
-        <div className="flex flex-wrap items-center justify-center py-5 mx-5 bg-white border-t-2 border-purple md:mx-auto">
+        <div className="mx-5 flex flex-wrap items-center justify-center border-t-2 border-purple bg-white py-5 md:mx-auto">
           {technoLogos.map((item, i) => (
             <div
               key={i}
@@ -269,7 +269,7 @@ export default function Yanclone() {
                 src={item.url?.src}
                 alt={item.desc}
                 width={"55vw"}
-                className="p-2 border-2 rounded-full border-purple"
+                className="rounded-full border-2 border-purple p-2"
               />
               <p className="whitespace-nowrap lg:text-[1.3vh]">{item.desc}</p>
             </div>
@@ -279,7 +279,7 @@ export default function Yanclone() {
           style={{
             maxWidth: carouselSize ? (carouselSize.width * 70) / 100 : "auto",
           }}
-          className="py-5 mx-auto mb-5 text-justify border-y-2 border-purple md:text-lg "
+          className="mx-auto mb-5 border-y-2 border-purple py-5 text-justify md:text-lg "
         >
           <p>{t("yanclone.text.firstPart")}</p>
           <br />
