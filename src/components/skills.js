@@ -35,11 +35,6 @@ import dockerLogo from "../../public/skills/docker_logo.svg";
 import bashLogo from "../../public/skills/bash_logo.svg";
 import jiraLogo from "../../public/skills/jira_logo.svg";
 import trelloLogo from "../../public/skills/trello_logo.svg";
-import agileIcon from "../../public/skills/agile_icon.svg";
-import chromeLogo from "../../public/skills/chrome_logo.svg";
-import webscrappingIcon from "../../public/skills/webscrapping_icon.svg";
-import oauthLogo from "../../public/skills/oauth_logo.svg";
-import apiIcon from "../../public/skills/api_icon.svg";
 import { useTranslation } from "next-i18next";
 
 export default function Skills() {
@@ -54,7 +49,6 @@ export default function Skills() {
   useEffect(() => {
     const handleResize = () => {
       if (divRef.current) {
-        console.log(divRef.current.clientWidth);
         setScreenWidth(divRef.current.clientWidth);
       }
     };
@@ -140,10 +134,10 @@ export default function Skills() {
   return (
     <div
       ref={divRef}
-      className="xl:bg-purple-white sticky flex h-screen flex-col items-center justify-center overflow-x-hidden bg-purple tall:top-0"
+      className="sticky flex flex-col items-center justify-center h-screen overflow-x-hidden xl:bg-purple-white bg-purple tall:top-0"
     >
       <motion.h2
-        className="left-10 top-5 ml-5 mr-0 select-none self-start font-title text-4xl text-white xl:ml-0 xl:mr-10 xl:self-end xl:text-[2.6rem] xl:font-bold xl:text-black xxl:text-6xl"
+        className="left-10 top-5 ml-5 mr-0 select-none self-start font-title text-4xl text-white xl:ml-0 xl:mr-10 xl:self-end xl:text-[2.6rem] xl:font-bold xl:text-black xxl:mb-5 xxl:text-6xl"
         variants={animateText}
         initial="hidden"
         animate={controls}
@@ -157,7 +151,7 @@ export default function Skills() {
         </motion.p>
         <SkillRow rowSkills={frontEndBasicLogos} screenWidth={screenWidth} />
       </div>
-      <div className="mt-5 w-full overflow-x-hidden">
+      <div className="w-full mt-5 overflow-x-hidden">
         <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
           {t("skills.frontEndLib")}
         </motion.p>
@@ -168,7 +162,7 @@ export default function Skills() {
         />
       </div>
       {screenWidth >= 1024 ? (
-        <div className="mt-5 flex w-full flex-col flex-wrap justify-between md:flex-row xl:flex-wrap">
+        <div className="flex flex-col flex-wrap justify-between w-full mt-5 md:flex-row xl:flex-wrap">
           <div>
             <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
               Backend
@@ -176,14 +170,14 @@ export default function Skills() {
             <HalfSkillRow rowSkills={backEndLogos} leftToRight={true} />
           </div>
           <div>
-            <motion.p className="pt-2 pr-2 text-start text-lg text-white md:text-end md:text-black xl:pb-2 xl:pt-0 xl:text-2xl">
+            <motion.p className="pt-2 pr-2 text-lg text-white text-start md:text-end xl:pb-2 xl:pt-0 xl:text-2xl xl:text-black">
               Databases
             </motion.p>
             <HalfSkillRow rowSkills={databasesLogos} leftToRight={false} />
           </div>
         </div>
       ) : (
-        <div className="mt-5 flex w-full flex-col flex-wrap justify-between md:flex-row xl:flex-wrap">
+        <div className="w-full mt-5 overflow-x-hidden">
           <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
             Backend &amp; Databases
           </motion.p>
@@ -194,7 +188,7 @@ export default function Skills() {
           />
         </div>
       )}
-      <div className="mt-5 w-full overflow-x-hidden">
+      <div className="w-full mt-5 overflow-x-hidden">
         <motion.p className="pt-2 pl-2 text-lg text-white xl:pb-2 xl:pt-0 xl:text-2xl">
           DevOps
         </motion.p>
@@ -227,17 +221,17 @@ const SkillRow = ({ rowSkills, animate, screenWidth }) => {
       className="flex h-[14vh] items-center justify-evenly overflow-y-hidden overflow-x-scroll rounded-lg border-2 border-purple bg-white md:h-[18vh] lg:h-[80px] xl:h-[100px] xl:flex-row xl:overflow-x-hidden"
       style={{ width: `${rowSkills.length * 40}vw` }}
     >
-      {Array.from({ length: 4 }, () => rowSkills).map((frontEndBasicLogos) =>
-        frontEndBasicLogos.map((item, i) => (
+      {Array.from({ length: 4 }, () => rowSkills).map((logos) =>
+        logos.map((item, i) => (
           <div
             key={i}
-            className="flex w-[135px] flex-col items-center justify-center xl:h-full xl:w-full xl:justify-evenly"
+            className="flex w-[135px] shrink-0 grow-0 flex-col items-center justify-center lg:shrink lg:grow xl:h-full xl:w-full xl:justify-evenly"
           >
             <img
               src={item.url?.src}
               alt={item.desc}
               width={"55vw"}
-              className="rounded-full border-2 border-purple p-2"
+              className="p-2 border-2 rounded-full border-purple"
             />
             <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
           </div>
@@ -245,23 +239,21 @@ const SkillRow = ({ rowSkills, animate, screenWidth }) => {
       )}
     </motion.div>
   ) : (
-    <motion.div className="flex h-[14vh] items-center justify-evenly overflow-y-hidden overflow-x-scroll border-2 border-y-purple bg-white md:h-[18vh]  lg:h-[80px] xl:h-[100px] xl:overflow-x-auto">
-      {Array.from({ length: 1 }, () => rowSkills).map((frontEndBasicLogos) =>
-        frontEndBasicLogos.map((item, i) => (
-          <div
-            key={i}
-            className="mx-10 flex w-[135px] flex-col items-center justify-center lg:mx-0 xl:h-full xl:w-full xl:justify-evenly"
-          >
-            <img
-              src={item.url?.src}
-              alt={item.desc}
-              width={"55vw"}
-              className="rounded-full border-2 border-purple p-2"
-            />
-            <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
-          </div>
-        ))
-      )}
+    <motion.div className="flex h-[14vh] overflow-y-hidden overflow-x-scroll border-2 border-y-purple bg-white md:h-[18vh] lg:h-[80px] lg:items-center lg:justify-evenly xl:h-[100px] xl:overflow-x-auto">
+      {rowSkills.map((item, i) => (
+        <div
+          key={i}
+          className="mx-10 flex w-[135px] shrink-0 grow-0 flex-col items-center justify-center lg:mx-0 lg:shrink lg:grow xl:h-full xl:w-full xl:justify-evenly"
+        >
+          <img
+            src={item.url?.src}
+            alt={item.desc}
+            width={"55vw"}
+            className="p-2 border-2 rounded-full border-purple"
+          />
+          <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
+        </div>
+      ))}
     </motion.div>
   );
 };
@@ -284,20 +276,20 @@ const HalfSkillRow = ({ rowSkills, leftToRight }) => {
           ease: "linear",
           repeatType: "mirror",
         }}
-        className="flex h-full flex-row items-center justify-evenly"
+        className="flex flex-row items-center h-full justify-evenly"
         style={{ width: `${rowSkills.length * 40}vw` }}
       >
-        {Array.from({ length: 4 }, () => rowSkills).map((frontEndBasicLogos) =>
-          frontEndBasicLogos.map((item, i) => (
+        {Array.from({ length: 4 }, () => rowSkills).map((logos) =>
+          logos.map((item, i) => (
             <div
               key={i}
-              className="flex w-[135px] flex-col items-center justify-center xl:h-full xl:w-full xl:justify-evenly"
+              className="flex w-[135px] shrink-0 grow-0 flex-col items-center justify-center lg:shrink lg:grow xl:h-full xl:w-full xl:justify-evenly"
             >
               <img
                 src={item.url?.src}
                 alt={item.desc}
                 width={"55vw"}
-                className="rounded-full border-2 border-purple p-2"
+                className="p-2 border-2 rounded-full border-purple"
               />
               <p className="whitespace-nowrap lg:text-[1.5vh]">{item.desc}</p>
             </div>

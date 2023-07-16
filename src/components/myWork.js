@@ -162,7 +162,6 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
           </div>
         </div>
         <div className="absolute right-2 h-[60px] w-[60px] md:relative md:right-0 md:h-auto md:w-3/5 md:rounded-tr-3xl md:rounded-br-3xl md:border-2 md:border-l-0 md:border-purple md:bg-white">
-          {console.log(title)}
           <Image
             src={imageUrl}
             alt={imageAlt}
@@ -170,7 +169,7 @@ const Project = ({ title, imageUrl, imageAlt, description, route }) => {
             sizes="(max-width: 767px) 60px, 60%"
             style={{ objectFit: "contain" }}
             className={
-              (title === "Yanclone" ? "p-10" : "") +
+              (title === "Yanclone" ? "p-3 lg:p-12" : "") +
               " md:rounded-tr-3xl md:rounded-br-3xl"
             }
           />
