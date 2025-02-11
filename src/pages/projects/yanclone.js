@@ -33,6 +33,7 @@ import { useTranslation } from "next-i18next";
 import BackArrow from "@/components/icons/BackArrow";
 import useSize from "@/hooks/useSize";
 import GithubIcon from "@/components/icons/GithubIcon";
+import handleGoBack from "./utils/handleGoBack";
 
 export default function Yanclone() {
   const router = useRouter();
@@ -128,21 +129,6 @@ export default function Yanclone() {
     setCarouselPosition((old) =>
       old < carouselContent.length - 1 ? old + 1 : old
     );
-  };
-
-  const handleGoBack = () => {
-    if (
-      history.length > 1 &&
-      document.referrer.includes(window?.location?.host)
-    ) {
-      history.back();
-    } else {
-      if (router.locale === "fr") {
-        window.location.href = "/fr";
-      } else {
-        window.location.href = "/";
-      }
-    }
   };
 
   return (

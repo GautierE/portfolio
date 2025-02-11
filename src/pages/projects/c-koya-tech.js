@@ -20,6 +20,7 @@ import apiIcon from "../../../public/skills/api_icon.svg";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import BackArrow from "@/components/icons/BackArrow";
+import handleGoBack from "./utils/handleGoBack";
 
 export default function RobertsAdventure() {
   const router = useRouter();
@@ -41,21 +42,6 @@ export default function RobertsAdventure() {
     { url: gitLogo, desc: "Git" },
     { url: apiIcon, desc: "RESTful API" },
   ];
-
-  const handleGoBack = () => {
-    if (
-      history.length > 1 &&
-      document.referrer.includes(window?.location?.host)
-    ) {
-      history.back();
-    } else {
-      if (router.locale === "fr") {
-        window.location.href = "/fr";
-      } else {
-        window.location.href = "/";
-      }
-    }
-  };
 
   return (
     <>
