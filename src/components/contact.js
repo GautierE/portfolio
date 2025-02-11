@@ -30,45 +30,50 @@ export default function Contact() {
   const handleSubmit = () => {
     if (formContent.name === "") {
       toast.warning(t("contact.toast.name"));
-    } else if (formContent.email === "" || !validateEmail(formContent.email)) {
-      toast.warning(t("contact.toast.email"));
-    } else if (formContent.message === "") {
-      toast.warning(t("contact.toast.message"));
-    } else {
-      setFormContent({
-        name: "",
-        email: "",
-        message: "",
-      });
-      setIsSending(true);
-      fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(formContent),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setIsSending(false);
-          toast.success(
-            data.message === "success"
-              ? t("contact.toast.success")
-              : data.message
-          );
-        })
-        .catch((error) => toast.error(error));
+      return;
     }
+
+    if (formContent.email === "" || !validateEmail(formContent.email)) {
+      toast.warning(t("contact.toast.email"));
+      return;
+    }
+
+    if (formContent.message === "") {
+      toast.warning(t("contact.toast.message"));
+      return;
+    }
+
+    setFormContent({
+      name: "",
+      email: "",
+      message: "",
+    });
+    setIsSending(true);
+    fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(formContent),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setIsSending(false);
+        toast.success(
+          data.message === "success" ? t("contact.toast.success") : data.message
+        );
+      })
+      .catch((error) => toast.error(error));
   };
 
   const validateEmail = (email) => {
-    var re = /\S+@\S+\.\S+/;
+    const re = /\S+@\S+\.\S+/;
     return re.test(email);
   };
 
   return (
-    <div className="sticky w-full my-0 mt-5 bg-white tall:top-0 tall:mt-0 tall:h-screen">
+    <div className="sticky my-0 mt-5 w-full bg-white tall:top-0 tall:mt-0 tall:h-screen">
       <div className="mx-auto flex h-full w-[90%] flex-col items-center justify-center md:w-auto">
         <div className="mb-5 text-center md:mb-28 ">
           <motion.h2
-            className="mb-3 text-2xl font-bold font-title text-purple md:text-5xl lg:text-6xl"
+            className="mb-3 font-title text-2xl font-bold text-purple md:text-5xl lg:text-6xl"
             variants={animateText}
             custom={{ delay: 0 }}
             initial="hidden"
@@ -92,7 +97,7 @@ export default function Contact() {
         </div>
         <div className="mb-10 flex w-11/12 max-w-[845px] flex-col items-center justify-center md:mb-20 md:w-8/12">
           <motion.div
-            className="flex flex-col justify-around w-full mb-5 md:mb-20 md:flex-row"
+            className="mb-5 flex w-full flex-col justify-around md:mb-20 md:flex-row"
             custom={{ delay: 1 }}
             variants={animateText}
             initial="hidden"
@@ -104,7 +109,7 @@ export default function Contact() {
                 {t("contact.form.name.label")}
               </label>
               <input
-                className="p-4 text-lg bg-transparent border-b border-purple"
+                className="border-b border-purple bg-transparent p-4 text-lg"
                 id="name"
                 placeholder={t("contact.form.name.placeholder")}
                 type="text"
@@ -122,7 +127,7 @@ export default function Contact() {
                 {t("contact.form.email.label")}
               </label>
               <input
-                className="p-4 text-lg bg-transparent border-b border-purple "
+                className="border-b border-purple bg-transparent p-4 text-lg "
                 id="email"
                 placeholder={t("contact.form.email.placeholder")}
                 type="email"
@@ -137,7 +142,7 @@ export default function Contact() {
             </div>
           </motion.div>
           <motion.div
-            className="flex flex-col w-full"
+            className="flex w-full flex-col"
             custom={{ delay: 1.5 }}
             variants={animateText}
             initial="hidden"
@@ -148,7 +153,7 @@ export default function Contact() {
               {t("contact.form.message.label")}
             </label>
             <textarea
-              className="p-4 text-lg bg-transparent border-b resize-none h-28 border-purple "
+              className="h-28 resize-none border-b border-purple bg-transparent p-4 text-lg "
               id="message"
               placeholder={t("contact.form.message.placeholder")}
               type="text"
@@ -164,7 +169,7 @@ export default function Contact() {
           </motion.div>
         </div>
         <motion.button
-          className="flex items-center justify-center px-3 py-2 mb-1 border-2 rounded-lg border-purple stroke-purple text-purple md:mb-0 md:w-1/6 md:p-5"
+          className="mb-1 flex items-center justify-center rounded-lg border-2 border-purple stroke-purple px-3 py-2 text-purple md:mb-0 md:w-1/6 md:p-5"
           whileHover={{
             scale: 1.05,
             backgroundColor: "#592d8c",
