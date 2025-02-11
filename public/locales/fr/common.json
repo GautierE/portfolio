@@ -27,8 +27,8 @@
     },
     "skills": {
         "title": "Compétences",
-        "frontEndLib": "Frontend base & style",
-        "frontEndBasic": "Frontend Librairies & Frameworks",
+        "frontEndLib": "Frontend Librairies & Frameworks",
+        "frontEndBasic": "Frontend base & style",
         "miscstext": "Divers"
     },
     "myWork": {
