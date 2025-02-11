@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { motion, useAnimationControls } from "framer-motion";
-import useResizeObserver from "@react-hook/resize-observer";
 import robertTitle from "../../../public/projects/robert/robert_title.png";
 import game1 from "../../../public/projects/robert/game1.png";
 import game2 from "../../../public/projects/robert/game2.png";
@@ -17,6 +16,7 @@ import agileIcon from "../../../public/skills/agile_icon.svg";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import BackArrow from "@/components/icons/BackArrow";
+import useSize from "@/hooks/useSize";
 
 export default function RobertsAdventure() {
   const router = useRouter();
@@ -242,17 +242,6 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
       </div>
     </div>
   );
-};
-
-const useSize = (target) => {
-  const [size, setSize] = React.useState();
-
-  React.useEffect(() => {
-    setSize(target.current.getBoundingClientRect());
-  }, [target]);
-
-  useResizeObserver(target, (entry) => setSize(entry.contentRect));
-  return size;
 };
 
 const GithubIcon = ({ height, width }) => (

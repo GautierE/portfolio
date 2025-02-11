@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { motion, useAnimationControls } from "framer-motion";
-import useResizeObserver from "@react-hook/resize-observer";
 import cloudMateBanner from "../../../public/projects/cloudmate/cloudmate_banner.png";
 import linkOpenerScreen from "../../../public/projects/cloudmate/app.png";
 import jigScreen from "../../../public/projects/cloudmate/jig_features.png";
@@ -21,6 +20,7 @@ import chromeLogo from "../../../public/skills/chrome_logo.svg";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import BackArrow from "@/components/icons/BackArrow";
+import useSize from "@/hooks/useSize";
 
 export default function RobertsAdventure() {
   const router = useRouter();
@@ -227,17 +227,6 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
       </div>
     </div>
   );
-};
-
-const useSize = (target) => {
-  const [size, setSize] = React.useState();
-
-  React.useEffect(() => {
-    setSize(target.current.getBoundingClientRect());
-  }, [target]);
-
-  useResizeObserver(target, (entry) => setSize(entry.contentRect));
-  return size;
 };
 
 export async function getStaticProps({ locale }) {

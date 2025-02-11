@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { motion, useAnimationControls } from "framer-motion";
-import useResizeObserver from "@react-hook/resize-observer";
 import yancloneLogo from "../../../public/projects/yanclone/yanclone_logo.svg";
 import defaultMap from "../../../public/projects/yanclone/defaultMap.png";
 import createProperty from "../../../public/projects/yanclone/createProperty.png";
@@ -32,6 +31,7 @@ import gitLogo from "../../../public/skills/git_logo.svg";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import BackArrow from "@/components/icons/BackArrow";
+import useSize from "@/hooks/useSize";
 
 export default function Yanclone() {
   const router = useRouter();
@@ -305,17 +305,6 @@ const CarouselItem = ({ caption, imageUrl, imageAlt, width }) => {
       </div>
     </div>
   );
-};
-
-const useSize = (target) => {
-  const [size, setSize] = React.useState();
-
-  React.useEffect(() => {
-    setSize(target.current.getBoundingClientRect());
-  }, [target]);
-
-  useResizeObserver(target, (entry) => setSize(entry.contentRect));
-  return size;
 };
 
 export async function getStaticProps({ locale }) {
