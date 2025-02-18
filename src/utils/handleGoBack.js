@@ -1,4 +1,4 @@
-const handleGoBack = () => {
+const handleGoBack = (router) => {
   if (
     history.length > 1 &&
     document.referrer.includes(window?.location?.host)

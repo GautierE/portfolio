@@ -21,7 +21,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import BackArrow from "@/components/icons/BackArrow";
 import useSize from "@/hooks/useSize";
-import handleGoBack from "./utils/handleGoBack";
+import handleGoBack from "@/utils/handleGoBack";
 
 export default function RobertsAdventure() {
   const router = useRouter();
@@ -91,7 +91,7 @@ export default function RobertsAdventure() {
   return (
     <>
       <motion.button
-        onClick={handleGoBack}
+        onClick={() => handleGoBack(router)}
         className="top-10 left-10 z-10 mx-auto mt-10 flex w-auto items-center justify-evenly self-center rounded-lg border-2 border-black bg-white stroke-black p-2 text-xl shadow-lg lg:sticky lg:mx-0 lg:mt-0 lg:p-4"
         whileHover={{
           scale: 0.98,
